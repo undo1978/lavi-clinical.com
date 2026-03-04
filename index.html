@@ -613,6 +613,323 @@ footer {
 
 .footer-right a:hover { color: var(--navy); }
 
+/* ─── ARCHITECTURE DEEP DIVE ─── */
+.arch-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 0.6fr;
+  gap: 2rem;
+  align-items: start;
+}
+
+.arch-main { display: grid; gap: 1.5rem; }
+
+.arch-block {
+  padding: 2rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.arch-block h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.arch-block p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.75;
+}
+
+.arch-side { display: grid; gap: 1rem; }
+
+.arch-detail-card {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  transition: border-color 0.3s;
+}
+
+.arch-detail-card:hover { border-color: var(--border-hover); }
+
+.adc-icon {
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.adc-icon svg { width: 22px; height: 22px; }
+
+.adc-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.2rem;
+}
+
+.adc-text {
+  font-size: 0.8rem;
+  color: var(--text-body);
+  line-height: 1.6;
+}
+
+/* ─── CLINICAL VALIDATION ─── */
+.validation-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.val-card {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.35s;
+}
+
+.val-card:hover {
+  border-color: var(--border-hover);
+  transform: translateY(-3px);
+}
+
+.val-phase {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--blue-arrow);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+}
+
+.val-card h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.6rem;
+}
+
+.val-card p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.val-status {
+  margin-top: 1.25rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.35rem 0.85rem;
+  border-radius: 100px;
+  display: inline-flex;
+  align-self: flex-start;
+}
+
+.val-status.done {
+  background: rgba(91, 164, 201, 0.12);
+  color: var(--blue-arrow);
+}
+
+.val-status.current {
+  background: rgba(46, 160, 67, 0.1);
+  color: #2ea043;
+}
+
+.val-status.upcoming {
+  background: rgba(27, 42, 74, 0.06);
+  color: var(--text-muted);
+}
+
+/* ─── TIMELINE / ROADMAP ─── */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 1rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 28px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: linear-gradient(180deg, var(--blue-arrow), var(--node-light), rgba(176, 193, 212, 0.3));
+}
+
+.tl-item {
+  position: relative;
+  padding-left: 80px;
+  padding-bottom: 3rem;
+}
+
+.tl-item:last-child { padding-bottom: 0; }
+
+.tl-dot {
+  position: absolute;
+  left: 18px;
+  top: 4px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 3px solid var(--node-light);
+  background: var(--bg);
+}
+
+.tl-dot.active {
+  border-color: var(--blue-arrow);
+  background: var(--blue-arrow);
+}
+
+.tl-dot.current {
+  border-color: #2ea043;
+  background: var(--bg);
+  box-shadow: 0 0 0 4px rgba(46, 160, 67, 0.15);
+}
+
+.tl-dot.current::after {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border-radius: 50%;
+  background: #2ea043;
+}
+
+.tl-dot.upcoming {
+  border-color: var(--node-light);
+  background: var(--bg);
+}
+
+.tl-year {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--blue-arrow);
+  margin-bottom: 0.35rem;
+}
+
+.tl-content h4 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.4rem;
+}
+
+.tl-content p {
+  font-size: 0.875rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+/* ─── TEAM ─── */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 1.5rem;
+}
+
+.team-card {
+  display: flex;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 2rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+}
+
+.team-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 14px;
+  background: var(--navy);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+
+.team-info h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 0.15rem;
+}
+
+.team-role {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--blue-arrow);
+  margin-bottom: 0.6rem;
+}
+
+.team-info p {
+  font-size: 0.85rem;
+  color: var(--text-body);
+  line-height: 1.65;
+  margin-bottom: 0.75rem;
+}
+
+.team-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--navy);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.team-link:hover { color: var(--blue-arrow); }
+
+.team-note {
+  margin-top: 2rem;
+  padding: 1.5rem 2rem;
+  background: var(--blue-glow);
+  border: 1px solid rgba(91, 164, 201, 0.15);
+  border-radius: 14px;
+}
+
+.team-note p {
+  font-size: 0.9rem;
+  color: var(--text-body);
+  line-height: 1.7;
+}
+
+.team-note a {
+  color: var(--blue-arrow);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.team-note a:hover { text-decoration: underline; }
+
+/* ─── CTA BUTTONS ─── */
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
   from { opacity: 0; transform: translateY(24px); }
@@ -666,6 +983,8 @@ footer {
   .hero-actions { justify-content: center; }
   .hero-visual { display: none; }
   .tech-grid { grid-template-columns: 1fr; }
+  .arch-grid { grid-template-columns: 1fr; }
+  .validation-grid { grid-template-columns: 1fr; }
   .pipeline { grid-template-columns: 1fr 1fr; }
   .pipeline::before { display: none; }
   .pipeline-section { padding: 2rem; }
@@ -691,7 +1010,9 @@ footer {
   </a>
   <ul class="nav-links">
     <li><a href="#technology">Technology</a></li>
-    <li><a href="#pipeline">Pipeline</a></li>
+    <li><a href="#validation">Validation</a></li>
+    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#about">About</a></li>
   </ul>
   <a href="#contact" class="nav-cta">Get in Touch</a>
@@ -859,7 +1180,7 @@ footer {
   </div>
 </div>
 
-<!-- TECHNOLOGY -->
+<!-- TECHNOLOGY OVERVIEW -->
 <section id="technology">
   <div class="section-label reveal">01 / Technology</div>
   <h2 class="section-title reveal">Clinical-Grade Intelligence</h2>
@@ -891,7 +1212,7 @@ footer {
         <svg viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
       </div>
       <h3>Longitudinal Tracking</h3>
-      <p>Automated comparison of serial scans to detect new or enlarging lesions and volume changes.</p>
+      <p>Automated comparison of serial scans to detect new or enlarging lesions and volume changes between timepoints.</p>
     </div>
     <div class="tech-card reveal">
       <div class="tech-icon">
@@ -909,6 +1230,61 @@ footer {
     </div>
   </div>
 </section>
+
+<!-- DEEP DIVE: ARCHITECTURE -->
+<div style="background: var(--bg-white);">
+<section id="architecture">
+  <div class="section-label reveal">01b / Under the Hood</div>
+  <h2 class="section-title reveal">Model Architecture</h2>
+  <p class="section-desc reveal">A robust, well-validated segmentation backbone adapted for clinical neuroimaging.</p>
+
+  <div class="arch-grid reveal">
+    <div class="arch-main">
+      <div class="arch-block">
+        <h3>nnU-Net Foundation</h3>
+        <p>Our segmentation engine is built on the nnU-Net framework — a self-configuring deep learning architecture that has consistently achieved top performance in medical image segmentation challenges. The framework automatically adapts its preprocessing, network topology, and training strategy to the characteristics of each dataset, reducing the need for manual hyperparameter tuning.</p>
+      </div>
+      <div class="arch-block">
+        <h3>3D Volumetric Processing</h3>
+        <p>Unlike 2D slice-by-slice approaches, our model processes full 3D MRI volumes natively. This preserves spatial context across slices, enabling more accurate detection of small lesions and precise boundary delineation — particularly important for periventricular and cortical lesions that span multiple slices.</p>
+      </div>
+      <div class="arch-block">
+        <h3>Multi-Sequence Input</h3>
+        <p>The model jointly processes FLAIR, T1-weighted, and T2-weighted sequences as multi-channel input. This multi-contrast approach mirrors the information a radiologist uses in clinical practice, providing complementary tissue contrasts that improve lesion-to-background discrimination.</p>
+      </div>
+    </div>
+    <div class="arch-side">
+      <div class="arch-detail-card">
+        <div class="adc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-arrow)" stroke-width="1.8"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+        </div>
+        <div>
+          <div class="adc-title">Benchmark Validated</div>
+          <div class="adc-text">Externally validated on MSSEG-2, ISBI Longitudinal MS, and Insight MS Longitudinal public datasets</div>
+        </div>
+      </div>
+      <div class="arch-detail-card">
+        <div class="adc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-arrow)" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div>
+          <div class="adc-title">Local Calibration</div>
+          <div class="adc-text">Site-specific calibration layer adapts to local scanner characteristics without modifying core model weights</div>
+        </div>
+      </div>
+      <div class="arch-detail-card">
+        <div class="adc-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="var(--blue-arrow)" stroke-width="1.8"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div>
+          <div class="adc-title">&lt;2 min Processing</div>
+          <div class="adc-text">Full lesion segmentation and volumetric analysis from DICOM input to structured output</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
 
 <!-- PIPELINE -->
 <section id="pipeline">
@@ -941,34 +1317,127 @@ footer {
   </div>
 </section>
 
-<!-- STATS -->
-<div style="padding: 0 2.5rem;">
-  <div class="stats-section reveal">
-    <div class="stats-row">
-      <div class="stat-item">
-        <div class="stat-value">&lt;2min</div>
-        <div class="stat-label">Processing Time</div>
+<!-- CLINICAL VALIDATION -->
+<div style="background: var(--bg-white);">
+<section id="validation">
+  <div class="section-label reveal">03 / Clinical Validation</div>
+  <h2 class="section-title reveal">Rigorous Validation at Every Stage</h2>
+  <p class="section-desc reveal">We follow a multi-phase validation approach to ensure our technology performs reliably before it reaches clinical practice.</p>
+
+  <div class="validation-grid">
+    <div class="val-card reveal">
+      <div class="val-phase">Phase 1</div>
+      <h3>External Benchmarking</h3>
+      <p>Performance evaluation on publicly available, expert-annotated MS datasets including MSSEG-2, ISBI Longitudinal MS Challenge, and Insight MS Longitudinal. These benchmarks test generalizability across different scanner types, field strengths, and acquisition protocols from multiple international sites.</p>
+      <div class="val-status done">Ongoing</div>
+    </div>
+    <div class="val-card reveal">
+      <div class="val-phase">Phase 2</div>
+      <h3>Clinical Validation Study</h3>
+      <p>Prospective validation study with a clinical partner in Estonia. The study will evaluate diagnostic performance on real-world clinical data, comparing AI-generated segmentations against expert neuroradiologist annotations. Currently in contract negotiation phase with the clinical validation partner.</p>
+      <div class="val-status current">In preparation</div>
+    </div>
+    <div class="val-card reveal">
+      <div class="val-phase">Phase 3</div>
+      <h3>Multi-Site Validation</h3>
+      <p>Broader validation across multiple clinical sites to demonstrate consistent performance across different patient populations, scanner configurations, and clinical workflows — a key requirement for CE marking under the Medical Device Regulation.</p>
+      <div class="val-status upcoming">Planned</div>
+    </div>
+  </div>
+</section>
+</div>
+
+<!-- REGULATORY ROADMAP -->
+<section id="roadmap">
+  <div class="section-label reveal">04 / Regulatory Roadmap</div>
+  <h2 class="section-title reveal">Path to Market</h2>
+  <p class="section-desc reveal">A clear regulatory strategy aligned with the EU Medical Device Regulation (CE-MDR) framework.</p>
+
+  <div class="timeline reveal">
+    <div class="timeline-line"></div>
+
+    <div class="tl-item">
+      <div class="tl-dot active"></div>
+      <div class="tl-year">2025</div>
+      <div class="tl-content">
+        <h4>Foundation</h4>
+        <p>External validation on public benchmarks. Development of quality management system (QMS). Clinical partnership establishment.</p>
       </div>
-      <div class="stat-item">
-        <div class="stat-value">3D</div>
-        <div class="stat-label">Volumetric Analysis</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot current"></div>
+      <div class="tl-year">2026</div>
+      <div class="tl-content">
+        <h4>Clinical Validation</h4>
+        <p>Prospective clinical validation study. Ethics committee approval and data collection. Performance evaluation against expert annotations.</p>
       </div>
-      <div class="stat-item">
-        <div class="stat-value">CE-MDR</div>
-        <div class="stat-label">Regulatory Pathway</div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot upcoming"></div>
+      <div class="tl-year">2027</div>
+      <div class="tl-content">
+        <h4>CE-MDR Process</h4>
+        <p>Initiation of CE marking process under MDR. Technical documentation, risk management, and conformity assessment with Notified Body.</p>
+      </div>
+    </div>
+
+    <div class="tl-item">
+      <div class="tl-dot upcoming"></div>
+      <div class="tl-year">2028</div>
+      <div class="tl-content">
+        <h4>Market Entry</h4>
+        <p>CE mark approval and commercial launch in the European market. Integration partnerships with hospital PACS systems.</p>
       </div>
     </div>
   </div>
+</section>
+
+<!-- TEAM -->
+<div style="background: var(--bg-white);">
+<section id="team">
+  <div class="section-label reveal">05 / Team</div>
+  <h2 class="section-title reveal">Who We Are</h2>
+  <p class="section-desc reveal">A focused team at the intersection of AI, medical imaging, and clinical software development.</p>
+
+  <div class="team-grid reveal">
+    <div class="team-card">
+      <div class="team-avatar">A</div>
+      <div class="team-info">
+        <h3>Andreas</h3>
+        <div class="team-role">Founder & CEO</div>
+        <p>Leading product development, clinical partnerships, and regulatory strategy. Responsible for the technical architecture of the AI platform and guiding the company from validation through to market entry.</p>
+        <a href="https://www.linkedin.com/company/lavi-clinical-solutions/" target="_blank" rel="noopener" class="team-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+          LinkedIn
+        </a>
+      </div>
+    </div>
+    <div class="team-card">
+      <div class="team-avatar">AH</div>
+      <div class="team-info">
+        <h3>Alvar Haug</h3>
+        <div class="team-role">Infrastructure & Security</div>
+        <p>Responsible for cloud infrastructure, deployment pipelines, and security architecture. Ensuring the platform meets the stringent data protection and availability requirements of clinical healthcare environments.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="team-note reveal">
+    <p>We are actively building our team. If you're passionate about clinical AI, medical imaging, or regulatory affairs — <a href="mailto:andreas@lavi-clinical.com">get in touch</a>.</p>
+  </div>
+</section>
 </div>
 
 <!-- ABOUT -->
 <section id="about">
-  <div class="section-label reveal">03 / About</div>
+  <div class="section-label reveal">06 / About</div>
   <h2 class="section-title reveal">Lävi Clinical Solutions</h2>
   <div class="about-grid">
     <div class="about-text reveal">
       <p>Lävi Clinical Solutions OÜ develops AI-powered medical imaging software to advance the diagnosis and monitoring of neurological conditions. Our core technology focuses on MS lesion detection and brain volume quantification, designed to support clinical decision-making with quantitative, reproducible insights.</p>
-      <p>We are committed to rigorous clinical validation and regulatory compliance, building software that clinicians can trust in real-world diagnostic workflows.</p>
+      <p>We are committed to rigorous clinical validation and regulatory compliance, building software that clinicians can trust in real-world diagnostic workflows. Based in Tartu, Estonia — a growing hub for health technology and life sciences in the Nordics and Baltics.</p>
     </div>
     <div class="about-details reveal">
       <div class="about-detail">
@@ -997,9 +1466,12 @@ footer {
 
 <!-- CTA -->
 <section class="cta-section" id="contact">
-  <h2 class="section-title reveal">Ready to Transform Your<br><span class="accent">Neuroimaging Workflow?</span></h2>
-  <p class="section-desc reveal">Get in touch to learn how Lävi's AI platform can support your clinical practice.</p>
-  <a href="mailto:andreas@lavi-clinical.com" class="btn-primary reveal">Contact Us <span class="arrow">&rarr;</span></a>
+  <h2 class="section-title reveal">Interested in Partnering<br><span class="accent">or Learning More?</span></h2>
+  <p class="section-desc reveal">Whether you're a clinical partner, investor, or fellow researcher — we'd love to hear from you.</p>
+  <div class="cta-buttons reveal">
+    <a href="mailto:andreas@lavi-clinical.com" class="btn-primary">Get in Touch <span class="arrow">&rarr;</span></a>
+    <a href="https://www.linkedin.com/company/lavi-clinical-solutions/" target="_blank" rel="noopener" class="btn-secondary">Follow on LinkedIn</a>
+  </div>
 </section>
 
 <!-- FOOTER -->
