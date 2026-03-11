@@ -1,4 +1,4 @@
-# Lävi Clinical Solutions — https://lavi-clinical.com
+# Lävi Clinical Suite — https://lavi-clinical.com
 User-agent: *
 Allow: /
 
