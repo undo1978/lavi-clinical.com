@@ -7,6 +7,7 @@
 <meta name="description" content="Lävi Clinical Solutions develops AI-powered longitudinal MRI analysis software for Multiple Sclerosis. Automatically detect new and enlarging lesions, track disease progression, and generate structured clinical reports with fail-closed quality control. CE-MDR pathway. Based in Tartu, Estonia.">
 <meta name="keywords" content="MS lesion detection, multiple sclerosis MRI, brain volume quantification, AI medical imaging, longitudinal MRI analysis, MS progression analysis, multiple sclerosis monitoring, MRI follow-up analysis, white matter hyperintensity segmentation, WMH detection, neuroradiology AI, brain atrophy measurement, CE-MDR medical device, clinical validation, MS monitoring software, quantitative neuroimaging, MS treatment monitoring, disease progression tracking, automated MRI analysis, Lävi Clinical Solutions, Estonia medtech">
 <meta name="author" content="Lävi Clinical Solutions OÜ">
+<meta name="theme-color" content="#1b2a4a">
 <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
 <link rel="canonical" href="https://lavi-clinical.com/">
 <link rel="sitemap" type="application/xml" href="https://lavi-clinical.com/sitemap.xml">
@@ -58,13 +59,43 @@
   "sameAs": [
     "https://www.linkedin.com/company/lavi-clinical-solutions/"
   ],
+  "medicalSpecialty": "https://schema.org/Radiology",
   "founder": {
     "@type": "Person",
     "name": "Andreas Müürsepp",
     "jobTitle": "CEO & Founder",
-    "sameAs": "https://www.linkedin.com/in/andreas-muursepp/"
+    "description": "Neuroradiologist and software engineer. Combines clinical radiology expertise with deep learning research to build fail-closed medical imaging pipelines.",
+    "hasOccupation": {
+      "@type": "Occupation",
+      "name": "Neuroradiologist",
+      "occupationalCategory": "29-1224.00"
+    },
+    "sameAs": "https://www.linkedin.com/in/andreas-muursepp/",
+    "knowsAbout": ["Neuroradiology", "Multiple Sclerosis Imaging", "Deep Learning", "Medical Device Software", "nnU-Net"]
   },
-  "knowsAbout": ["Multiple Sclerosis", "Neuroimaging", "Medical Device Software", "Brain MRI Analysis", "White Matter Hyperintensity Detection"]
+  "knowsAbout": ["Multiple Sclerosis", "Neuroimaging", "Medical Device Software", "Brain MRI Analysis", "White Matter Hyperintensity Detection", "Longitudinal Lesion Tracking", "Brain Volumetry"]
+}
+</script>
+<!-- MedicalCondition schema — Multiple Sclerosis context -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MedicalCondition",
+  "name": "Multiple Sclerosis",
+  "alternateName": ["MS", "Relapsing-Remitting Multiple Sclerosis", "RRMS"],
+  "associatedAnatomy": {
+    "@type": "AnatomicalStructure",
+    "name": "Brain White Matter"
+  },
+  "signOrSymptom": [
+    {"@type": "MedicalSignOrSymptom", "name": "White matter lesions"},
+    {"@type": "MedicalSignOrSymptom", "name": "Brain atrophy"},
+    {"@type": "MedicalSignOrSymptom", "name": "New and enlarging lesions on MRI"}
+  ],
+  "possibleTreatment": {
+    "@type": "MedicalTherapy",
+    "name": "Disease-modifying therapy monitoring via longitudinal MRI"
+  }
 }
 </script>
 <script type="application/ld+json">
@@ -75,6 +106,7 @@
   "applicationCategory": "MedicalApplication",
   "operatingSystem": "Linux",
   "description": "Automated longitudinal MS lesion detection and brain volume quantification pipeline with fail-closed quality control, per-lesion tracking, and clinical-grade reporting.",
+  "featureList": ["Hybrid dual-model nnU-Net lesion segmentation", "Per-lesion longitudinal tracking", "Fail-closed quality control", "Brain volume quantification with normative percentiles", "DICOM SEG output", "PACS integration", "Structured clinical reports"],
   "offers": {
     "@type": "Offer",
     "availability": "https://schema.org/PreOrder",
@@ -1998,7 +2030,7 @@ footer {
 
 <!-- FOOTER -->
 <footer aria-label="Site footer">
-  <div class="footer-left">&copy; 2026 Lävi Clinical Solutions OÜ &middot; Tartu, Estonia</div>
+  <div class="footer-left">&copy; 2026 Lävi Clinical Solutions OÜ &middot; Tartu, Estonia &middot; <time datetime="2026-03">Updated March 2026</time></div>
   <div class="footer-right">
     <a href="sample-report.html">Sample Report</a>
     <a href="mailto:andreas@lavi-clinical.com">andreas@lavi-clinical.com</a>
