@@ -596,3 +596,4 @@ p, li { max-width: var(--measure); }
 .err-page { min-height: 55vh; display: flex; align-items: center; }
 .figcap .glyph-new { color: var(--amber-bright); }
 .figcap .glyph-res { color: var(--blue-bright); }
+.wordmark .mark { align-self: center; height: 42px; width: auto; margin-right: 0.4rem; }

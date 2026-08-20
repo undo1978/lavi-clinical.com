@@ -37,7 +37,12 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
   should be named in the founder bio, that is a new decision.
 - **F4 — brand inconsistencies.** The old logo image and the LinkedIn company URL say
   "Lavi Clinical Solutions"; D1 chose "Lävi Clinical Suite OÜ". The LinkedIn URL is kept as a
-  working link; the logo image was deleted (also banned as a neural-network brain graphic).
+  working link. The logo was initially deleted, then restored on the risk owner's request
+  (2026-08-20) as the **mark only** (`logo-mark.png`, extracted from the embedded original,
+  white background keyed out) in the header of every page — the "CLINICAL SOLUTIONS" wordmark
+  text was not restored, so the public site never contradicts D1. Design note: the brief's
+  ban on neural-network graphics was applied to product illustration; the company's own
+  trademark is identity, not a product claim, and the risk owner decided it stays.
 - **F5 — old validation copy.** The previous site promised a *prospective* study; the truth
   source specifies a *retrospective* MRMC study. All old validation copy was deleted.
 
