@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Technology — Lävi Delta</title>
+<meta name="description" content="How Lävi Delta is built: on-premise DICOM deployment, longitudinal registration with recorded provenance, direction-aware candidate presentation, quality-control logic with explicit abstention, and machine-checked traceability.">
+<meta name="author" content="Lävi Clinical Suite OÜ">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lavi-clinical.com/technology.html">
+
+<meta property="og:title" content="Technology — Lävi Delta">
+<meta property="og:description" content="On-premise DICOM deployment, registration with recorded provenance, direction-aware candidates, explicit abstention, and machine-checked traceability.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lavi-clinical.com/technology.html">
+<meta property="og:site_name" content="Lävi Clinical Suite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://lavi-clinical.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Technology — Lävi Delta">
+<meta name="twitter:description" content="On-premise DICOM deployment, registration with recorded provenance, direction-aware candidates, explicit abstention, and machine-checked traceability.">
+<meta name="twitter:image" content="https://lavi-clinical.com/og.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X7QBW5X59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6X7QBW5X59');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/">Lävi Delta <span class="wordmark-sub">Lävi Clinical Suite</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/technology.html" aria-current="page">Technology</a></li>
+        <li><a href="/validation.html">Validation</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Technology</p>
+      <h1>Built to be checked.</h1>
+      <p class="standfirst">This page describes the properties of Lävi Delta that survive
+        implementation change. It deliberately does not describe model internals, check counts
+        or thresholds: those change, and a page that names them becomes false without anyone
+        noticing.</p>
+      <p class="status-line" data-status="heroStatusLine">Clinical validation and regulatory development in progress · not CE-marked</p>
+    </div>
+  </section>
+
+  <!-- ============ 01 Deployment ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">01</span> — Deployment</p>
+        <h2>Inside the hospital, on standard DICOM</h2>
+      </div>
+      <div class="prose">
+        <p>Lävi Delta runs on-premise, inside the hospital network. It receives studies over
+          standard DICOM, processes them without operator interaction, and returns its results
+          into the existing PACS workflow. No image data needs to leave the institution.</p>
+        <p>Results are standard DICOM objects: DICOM SEG segmentation objects for candidate
+          regions, secondary-capture overlay series, and a structured report. Nothing about
+          the integration requires a proprietary viewer or a new workflow around the reading
+          radiologist.</p>
+        <p>The shipped software is an integration and orchestration runtime for a clinical
+          site's own infrastructure — deliberately not a sealed appliance, and not something
+          we present as one-command clinical deployment.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 Sequence-aware processing ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">02</span> — Input handling</p>
+        <h2>Sequence-aware, and fails closed</h2>
+      </div>
+      <div class="prose">
+        <p>The pipeline identifies the series it needs from DICOM header evidence, including
+          vendor private tags. When that evidence is insufficient, it fails closed with an
+          explicit error rather than guessing. A wrong series silently accepted would be worse
+          than no result; the design treats it that way.</p>
+        <p>Processing covers longitudinal registration of the imaging pair, intra-session
+          alignment of pre- and post-contrast series, and brain extraction using established,
+          widely used tools.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 Registration & provenance ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">03</span> — Provenance</p>
+        <h2>Registration you can replay</h2>
+      </div>
+      <div class="prose">
+        <p>Every run records its provenance: the registration method, the identity of the
+          registration policy, hashes of the actual inputs, the transform, and the execution
+          environment — bound to the exported artefacts, so a result can always be traced to
+          exactly what produced it.</p>
+        <p>On the path where the claim can be made, registration is deterministic and
+          replayable: the same input reproduces the same result, and any change to a
+          registration parameter changes the recorded policy identity. Where determinism is
+          bounded rather than exact, it is characterised as such — we do not make a blanket
+          "same input, same output" claim.</p>
+        <p>One principle sits above all of this: anatomical correspondence is never inferred
+          from a method name. Successful registration and convergence are recorded as
+          provenance — they are not treated as proof that the anatomy corresponds. Where
+          correspondence is unsupported, that lane abstains.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 Candidates ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">04</span> — Candidates</p>
+        <h2>Direction-aware presentation</h2>
+      </div>
+      <div class="prose">
+        <p>Candidate regions of change carry their location, volume and direction of change.
+          New or increasing change and resolving or decreasing change are handled as separate
+          ranked lanes, because they mean different things clinically and deserve separate
+          attention.</p>
+        <p>Candidates are ordered by review priority, presented to the reading radiologist,
+          and each one is explicitly accepted or rejected. The software detects change at the
+          level of image regions; it does not count lesions, match lesions between visits, or
+          classify disease — and it makes no diagnostic decision.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 QC & abstention ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">05</span> — Quality control</p>
+        <h2>Graded outcomes, explicit abstention</h2>
+      </div>
+      <div class="prose">
+        <p>The quality-control logic assesses whether the longitudinal comparison meets its
+          prerequisites, and grades the outcome: report, report with caution, or an explicit
+          refusal to report the longitudinal comparison. Abstention is a first-class output —
+          when the comparison cannot be trusted, the software says so and withholds the
+          result, rather than producing a number of unknown reliability.</p>
+        <p>Stated precisely: this does not guarantee that every unreliable result is caught.
+          It means the system's own prerequisites are checked explicitly, and longitudinal
+          output that fails them is withheld — with the refusal itself reported to the
+          reader.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 Traceability ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">06</span> — Traceability</p>
+        <h2>The build fails when the paperwork lies</h2>
+      </div>
+      <div class="prose">
+        <p>Lävi Delta is developed under a documented software lifecycle (IEC 62304, Class B)
+          with an ISO 14971 risk file, a requirements specification, traceability from every
+          requirement to its tests, a controlled-document set and a change log.</p>
+        <p>That traceability is machine-checked, not merely tabulated. Automated guards fail
+          the build when a requirement cites a test that does not exist or cannot be
+          collected, when a controlled record is malformed, or when a controlled document
+          drifts out of agreement with the shipped code. These guards exist because our own
+          audits once found traceability rows that did not hold — a lesson we chose to encode
+          into the build rather than into a policy document.</p>
+        <p>A large, continuously run automated test suite backs this, executed across multiple
+          runtime versions in continuous integration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 07 End-to-end ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">07</span> — Conformance</p>
+        <h2>Verified end to end, against a real deployment</h2>
+      </div>
+      <div class="prose">
+        <p>The full producer-to-reader chain has been executed against a real deployment, not
+          simulated: a committed pipeline run, exported as a hash-bound case package,
+          delivered into the image store, ingested by the reader workstation, and presented to
+          the reader solely from the authoritative package manifest.</p>
+        <p>The negative path was verified too: cases the pipeline rejects are rejected by the
+          chain, not silently passed through.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 08 Review workflow ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">08</span> — Review</p>
+        <h2>A browser-based reading environment</h2>
+      </div>
+      <div class="prose">
+        <p>For the planned reader study, a dedicated browser-based reader workstation exists
+          and is deployed — built on a pinned open-source medical imaging viewer with a
+          standard image store behind a phase-aware proxy.</p>
+        <p>It implements role-based access control with two-factor authentication, the
+          blinding gate between study arms, washout enforcement between phases, structured
+          reader response capture, an audit trail, and a results export. All of it is
+          implemented and tested today.</p>
+        <p class="hairline-note">Lävi Delta is under development. It is not CE-marked, is not
+          available for sale, and must not be used for clinical decision-making. Information on
+          this site describes a product in development and its planned evaluation, not the
+          performance of a marketed medical device.</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="regulatory">Lävi Delta is under development. It is not CE-marked, is not available
+      for sale, and must not be used for clinical decision-making. Information on this site
+      describes a product in development and its planned evaluation, not the performance of a
+      marketed medical device.</p>
+    <div class="footer-grid">
+      <div>
+        <h2>Lävi Clinical Suite OÜ</h2>
+        <ul>
+          <li>Tartu, Estonia</li>
+          <li><a href="mailto:andreas@lavi-clinical.com">andreas@lavi-clinical.com</a></li>
+          <li><a href="tel:+3725012118">+372 501 2118</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="/">Lävi Delta</a></li>
+          <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/validation.html">Validation &amp; evidence</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/lavi-clinical-solutions/" rel="external">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      <span>© 2026 Lävi Clinical Suite OÜ</span>
+      <span data-status="asOf">Status as of 2026-08-20</span>
+    </p>
+  </div>
+</footer>
+
+<script src="/content/site-status.js" defer></script>
+</body>
+</html>
