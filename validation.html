@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clinical validation &amp; evidence — Lävi Delta</title>
+<meta name="description" content="How Lävi Delta will be validated: a planned multi-reader, multi-case study of follow-up brain MRI, the evidence ladder from technical development to regulatory validation, and what has not yet been proven. Clinical validation programme in preparation.">
+<meta name="author" content="Lävi Clinical Suite OÜ">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://lavi-clinical.com/validation.html">
+
+<meta property="og:title" content="Clinical validation &amp; evidence — Lävi Delta">
+<meta property="og:description" content="The planned reader study, the evidence ladder, and what has not yet been proven. Clinical validation programme in preparation.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://lavi-clinical.com/validation.html">
+<meta property="og:site_name" content="Lävi Clinical Suite">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://lavi-clinical.com/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Clinical validation &amp; evidence — Lävi Delta">
+<meta name="twitter:description" content="The planned reader study, the evidence ladder, and what has not yet been proven.">
+<meta name="twitter:image" content="https://lavi-clinical.com/og.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/favicon-32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+<link rel="preload" href="/fonts/archivo-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/source-serif-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X7QBW5X59"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-6X7QBW5X59');
+</script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="container">
+    <a class="wordmark" href="/">Lävi Delta <span class="wordmark-sub">Lävi Clinical Suite</span></a>
+    <nav class="site-nav" aria-label="Site">
+      <ul>
+        <li><a href="/technology.html">Technology</a></li>
+        <li><a href="/validation.html" aria-current="page">Validation</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="kicker">Clinical validation &amp; evidence</p>
+      <h1>What we will prove, and how.</h1>
+      <p class="standfirst">No clinical performance claim on this site is made from anything
+        short of independent clinical evidence — and that evidence does not exist yet. This
+        page describes how it will be constructed.</p>
+      <p class="status-line"><span data-status="validationStatus">Clinical validation programme in preparation</span> · <span data-status="asOf">Status as of 2026-08-20</span></p>
+    </div>
+  </section>
+
+  <!-- ============ 01 The question ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">01</span> — The question</p>
+        <h2>What a reader study answers</h2>
+      </div>
+      <div class="prose">
+        <p>A second-reader tool does not make findings on its own; it changes how a radiologist
+          reads. So the question that matters is not "how accurate is the software?" but
+          "do radiologists read follow-up brain MRI better with it than without it?"</p>
+        <p>The study design built to answer that question is called a multi-reader, multi-case
+          study — MRMC for short. The same retrospective cases are read by several
+          radiologists, first without the software and later with it, with a deliberate pause
+          between the two rounds so that no reader remembers individual cases. Because every
+          reader reads every case in both conditions, the study can measure whether the
+          software changes reader performance while accounting for differences between readers
+          and differences between cases.</p>
+        <p>This is the standard of evidence we consider appropriate for a tool of this kind,
+          and it is the standard the site holds itself to: until that study is run and
+          independently analysed, no claim about clinical performance appears here.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 Evidence ladder ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">02</span> — The evidence ladder</p>
+        <h2>Four rungs, one boundary</h2>
+      </div>
+      <div>
+        <div class="ladder-group">
+          <p class="ladder-group-title">Technical evidence</p>
+          <ol class="ladder">
+            <li>
+              <span class="rung-no" aria-hidden="true">1</span>
+              <div>
+                <h3>Technical development</h3>
+                <p>The processing and quality-control architecture that exists today: the
+                  on-premise pipeline, graded quality control with explicit abstention,
+                  per-run provenance, and the dedicated reader workstation.</p>
+              </div>
+              <span class="chip chip-now">exists today</span>
+            </li>
+            <li>
+              <span class="rung-no" aria-hidden="true">2</span>
+              <div>
+                <h3>Public-dataset evaluation</h3>
+                <p>Technical benchmarking on publicly available datasets. This is engineering
+                  evidence: it informs development. No figures from it are published, and it
+                  is never clinical validation.</p>
+              </div>
+              <span class="chip">technical benchmarking</span>
+            </li>
+          </ol>
+        </div>
+
+        <p class="ladder-divider" role="separator" aria-label="Boundary between technical and clinical evidence">No clinical performance claim is made from anything above this line</p>
+
+        <div class="ladder-group">
+          <p class="ladder-group-title">Clinical and regulatory evidence</p>
+          <ol class="ladder" start="3">
+            <li value="3">
+              <span class="rung-no" aria-hidden="true">3</span>
+              <div>
+                <h3>Independent clinical validation</h3>
+                <p>The planned reader study described below, with an independent
+                  reference-standard process and independent statistical input. It has not
+                  started.</p>
+              </div>
+              <span class="chip">in preparation</span>
+            </li>
+            <li value="4">
+              <span class="rung-no" aria-hidden="true">4</span>
+              <div>
+                <h3>Regulatory validation</h3>
+                <p>The future conformity-assessment evidence package under the EU Medical
+                  Device Regulation, built on the rungs below it.</p>
+              </div>
+              <span class="chip">future</span>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 The planned study ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">03</span> — The planned study</p>
+        <h2>A retrospective multi-reader, multi-case study</h2>
+      </div>
+      <div class="prose">
+        <p>The study in preparation will use one hundred retrospective brain MRI cases across
+          three clinical strata — multiple sclerosis, primary brain tumours, and brain
+          metastases. Multiple radiologists will read every case twice: first unaided, and
+          later aided by Lävi Delta, with an enforced washout period between the two phases.</p>
+        <p>The reference standard will be established by an independent process, and the
+          statistical analysis will have independent input. Endpoints under preparation cover
+          localisation performance, false-positive burden, reading time and reader confidence,
+          alongside standalone technical performance.</p>
+        <p>The final statistical design is subject to methodology review. We publish no sample
+          size justification, no power figures, no target effect sizes, and no dates: those
+          belong in the study protocol, not on a website.</p>
+        <p class="mono" style="font-size: 0.85rem;"><span class="chip chip-now" data-status="validationStatus">Clinical validation programme in preparation</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 The reader environment ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">04</span> — The reader environment</p>
+        <h2>The study infrastructure already exists</h2>
+      </div>
+      <div class="prose">
+        <p>Reader studies fail on logistics as often as on science, so the reading environment
+          was built first. A dedicated browser-based reader workstation exists and is
+          deployed.</p>
+        <p>Implemented and tested: role-based access control with two-factor authentication;
+          the blinding gate between arms, so that readers in the unaided phase cannot reach
+          the software's outputs; washout enforcement between phases; structured capture of
+          reader responses; a full audit trail; and a results export for analysis.</p>
+        <p>The pipeline and this reader environment have been verified to work together end to
+          end against a real deployment — including verifying that cases the pipeline rejects
+          are rejected, not silently passed through.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 05 What we have not proven ============ -->
+  <section class="section">
+    <div class="container">
+      <div class="not-proven">
+        <p class="kicker">05 — The boundary</p>
+        <h2>What we have not proven</h2>
+        <ol>
+          <li><p>Clinical performance has not been established. Whether Lävi Delta changes
+            reader performance is precisely what the planned study exists to measure — we do
+            not claim it in advance.</p></li>
+          <li><p>Cross-vendor and cross-protocol comparison is a design goal and an explicit
+            requirement of the validation programme. It is not an established capability, and
+            we do not claim that the software works across scanners or protocols.</p></li>
+          <li><p>Some implemented capabilities — including longitudinal contrast-enhancement
+            change detection — are still under technical evaluation and are not part of any
+            claim.</p></li>
+          <li><p>The absence of a flagged candidate is not evidence that no change occurred.
+            The radiologist reads every study independently; nothing about Lävi Delta reduces
+            that responsibility.</p></li>
+        </ol>
+        <p class="status-line" data-status="asOf">Status as of 2026-08-20</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 06 Regulatory pathway ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">06</span> — Regulatory pathway</p>
+        <h2>Stages, not dates</h2>
+      </div>
+      <div>
+        <p>Lävi Delta is being developed as a medical device under the EU Medical Device
+          Regulation. The pathway below is stated as stages deliberately without dates: a
+          published timeline is a promise about other parties' decisions, and we do not make
+          promises we do not control.</p>
+        <ol class="pathway" style="margin-top: 1.6rem;">
+          <li data-stage="development"><span class="stage-name">Product and evidence development</span><span class="stage-state">current stage</span></li>
+          <li data-stage="verification"><span class="stage-name">Technical verification</span><span class="stage-state">current stage</span></li>
+          <li data-stage="validation"><span class="stage-name">Independent clinical validation</span><span class="stage-state">in preparation</span></li>
+          <li data-stage="documentation"><span class="stage-name">Quality and technical documentation</span><span class="stage-state">ahead</span></li>
+          <li data-stage="conformity"><span class="stage-name">Conformity assessment</span><span class="stage-state">ahead</span></li>
+          <li data-stage="deployment"><span class="stage-name">Market deployment</span><span class="stage-state">ahead</span></li>
+        </ol>
+        <p class="hairline-note">Lävi Delta is under development. It is not CE-marked, is not
+          available for sale, and must not be used for clinical decision-making. Information on
+          this site describes a product in development and its planned evaluation, not the
+          performance of a marketed medical device.</p>
+        <p class="status-line" data-status="asOf">Status as of 2026-08-20</p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="container">
+    <p class="regulatory">Lävi Delta is under development. It is not CE-marked, is not available
+      for sale, and must not be used for clinical decision-making. Information on this site
+      describes a product in development and its planned evaluation, not the performance of a
+      marketed medical device.</p>
+    <div class="footer-grid">
+      <div>
+        <h2>Lävi Clinical Suite OÜ</h2>
+        <ul>
+          <li>Tartu, Estonia</li>
+          <li><a href="mailto:andreas@lavi-clinical.com">andreas@lavi-clinical.com</a></li>
+          <li><a href="tel:+3725012118">+372 501 2118</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Site</h2>
+        <ul>
+          <li><a href="/">Lävi Delta</a></li>
+          <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/validation.html">Validation &amp; evidence</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Elsewhere</h2>
+        <ul>
+          <li><a href="https://www.linkedin.com/company/lavi-clinical-solutions/" rel="external">LinkedIn</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="fine">
+      <span>© 2026 Lävi Clinical Suite OÜ</span>
+      <span data-status="asOf">Status as of 2026-08-20</span>
+    </p>
+  </div>
+</footer>
+
+<script src="/content/site-status.js" defer></script>
+</body>
+</html>
