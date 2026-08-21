@@ -36,9 +36,11 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
   brief was treated as approval to use it. Formal approval note still recommended.
 - **F3 — "ACME Diagnostics".** Removed as apparent placeholder text. If a real prior company
   should be named in the founder bio, that is a new decision.
-- **F4 — brand inconsistencies.** The old logo image and the LinkedIn company URL say
-  "Lavi Clinical Solutions"; D1 chose "Lävi Clinical Suite OÜ". The LinkedIn URL is kept as a
-  working link. The logo was initially deleted, then restored on the risk owner's request
+- **F4 — brand inconsistencies.** The old logo image and the LinkedIn company URL said
+  "Lavi Clinical Solutions"; D1 chose "Lävi Clinical Suite OÜ". Update 2026-08-21: the
+  LinkedIn company page was renamed; the site now links to the new slug
+  `lav-clinical-suit` (known typo — LinkedIn does not allow an immediate second rename;
+  update the four site links again when the slug is corrected). The logo was initially deleted, then restored on the risk owner's request
   (2026-08-20) as the **mark only** (`logo-mark.png`, extracted from the embedded original,
   white background keyed out) in the header of every page — the "CLINICAL SOLUTIONS" wordmark
   text was not restored, so the public site never contradicts D1. Design note: the brief's
@@ -95,14 +97,35 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
 1. Correct IFU-CA-2.1 manufacturer name/city to match D1.
 2. Narrow IFU §4 population to match D2.
 3. Formal risk-owner approval note on `docs/product-truth-source.md` (currently "DRAFT").
-4. Whether the LinkedIn company slug ("lavi-clinical-solutions") should be renamed to match
-   the brand; the site links to it either way.
+4. LinkedIn company page renamed (2026-08-21); current slug `lav-clinical-suit` carries a
+   known typo LinkedIn will not yet let us correct. When it permits, fix the slug and
+   update the four site links + JSON-LD `sameAs` in the same commit.
 5. Confirm no real company was meant by "ACME Diagnostics" (F3).
 6. Google Analytics property `G-6X7QBW5X59` remains the intended property.
 7. The truth source covers Lävi Delta only. The Lävi MS claims on `lavi-ms.html` rest on the
    risk owner's written instruction of 2026-08-21 (recorded as D5); a Lävi MS section should
    be added to `docs/product-truth-source.md` at its next revision so the file stays the
    single authority.
+
+## 6b. External review round (2026-08-21)
+
+A trusted-reviewer pass produced three required changes and three notes; outcomes:
+
+1. **Legal-name triangle** — LinkedIn now points at the renamed company page
+   (`lav-clinical-suit`, typo pending rename); meta-author and footer already carry the D1
+   entity. Remaining leg: the IFU correction (§6.1) stays on the company side. Registry
+   check of the registered entity remains with the risk owner.
+2. **"Wrote the core pipeline himself"** — softened to "drove the design of the Lävi Delta
+   pipeline from its first version", and the bio now points the competence question at the
+   answer: the code is governed by the documented lifecycle, machine-checked traceability
+   and the test suite, not by any one author's credentials.
+3. **"Neuroradiologist"** — reconfirmed by the risk owner as formally correct; unchanged.
+- Meta descriptions aligned with the hero's precise wording ("cannot be compared on
+  technical grounds" instead of "cannot be trusted").
+- The exact-vs-bounded determinism distinction was removed from the homepage (plain
+  provenance statement + link remains); the full claim lives on the technology page only.
+- Alvar Haug's CTO title: D4 stands; confirming it with him personally remains a
+  risk-owner action.
 
 ## 7. Acceptance test (brief §17) — answers as read from the built site
 
