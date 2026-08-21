@@ -14,6 +14,7 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
 | D2 | Public patient population (§10.2) | **Validation strata**: multiple sclerosis, primary brain tumours, brain metastases. Presented on the site as the strata of the planned reader study / initial clinical settings, not as validated indications. Consequence: IFU §4 to be narrowed to match. |
 | D3 | Founder public title (§10.3) | **"Neuroradiologist"; no hospital or university affiliations named.** No publication claims on the site. |
 | D4 | Alvar Haug public role (§10.4) | **CTO.** |
+| D5 | Product architecture: how Lävi MS appears publicly (not covered by the truth source) | **Two-product family (risk-owner instruction, 2026-08-21).** Lävi Delta is the current flagship and sole clinical-validation and regulatory focus; Lävi MS is a separate *planned next product programme* whose development, validation and regulatory pathway begin after the current Delta programme reaches maturity. Lävi MS gets its own page and nav entry; it is never presented as an MS mode of Delta, as validated, as available, or as "coming soon"; no dates, no performance claims, no regulatory milestones. Public status wording: "Planned next product programme". |
 
 ## 2. Defaults applied without asking (truth source defaults)
 
@@ -91,6 +92,10 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
    the brand; the site links to it either way.
 5. Confirm no real company was meant by "ACME Diagnostics" (F3).
 6. Google Analytics property `G-6X7QBW5X59` remains the intended property.
+7. The truth source covers Lävi Delta only. The Lävi MS claims on `lavi-ms.html` rest on the
+   risk owner's written instruction of 2026-08-21 (recorded as D5); a Lävi MS section should
+   be added to `docs/product-truth-source.md` at its next revision so the file stays the
+   single authority.
 
 ## 7. Acceptance test (brief §17) — answers as read from the built site
 
