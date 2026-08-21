@@ -76,7 +76,14 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
   regulatory statement is always static.
 - **Fonts self-hosted** (Archivo variable, Source Serif 4 variable, IBM Plex Mono; latin
   subsets, ~240 KB total) — no Google Fonts CDN calls from visitors' browsers.
-- **Google Analytics tag carried over unchanged** (brief: no analytics rework).
+- **Google Analytics tag carried over unchanged** (brief: no analytics rework). The same
+  GA4 property `G-6X7QBW5X59` and the identical gtag snippet from the previous site are
+  present on all five pages, including `404.html` (added 2026-08-21 — 404 hits reveal
+  broken inbound links left over from the old URL structure). No custom events, no
+  consent banner, no analytics rework. Note: the old file carried the boilerplate
+  comment "Replace G-6X7QBW5X59 with your Measurement ID"; the ID looks real (a global
+  find-replace would have rewritten the comment too), but see §6.6 — worth confirming
+  in the GA console that data is arriving.
 - **Third-party component names** (viewer, image store, brain-extraction tools) are withheld
   on the site even where the truth source would permit them — the brief's "no model names"
   rule was applied strictly.
