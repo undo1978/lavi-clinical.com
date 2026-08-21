@@ -92,6 +92,10 @@ Last reviewed: 2026-08-20.
 | JSON-LD: `Organization` (name, Tartu EE, contact, founder name + company role) + `WebSite` | `<head>` | §1 + D1 | VERIFIED FACT | Structured data must not assert product status | No `SoftwareApplication`, no offers/availability, no capability adjectives |
 | OG image: abstract interval-pair mark, "Make interval change easier to see.", "in development · not CE-marked" | `og.png` | §2, §12 | VERIFIED FACT | Images are claims too | Abstract only; no fabricated clinical output |
 | Key visual: baseline → follow-up → QC gate → candidates → radiologist (terminal); withheld branch | `index.html` SVG + alt text | §2, §3.2, §3.3 | VERIFIED FACT | Composition must not imply autonomous diagnosis | Radiologist is the terminal node; abstract contours only |
+| Fig. 2 (home): slice-geometry mismatch between visits | `index.html` SVG | — (clinical background, no product claim) | VERIFIED FACT (general knowledge) | Must stay schematic | Labelled "schematic; not patient data" |
+| Fig. 1 (validation): planned MRMC study design diagram | `validation.html` SVG | §5 | PLANNED VALIDATION | Diagram must read as a plan, not a running study | Caption: "in preparation; final design subject to methodology review" |
+| Fig. 1 (technology): deployment inside hospital network, no image data leaves | `technology.html` SVG | §3.1 | VERIFIED FACT | — | Schematic |
+| Fig. 2 (technology): verified producer-to-reader chain incl. rejected-run stop | `technology.html` SVG | §3.6 | VERIFIED FACT | No verdict vocabulary beyond §3.6 phrasing | "executed against a real deployment" |
 
 ## Claims deliberately absent
 

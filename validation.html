@@ -62,9 +62,9 @@
     <div class="container">
       <p class="kicker">Clinical validation &amp; evidence</p>
       <h1>What we will prove, and how.</h1>
-      <p class="standfirst">No clinical performance claim on this site is made from anything
-        short of independent clinical evidence — and that evidence does not exist yet. This
-        page describes how it will be constructed.</p>
+      <p class="standfirst">We claim nothing about clinical performance yet, because the
+        evidence for such a claim does not exist. This page describes the study that will
+        produce it — and where the boundary between technical and clinical evidence runs.</p>
       <p class="status-line"><span data-status="validationStatus">Clinical validation programme in preparation</span> · <span data-status="asOf">Status as of 2026-08-20</span></p>
     </div>
   </section>
@@ -77,19 +77,20 @@
         <h2>What a reader study answers</h2>
       </div>
       <div class="prose">
-        <p>A second-reader tool does not make findings on its own; it changes how a radiologist
-          reads. So the question that matters is not "how accurate is the software?" but
-          "do radiologists read follow-up brain MRI better with it than without it?"</p>
-        <p>The study design built to answer that question is called a multi-reader, multi-case
-          study — MRMC for short. The same retrospective cases are read by several
-          radiologists, first without the software and later with it, with a deliberate pause
-          between the two rounds so that no reader remembers individual cases. Because every
-          reader reads every case in both conditions, the study can measure whether the
-          software changes reader performance while accounting for differences between readers
-          and differences between cases.</p>
-        <p>This is the standard of evidence we consider appropriate for a tool of this kind,
-          and it is the standard the site holds itself to: until that study is run and
-          independently analysed, no claim about clinical performance appears here.</p>
+        <p>A second-reader tool makes no findings of its own. What it changes — if it changes
+          anything — is how a radiologist reads. So "how accurate is the software?" is the
+          wrong question to lead with.</p>
+        <p class="pull">The unit of evaluation is not the algorithm. It is the radiologist
+          reading with it.</p>
+        <p>The design built for that question is the multi-reader, multi-case study, MRMC for
+          short. Several radiologists read the same retrospective cases twice: once without
+          the software, and — after a pause long enough that no one remembers individual
+          cases — once with it. Because every reader reads every case both ways, the study
+          can attribute a change in reading performance to the software itself, rather than
+          to one sharp-eyed reader or one easy case mix.</p>
+        <p>That is the standard of evidence we consider appropriate here, and this site holds
+          itself to it: until the study is run and independently analysed, no clinical
+          performance claim appears on any page.</p>
       </div>
     </div>
   </section>
@@ -166,17 +167,73 @@
         <h2>A retrospective multi-reader, multi-case study</h2>
       </div>
       <div class="prose">
-        <p>The study in preparation will use one hundred retrospective brain MRI cases across
-          three clinical strata — multiple sclerosis, primary brain tumours, and brain
-          metastases. Multiple radiologists will read every case twice: first unaided, and
-          later aided by Lävi Delta, with an enforced washout period between the two phases.</p>
-        <p>The reference standard will be established by an independent process, and the
-          statistical analysis will have independent input. Endpoints under preparation cover
-          localisation performance, false-positive burden, reading time and reader confidence,
-          alongside standalone technical performance.</p>
-        <p>The final statistical design is subject to methodology review. We publish no sample
-          size justification, no power figures, no target effect sizes, and no dates: those
-          belong in the study protocol, not on a website.</p>
+        <p>The study in preparation uses one hundred retrospective brain MRI cases across
+          three clinical strata: multiple sclerosis, primary brain tumours, brain metastases.
+          Every participating radiologist reads every case twice — first unaided, later
+          aided by Lävi Delta — with an enforced washout period between the phases.</p>
+        <figure class="fig">
+          <svg viewBox="0 0 760 330" role="img" aria-labelledby="figmrmc-t">
+            <title id="figmrmc-t">Design of the planned reader study: one hundred cases in three strata are read by several radiologists in an unaided phase, then after a washout period in an aided phase; an independently established reference standard and independent statistics feed the analysis.</title>
+            <g fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">
+              <text x="30" y="34">CASES</text>
+              <text x="240" y="34">PHASE 1</text>
+              <text x="500" y="34">PHASE 2</text>
+              <text x="648" y="34">ANALYSIS</text>
+            </g>
+            <!-- cases box -->
+            <rect x="30" y="48" width="130" height="150" fill="none" stroke="#3C4147" stroke-width="1.4"/>
+            <g fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="11">
+              <text x="46" y="86">100 cases</text>
+              <text x="46" y="116">3 strata</text>
+            </g>
+            <g stroke="#9BA0A6" stroke-width="1"><line x1="46" y1="136" x2="144" y2="136"/><line x1="46" y1="156" x2="144" y2="156"/><line x1="46" y1="176" x2="144" y2="176"/></g>
+            <!-- arrow -->
+            <line x1="166" y1="123" x2="228" y2="123" stroke="#9BA0A6" stroke-width="1.4"/>
+            <!-- phase 1 -->
+            <rect x="234" y="48" width="150" height="150" fill="none" stroke="#3C4147" stroke-width="1.4"/>
+            <g fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="11">
+              <text x="250" y="86">unaided read</text>
+              <text x="250" y="108">every reader,</text>
+              <text x="250" y="126">every case</text>
+            </g>
+            <!-- washout band -->
+            <rect x="404" y="48" width="66" height="150" fill="none" stroke="#9BA0A6" stroke-width="1.2"/>
+            <g stroke="#9BA0A6" stroke-width="1" opacity="0.6">
+              <line x1="410" y1="192" x2="464" y2="54"/><line x1="410" y1="162" x2="452" y2="54"/><line x1="410" y1="132" x2="440" y2="54"/><line x1="422" y1="192" x2="464" y2="84"/><line x1="446" y1="192" x2="464" y2="132"/>
+            </g>
+            <text x="437" y="226" text-anchor="middle" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">WASHOUT</text>
+            <line x1="384" y1="123" x2="404" y2="123" stroke="#9BA0A6" stroke-width="1.4"/>
+            <line x1="470" y1="123" x2="490" y2="123" stroke="#9BA0A6" stroke-width="1.4"/>
+            <!-- phase 2 -->
+            <rect x="494" y="48" width="150" height="150" fill="none" stroke="#3C4147" stroke-width="1.4"/>
+            <g fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="11">
+              <text x="510" y="86">aided read</text>
+              <text x="510" y="108">same readers,</text>
+              <text x="510" y="126">same cases</text>
+            </g>
+            <path d="M614 74l5 9h-10z" fill="#A05400"/>
+            <text x="510" y="180" fill="#A05400" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">WITH LÄVI DELTA</text>
+            <!-- analysis -->
+            <line x1="644" y1="123" x2="648" y2="123" stroke="#9BA0A6" stroke-width="1.4"/>
+            <rect x="648" y="48" width="86" height="150" fill="#14171B"/>
+            <g fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.5">
+              <text x="660" y="106">indep.</text>
+              <text x="660" y="124">stats</text>
+            </g>
+            <!-- reference standard -->
+            <rect x="234" y="252" width="410" height="44" fill="none" stroke="#33637F" stroke-width="1.3"/>
+            <text x="439" y="279" text-anchor="middle" fill="#33637F" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">REFERENCE STANDARD — ESTABLISHED INDEPENDENTLY</text>
+            <path d="M660 274 h14 V204" stroke="#33637F" stroke-width="1.2" fill="none"/>
+            <line x1="644" y1="274" x2="660" y2="274" stroke="#33637F" stroke-width="1.2"/>
+          </svg>
+          <p class="fig-label"><span class="fig-no">Fig. 1 — Planned study design</span><span>in preparation; final design subject to methodology review</span></p>
+        </figure>
+        <p>The reference standard is established by an independent process, and the
+          statistical analysis has independent input. The endpoints being prepared cover
+          localisation performance, false-positive burden, reading time and reader
+          confidence, alongside standalone technical performance.</p>
+        <p>We publish no sample-size justification, no power figures, no target effect sizes
+          and no dates. Those belong in the study protocol, not on a website.</p>
         <p class="mono" style="font-size: 0.85rem;"><span class="chip chip-now" data-status="validationStatus">Clinical validation programme in preparation</span></p>
       </div>
     </div>
@@ -190,16 +247,17 @@
         <h2>The study infrastructure already exists</h2>
       </div>
       <div class="prose">
-        <p>Reader studies fail on logistics as often as on science, so the reading environment
-          was built first. A dedicated browser-based reader workstation exists and is
-          deployed.</p>
-        <p>Implemented and tested: role-based access control with two-factor authentication;
-          the blinding gate between arms, so that readers in the unaided phase cannot reach
-          the software's outputs; washout enforcement between phases; structured capture of
-          reader responses; a full audit trail; and a results export for analysis.</p>
-        <p>The pipeline and this reader environment have been verified to work together end to
-          end against a real deployment — including verifying that cases the pipeline rejects
-          are rejected, not silently passed through.</p>
+        <p>Reader studies fail on logistics about as often as on science, so we built the
+          reading environment first. A dedicated browser-based reader workstation exists and
+          is deployed — not a slide deck, a running system.</p>
+        <p>What is implemented and tested in it: role-based access with two-factor
+          authentication; the blinding gate between arms, so a reader in the unaided phase
+          cannot reach the software's outputs even on purpose; washout enforcement between
+          phases; structured capture of every reader response; a full audit trail; and a
+          results export for the analysts.</p>
+        <p>The pipeline and this reader environment have been run together end to end against
+          a real deployment. That included the unglamorous half of the test: cases the
+          pipeline rejects were confirmed to stay rejected, not slip quietly through.</p>
       </div>
     </div>
   </section>
@@ -212,17 +270,18 @@
         <h2>What we have not proven</h2>
         <ol>
           <li><p>Clinical performance has not been established. Whether Lävi Delta changes
-            reader performance is precisely what the planned study exists to measure — we do
-            not claim it in advance.</p></li>
+            reader performance is exactly what the planned study exists to measure, and we
+            will not claim the answer before the study does.</p></li>
           <li><p>Cross-vendor and cross-protocol comparison is a design goal and an explicit
             requirement of the validation programme. It is not an established capability, and
             we do not claim that the software works across scanners or protocols.</p></li>
-          <li><p>Some implemented capabilities — including longitudinal contrast-enhancement
-            change detection — are still under technical evaluation and are not part of any
-            claim.</p></li>
-          <li><p>The absence of a flagged candidate is not evidence that no change occurred.
-            The radiologist reads every study independently; nothing about Lävi Delta reduces
-            that responsibility.</p></li>
+          <li><p>Some capabilities that exist in the software — longitudinal
+            contrast-enhancement change detection among them — are still under technical
+            evaluation. They are not part of any claim, and they are not in any feature
+            list.</p></li>
+          <li><p>An empty candidate list is not evidence that nothing changed. The
+            radiologist reads every study independently; nothing about Lävi Delta reduces
+            that responsibility, and nothing about it is meant to.</p></li>
         </ol>
         <p class="status-line" data-status="asOf">Status as of 2026-08-20</p>
       </div>
@@ -238,9 +297,9 @@
       </div>
       <div>
         <p>Lävi Delta is being developed as a medical device under the EU Medical Device
-          Regulation. The pathway below is stated as stages deliberately without dates: a
-          published timeline is a promise about other parties' decisions, and we do not make
-          promises we do not control.</p>
+          Regulation. The pathway below has stages and no dates — on purpose. A published
+          timeline is a promise about other people's decisions, and we do not make promises
+          we cannot keep ourselves.</p>
         <ol class="pathway" style="margin-top: 1.6rem;">
           <li data-stage="development"><span class="stage-name">Product and evidence development</span><span class="stage-state">current stage</span></li>
           <li data-stage="verification"><span class="stage-name">Technical verification</span><span class="stage-state">current stage</span></li>
