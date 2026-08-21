@@ -84,6 +84,18 @@ Last reviewed: 2026-08-20.
 | End-to-end chain: committed run → hash-bound package → image store → workstation ingestion → presentation solely from the package manifest; rejection path verified | 07 | §3.6 | VERIFIED FACT | No verdict vocabulary | As TS §3.6 |
 | Reader workstation: pinned open-source viewer, standard image store, phase-aware proxy; RBAC/2FA, blinding, washout, response capture, audit trail, export — implemented and tested | 08 | §3.5 | VERIFIED FACT | — | Component brand names withheld (site policy) |
 
+## Lävi MS page (`lavi-ms.html`) — all claims rest on risk-owner decision D5 (2026-08-21)
+
+| Public claim | Section | TS ref | Classification | Risk if wrong | Approved wording |
+|---|---|---|---|---|---|
+| Lävi MS is the planned next product in the Lävi Clinical Suite roadmap; a dedicated MS longitudinal workflow | Hero; nav; home roadmap | D5 | DEVELOPMENT INTENT | Must never read as available, validated or "coming soon" | Status: "Planned next product programme"; from `content/site-status.js` |
+| MS follow-up is inherently longitudinal; the decisive task is change assessment over time | 01 | D5 (clinical background) | VERIFIED FACT (general knowledge) | — | No product claim in this section |
+| Planned scope: baseline/follow-up comparison, longitudinal alignment, MS lesion analysis, candidate new/changing lesion identification, QC information, structured auditable review | 02, 05 | D5 | DEVELOPMENT INTENT | Lesion-level language is permitted here **only** as planned future scope, future tense — never as an existing capability (contrast Delta §7 prohibitions) | "planned system", "expected to cover"; closing note that final outputs are determined by the validated product |
+| The radiologist remains responsible; no autonomous MS diagnosis, no treatment decisions | 02, 06 | D5 | DEVELOPMENT INTENT (limiting) | — | As written |
+| Delta-first sequencing: Delta establishes the platform (ingestion/provenance, registration, QC, workflow, review environment, auditability, validation methodology); Lävi MS builds on it with its own validation and regulatory pathway | 03; Fig. 1 | D5 | DEVELOPMENT INTENT | MS must not inherit Delta's validation by implication | "own development, clinical-validation and regulatory pathway"; solid vs dashed encoding in Fig. 1 |
+| Intended future users: (neuro)radiologists reading MS follow-up; MS centres; radiology departments | 04 | D5 | DEVELOPMENT INTENT | — | "intended", future tense |
+| Not validated, not CE-marked, not available; programme not started | 06; footer | D5 + §12 | DEVELOPMENT INTENT / VERIFIED FACT | Absence is the risk | Footer regulatory statement extended with the Lävi MS sentence |
+
 ## Metadata, structured data, assets (all pages)
 
 | Public claim | Location | TS ref | Classification | Risk if wrong | Approved wording |

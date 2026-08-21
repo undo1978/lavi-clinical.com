@@ -14,7 +14,7 @@
 
 const SITE_STATUS = {
   /** ISO date shown as "Status as of …" in validation and regulatory sections. */
-  asOf: '2026-08-20',
+  asOf: '2026-08-21',
 
   /** Hero status line (rendered uppercase by CSS). Truth source §5, §12. */
   heroStatusLine:
@@ -22,6 +22,11 @@ const SITE_STATUS = {
 
   /** The only permitted validation status wording. Truth source §5. */
   validationStatus: 'Clinical validation programme in preparation',
+
+  /** Lävi MS roadmap status. Risk-owner decision D5 (2026-08-21). */
+  msStatus: 'Planned next product programme',
+  msStatusLine:
+    'Planned next product programme · its own development, validation and regulatory pathway follow the current Lävi Delta programme',
 
   /**
    * Regulatory pathway position. Stage names are fixed in markup
@@ -50,7 +55,7 @@ const SITE_STATUS = {
     const key = el.getAttribute('data-status');
     if (key === 'asOf') {
       el.textContent = 'Status as of ' + SITE_STATUS.asOf;
-    } else if (key === 'heroStatusLine' || key === 'validationStatus') {
+    } else if (key === 'heroStatusLine' || key === 'validationStatus' || key === 'msStatus' || key === 'msStatusLine') {
       el.textContent = SITE_STATUS[key];
     }
   }

@@ -648,3 +648,21 @@ p, li { max-width: var(--measure); }
   .fig { overflow-x: auto; }
   .fig svg { min-width: 540px; }
 }
+
+/* ---------- product roadmap cards ---------- */
+.products { display: grid; gap: 1.2rem; }
+@media (min-width: 760px) { .products { grid-template-columns: 1fr 1fr; } }
+.product-card {
+  border: 1px solid var(--graphite);
+  border-radius: var(--radius);
+  background: #FFFFFF;
+  padding: 1.5rem 1.6rem 1.7rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  align-items: flex-start;
+}
+.product-card.planned { border-style: dashed; background: transparent; }
+.product-card h3 { font-size: 1.35rem; }
+.product-card p { font-size: 0.99rem; }
+.product-card .card-link { margin-top: auto; padding-top: 0.5rem; }
