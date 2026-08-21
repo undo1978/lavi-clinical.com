@@ -597,3 +597,54 @@ p, li { max-width: var(--measure); }
 .figcap .glyph-new { color: var(--amber-bright); }
 .figcap .glyph-res { color: var(--blue-bright); }
 .wordmark .mark { align-self: center; height: 42px; width: auto; margin-right: 0.4rem; }
+
+/* ---------- light figures ("Fig. n" journal style) ---------- */
+.fig {
+  border: 1px solid var(--film);
+  background: #FFFFFF;
+  border-radius: var(--radius);
+  padding: clamp(1rem, 2.5vw, 1.6rem);
+  margin-top: 1.8rem;
+}
+.fig svg { display: block; width: 100%; height: auto; }
+.fig .fig-label {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 1.2rem;
+  font-family: var(--f-mono);
+  font-size: 0.75rem;
+  color: var(--muted);
+  border-top: 1px solid var(--film);
+  padding-top: 0.7rem;
+  margin-top: 1rem;
+  max-width: none;
+}
+.fig .fig-label .fig-no { color: var(--ink); font-weight: 500; letter-spacing: 0.08em; }
+
+/* fig-label variant used inside dark panels */
+.figure-panel .fig-no { color: var(--panel-text); font-weight: 500; letter-spacing: 0.08em; }
+
+/* ---------- step glyphs in workflow ---------- */
+.workflow .step-glyph { display: block; margin-bottom: 0.5rem; }
+
+/* ---------- domain glyphs ---------- */
+.domains .domain-glyph { display: block; margin-bottom: 0.9rem; }
+
+/* ---------- pull statement ---------- */
+.pull {
+  font-family: var(--f-display);
+  font-variation-settings: 'wdth' 112;
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
+  line-height: 1.32;
+  color: var(--ink);
+  border-left: 3px solid var(--ink);
+  padding-left: 1.2rem;
+  margin-block: 1.9rem;
+  max-width: 34ch;
+  text-wrap: balance;
+}
+@media (max-width: 719px) {
+  .fig { overflow-x: auto; }
+  .fig svg { min-width: 540px; }
+}

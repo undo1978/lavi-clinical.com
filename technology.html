@@ -62,10 +62,10 @@
     <div class="container">
       <p class="kicker">Technology</p>
       <h1>Built to be checked.</h1>
-      <p class="standfirst">This page describes the properties of Lävi Delta that survive
-        implementation change. It deliberately does not describe model internals, check counts
-        or thresholds: those change, and a page that names them becomes false without anyone
-        noticing.</p>
+      <p class="standfirst">What follows are the properties of Lävi Delta we expect to
+        outlive any refactoring: how it deploys, what it records, and when it refuses.
+        Model internals, check counts and threshold values are left out on purpose — they
+        change, and a public page that names them quietly stops being true.</p>
       <p class="status-line" data-status="heroStatusLine">Clinical validation and regulatory development in progress · not CE-marked</p>
     </div>
   </section>
@@ -78,16 +78,47 @@
         <h2>Inside the hospital, on standard DICOM</h2>
       </div>
       <div class="prose">
-        <p>Lävi Delta runs on-premise, inside the hospital network. It receives studies over
-          standard DICOM, processes them without operator interaction, and returns its results
-          into the existing PACS workflow. No image data needs to leave the institution.</p>
-        <p>Results are standard DICOM objects: DICOM SEG segmentation objects for candidate
-          regions, secondary-capture overlay series, and a structured report. Nothing about
-          the integration requires a proprietary viewer or a new workflow around the reading
-          radiologist.</p>
-        <p>The shipped software is an integration and orchestration runtime for a clinical
-          site's own infrastructure — deliberately not a sealed appliance, and not something
-          we present as one-command clinical deployment.</p>
+        <p>Lävi Delta runs on-premise, inside the hospital network. Studies arrive over
+          standard DICOM, are processed without operator interaction, and the results go
+          back into the PACS workflow the department already has. No image data needs to
+          leave the institution.</p>
+        <figure class="fig">
+          <svg viewBox="0 0 760 250" role="img" aria-labelledby="figdep-t">
+            <title id="figdep-t">Deployment diagram: scanner, PACS and Lävi Delta all sit inside the hospital network; DICOM flows between them, and no image data crosses the network boundary.</title>
+            <rect x="24" y="40" width="540" height="180" fill="none" stroke="#14171B" stroke-width="1.6"/>
+            <rect x="40" y="28" width="190" height="22" fill="#F4F4F2"/>
+            <text x="48" y="44" fill="#14171B" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" letter-spacing="2">HOSPITAL NETWORK</text>
+            <!-- scanner -->
+            <rect x="56" y="96" width="110" height="66" fill="none" stroke="#3C4147" stroke-width="1.3"/>
+            <text x="82" y="134" fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">SCANNER</text>
+            <!-- pacs -->
+            <rect x="226" y="96" width="110" height="66" fill="none" stroke="#3C4147" stroke-width="1.3"/>
+            <text x="262" y="134" fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">PACS</text>
+            <!-- delta -->
+            <rect x="398" y="96" width="130" height="66" fill="#14171B"/>
+            <text x="416" y="126" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">LÄVI DELTA</text>
+            <text x="416" y="144" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.5">on-premise</text>
+            <!-- arrows -->
+            <line x1="166" y1="129" x2="222" y2="129" stroke="#9BA0A6" stroke-width="1.4"/>
+            <path d="M336 114 h58" stroke="#9BA0A6" stroke-width="1.4" fill="none"/>
+            <path d="M394 144 h-58" stroke="#9BA0A6" stroke-width="1.4" fill="none"/>
+            <text x="340" y="106" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.5">DICOM →</text>
+            <text x="336" y="170" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="0.5">← SEG/report</text>
+            <!-- blocked egress -->
+            <line x1="528" y1="129" x2="564" y2="129" stroke="#9BA0A6" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <line x1="588" y1="117" x2="612" y2="141" stroke="#3C4147" stroke-width="1.6"/>
+            <line x1="612" y1="117" x2="588" y2="141" stroke="#3C4147" stroke-width="1.6"/>
+            <text x="628" y="126" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="0.5">no image data</text>
+            <text x="628" y="141" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="0.5">leaves</text>
+          </svg>
+          <p class="fig-label"><span class="fig-no">Fig. 1 — Deployment</span><span>schematic</span></p>
+        </figure>
+        <p>The results are ordinary DICOM: SEG segmentation objects for candidate regions,
+          secondary-capture overlay series, and a structured report. No proprietary viewer,
+          no new workflow bolted onto the reading radiologist's day.</p>
+        <p>What ships is an integration and orchestration runtime for a clinical site's own
+          infrastructure. It is not a sealed appliance, and we do not pretend deployment
+          into a hospital is a one-command affair.</p>
       </div>
     </div>
   </section>
@@ -100,12 +131,12 @@
         <h2>Sequence-aware, and fails closed</h2>
       </div>
       <div class="prose">
-        <p>The pipeline identifies the series it needs from DICOM header evidence, including
-          vendor private tags. When that evidence is insufficient, it fails closed with an
-          explicit error rather than guessing. A wrong series silently accepted would be worse
-          than no result; the design treats it that way.</p>
+        <p>The pipeline picks out the series it needs from DICOM header evidence, vendor
+          private tags included. When the evidence is not there, it stops with an explicit
+          error instead of guessing — a wrong series accepted silently would be worse than
+          no result, and the design treats it that way.</p>
         <p>Processing covers longitudinal registration of the imaging pair, intra-session
-          alignment of pre- and post-contrast series, and brain extraction using established,
+          alignment of pre- and post-contrast series, and brain extraction with established,
           widely used tools.</p>
       </div>
     </div>
@@ -119,19 +150,19 @@
         <h2>Registration you can replay</h2>
       </div>
       <div class="prose">
-        <p>Every run records its provenance: the registration method, the identity of the
-          registration policy, hashes of the actual inputs, the transform, and the execution
-          environment — bound to the exported artefacts, so a result can always be traced to
-          exactly what produced it.</p>
-        <p>On the path where the claim can be made, registration is deterministic and
-          replayable: the same input reproduces the same result, and any change to a
-          registration parameter changes the recorded policy identity. Where determinism is
-          bounded rather than exact, it is characterised as such — we do not make a blanket
-          "same input, same output" claim.</p>
-        <p>One principle sits above all of this: anatomical correspondence is never inferred
-          from a method name. Successful registration and convergence are recorded as
-          provenance — they are not treated as proof that the anatomy corresponds. Where
-          correspondence is unsupported, that lane abstains.</p>
+        <p>Every run records what produced it: the registration method, the identity of the
+          registration policy, hashes of the actual inputs, the transform, the execution
+          environment. All of it is bound to the exported artefacts, so any result can be
+          traced back — months later, by someone else — to exactly the run that made it.</p>
+        <p>Where determinism can be claimed, it is exact: the same input reproduces the same
+          result, and changing any registration parameter changes the recorded policy
+          identity. Where it is only bounded, we characterise it as bounded. There is no
+          blanket "same input, same output" sentence in our documentation, and there will
+          not be one here.</p>
+        <p>Above all of this sits one principle: anatomical correspondence is never inferred
+          from a method name. A converged registration is a recorded fact, not proof that
+          the anatomy corresponds. Where correspondence is unsupported, that lane
+          abstains.</p>
       </div>
     </div>
   </section>
@@ -144,14 +175,14 @@
         <h2>Direction-aware presentation</h2>
       </div>
       <div class="prose">
-        <p>Candidate regions of change carry their location, volume and direction of change.
-          New or increasing change and resolving or decreasing change are handled as separate
-          ranked lanes, because they mean different things clinically and deserve separate
+        <p>Each candidate region carries its location, its volume and its direction of
+          change. New or growing change and resolving change run in separate ranked lanes —
+          they mean different things at the reading station and deserve separate
           attention.</p>
-        <p>Candidates are ordered by review priority, presented to the reading radiologist,
-          and each one is explicitly accepted or rejected. The software detects change at the
-          level of image regions; it does not count lesions, match lesions between visits, or
-          classify disease — and it makes no diagnostic decision.</p>
+        <p>Candidates are ordered by review priority and put in front of the reading
+          radiologist, who accepts or rejects each one. The software works at the level of
+          image regions: it does not count lesions, does not match lesions between visits,
+          does not classify disease, and makes no diagnostic decision.</p>
       </div>
     </div>
   </section>
@@ -164,15 +195,15 @@
         <h2>Graded outcomes, explicit abstention</h2>
       </div>
       <div class="prose">
-        <p>The quality-control logic assesses whether the longitudinal comparison meets its
-          prerequisites, and grades the outcome: report, report with caution, or an explicit
-          refusal to report the longitudinal comparison. Abstention is a first-class output —
-          when the comparison cannot be trusted, the software says so and withholds the
-          result, rather than producing a number of unknown reliability.</p>
-        <p>Stated precisely: this does not guarantee that every unreliable result is caught.
-          It means the system's own prerequisites are checked explicitly, and longitudinal
-          output that fails them is withheld — with the refusal itself reported to the
-          reader.</p>
+        <p>Before anything is reported, the quality-control logic asks whether the
+          longitudinal comparison meets its own prerequisites, and grades the answer:
+          report, report with caution, or refuse to report the comparison at all.
+          Abstention is a first-class output. When the comparison cannot be trusted, the
+          reader gets that statement — not a number of unknown reliability.</p>
+        <p>To be precise about what this is and is not: it does not guarantee that every
+          unreliable result is caught. It means the system's prerequisites are checked
+          explicitly, and longitudinal output that fails them is withheld, with the refusal
+          itself reported to the reader.</p>
       </div>
     </div>
   </section>
@@ -185,17 +216,18 @@
         <h2>The build fails when the paperwork lies</h2>
       </div>
       <div class="prose">
-        <p>Lävi Delta is developed under a documented software lifecycle (IEC 62304, Class B)
-          with an ISO 14971 risk file, a requirements specification, traceability from every
-          requirement to its tests, a controlled-document set and a change log.</p>
-        <p>That traceability is machine-checked, not merely tabulated. Automated guards fail
-          the build when a requirement cites a test that does not exist or cannot be
-          collected, when a controlled record is malformed, or when a controlled document
-          drifts out of agreement with the shipped code. These guards exist because our own
-          audits once found traceability rows that did not hold — a lesson we chose to encode
-          into the build rather than into a policy document.</p>
-        <p>A large, continuously run automated test suite backs this, executed across multiple
-          runtime versions in continuous integration.</p>
+        <p>Lävi Delta is developed under a documented software lifecycle (IEC 62304,
+          Class B), with an ISO 14971 risk file, a requirements specification, traceability
+          from every requirement to its tests, a controlled-document set and a change
+          log.</p>
+        <p>The part we actually trust is that the traceability is machine-checked. Automated
+          guards fail the build when a requirement cites a test that does not exist or
+          cannot be collected, when a controlled record is malformed, or when a controlled
+          document has drifted away from the shipped code. We added those guards after our
+          own audits turned up traceability rows that did not hold. Once was enough; now
+          the build refuses.</p>
+        <p>Behind it runs a large automated test suite, executed continuously across
+          multiple runtime versions.</p>
       </div>
     </div>
   </section>
@@ -208,12 +240,49 @@
         <h2>Verified end to end, against a real deployment</h2>
       </div>
       <div class="prose">
-        <p>The full producer-to-reader chain has been executed against a real deployment, not
-          simulated: a committed pipeline run, exported as a hash-bound case package,
-          delivered into the image store, ingested by the reader workstation, and presented to
-          the reader solely from the authoritative package manifest.</p>
-        <p>The negative path was verified too: cases the pipeline rejects are rejected by the
-          chain, not silently passed through.</p>
+        <p>The full producer-to-reader chain has been executed against a real deployment,
+          not simulated: a committed pipeline run, exported as a hash-bound case package,
+          delivered into the image store, ingested by the reader workstation, and presented
+          to the reader from the authoritative package manifest and nothing else.</p>
+        <figure class="fig">
+          <svg viewBox="0 0 760 240" role="img" aria-labelledby="fige2e-t">
+            <title id="fige2e-t">The verified end-to-end chain: pipeline run, hash-bound case package, image store, reader workstation, reader. A rejected package is stopped at ingestion instead of passing through.</title>
+            <g fill="none" stroke="#3C4147" stroke-width="1.3">
+              <rect x="24" y="56" width="120" height="60"/>
+              <rect x="192" y="56" width="120" height="60"/>
+              <rect x="360" y="56" width="110" height="60"/>
+              <rect x="518" y="56" width="130" height="60"/>
+            </g>
+            <g fill="#3C4147" font-family="IBM Plex Mono, monospace" font-size="10.5" letter-spacing="0.5">
+              <text x="38" y="82">PIPELINE</text><text x="38" y="98">RUN</text>
+              <text x="206" y="82">CASE PACKAGE</text><text x="206" y="98">hash-bound ⌗</text>
+              <text x="374" y="82">IMAGE</text><text x="374" y="98">STORE</text>
+              <text x="532" y="82">READER</text><text x="532" y="98">WORKSTATION</text>
+            </g>
+            <g stroke="#9BA0A6" stroke-width="1.4">
+              <line x1="144" y1="86" x2="190" y2="86"/>
+              <line x1="312" y1="86" x2="358" y2="86"/>
+              <line x1="470" y1="86" x2="516" y2="86"/>
+              <line x1="648" y1="86" x2="676" y2="86"/>
+            </g>
+            <circle cx="706" cy="86" r="26" fill="none" stroke="#14171B" stroke-width="1.8"/>
+            <circle cx="706" cy="86" r="19" fill="none" stroke="#9BA0A6" stroke-width="1"/>
+            <text x="706" y="90" text-anchor="middle" fill="#14171B" font-family="IBM Plex Mono, monospace" font-size="9" letter-spacing="0.5">READER</text>
+            <!-- rejected branch -->
+            <defs><pattern id="tex-hatch" width="7" height="7" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse"><line x1="0" y1="0" x2="0" y2="7" stroke="#9BA0A6" stroke-width="1" opacity="0.5"/></pattern></defs>
+            <line x1="252" y1="120" x2="252" y2="150" stroke="#9BA0A6" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <rect x="200" y="150" width="104" height="36" fill="url(#tex-hatch)" stroke="#9BA0A6" stroke-width="1"/>
+            <rect x="206" y="160" width="93" height="16" fill="#FFFFFF"/>
+            <text x="211" y="172" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="0.5">rejected run</text>
+            <line x1="304" y1="168" x2="360" y2="168" stroke="#9BA0A6" stroke-width="1.2" stroke-dasharray="4 4"/>
+            <line x1="366" y1="158" x2="382" y2="178" stroke="#3C4147" stroke-width="1.6"/>
+            <line x1="382" y1="158" x2="366" y2="178" stroke="#3C4147" stroke-width="1.6"/>
+            <text x="394" y="172" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="0.5">stopped at ingestion — verified</text>
+          </svg>
+          <p class="fig-label"><span class="fig-no">Fig. 2 — The verified chain</span><span>executed against a real deployment</span></p>
+        </figure>
+        <p>The negative path got the same treatment: cases the pipeline rejects are rejected
+          by the whole chain, not silently passed through.</p>
       </div>
     </div>
   </section>
@@ -226,13 +295,13 @@
         <h2>A browser-based reading environment</h2>
       </div>
       <div class="prose">
-        <p>For the planned reader study, a dedicated browser-based reader workstation exists
-          and is deployed — built on a pinned open-source medical imaging viewer with a
-          standard image store behind a phase-aware proxy.</p>
-        <p>It implements role-based access control with two-factor authentication, the
-          blinding gate between study arms, washout enforcement between phases, structured
-          reader response capture, an audit trail, and a results export. All of it is
-          implemented and tested today.</p>
+        <p>For the planned reader study there is a dedicated browser-based reader
+          workstation, already deployed — a pinned open-source medical imaging viewer over a
+          standard image store, behind a proxy that knows which study phase it is serving.</p>
+        <p>It carries role-based access with two-factor authentication, the blinding gate
+          between study arms, washout enforcement, structured reader response capture, an
+          audit trail and a results export. All of it implemented and tested today — because
+          a reader study should not have to wait for its own furniture.</p>
         <p class="hairline-note">Lävi Delta is under development. It is not CE-marked, is not
           available for sale, and must not be used for clinical decision-making. Information on
           this site describes a product in development and its planned evaluation, not the

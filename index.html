@@ -93,9 +93,10 @@
     <div class="container hero-inner">
       <p class="kicker">Longitudinal brain MRI</p>
       <h1>Make interval change easier to see.</h1>
-      <p class="standfirst">Lävi Delta is a second-reader tool for follow-up brain MRI. It brings
-        candidate changes between baseline and follow-up into one focused, auditable review —
-        and says so explicitly when the comparison cannot be trusted.</p>
+      <p class="standfirst">Lävi Delta is a second-reader tool for follow-up brain MRI. It gathers
+        the candidate changes between baseline and follow-up into one auditable review — and
+        when two studies cannot be compared on technical grounds, it says so and withholds
+        the result.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:andreas@lavi-clinical.com?subject=Clinical%20collaboration">Clinical collaboration</a>
         <a class="btn btn-secondary" href="#workflow">Explore Lävi Delta →</a>
@@ -282,6 +283,7 @@
       </svg>
 
       <figcaption class="figcap">
+        <span class="fig-no">Fig. 1 — The review loop</span>
         <span><strong class="glyph-new">▲</strong> new / increasing candidate</span>
         <span><strong class="glyph-res">▽</strong> resolving / decreasing candidate</span>
         <span><strong>▨</strong> comparison withheld when prerequisites are not met</span>
@@ -297,19 +299,45 @@
         <h2>Why longitudinal review is hard</h2>
       </div>
       <div class="prose">
-        <p>A follow-up brain MRI asks a different question from a first read: not <em>what is
-          there</em>, but <em>what has changed</em>. Answering it means holding two examinations
-          in mind at once — often acquired months apart, on different scanners, with different
-          positioning and protocols.</p>
-        <p>Interval change is easy to miss precisely because of how it presents. It can be
-          subtle, slow, or scattered across the volume, and the comparison is done pair by
-          pair, largely in the reader's head, under time pressure. The prior may not align
-          with the current study slice for slice; nothing about the display guarantees that
-          the same anatomy is being compared.</p>
-        <p>The hardest part is usually invisible: knowing whether the two studies can be
-          compared at all. When acquisition or positioning differs too much, a confident
-          side-by-side reading can be confidently wrong. Any tool that supports this task has
-          to take that possibility as seriously as the comparison itself.</p>
+        <p>Reading a follow-up scan means answering a comparative question: has anything
+          changed since last time? In practice that is harder than it sounds. The two
+          examinations were often acquired months apart, on different scanners, at different
+          slice angles, under different protocols. The reader scrolls two stacks side by side
+          and holds the difference in memory — case after case, on clinical time.</p>
+        <p>Slow, diffuse change is the kind most easily missed. A finding that grows a little
+          between every visit can look stable at each single comparison. A subtle new finding
+          can sit at the edge of a slice that has no true counterpart in the prior study.</p>
+        <p>Underneath both sits a quieter problem: sometimes the two studies simply cannot be
+          compared, because positioning or acquisition differs too much. Software built for
+          follow-up reading has to recognise that situation. Papering over it would be worse
+          than offering no help at all.</p>
+        <figure class="fig">
+          <svg viewBox="0 0 720 250" role="img" aria-labelledby="figgeo-t">
+            <title id="figgeo-t">Two visits of the same patient acquired with different slice geometry: the slice stacks do not align, so slice-by-slice comparison is unreliable.</title>
+            <text x="70" y="30" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">VISIT 1</text>
+            <g stroke="#3C4147" stroke-width="1.3" fill="#F4F4F2">
+              <path d="M60,70 l150,-22 l40,16 l-150,22 z"/>
+              <path d="M60,104 l150,-22 l40,16 l-150,22 z"/>
+              <path d="M60,138 l150,-22 l40,16 l-150,22 z"/>
+              <path d="M60,172 l150,-22 l40,16 l-150,22 z"/>
+              <path d="M60,206 l150,-22 l40,16 l-150,22 z"/>
+            </g>
+            <text x="470" y="30" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">VISIT 2</text>
+            <g stroke="#3C4147" stroke-width="1.3" fill="#F4F4F2">
+              <path d="M470,84 l150,10 l40,-24 l-150,-10 z"/>
+              <path d="M470,124 l150,10 l40,-24 l-150,-10 z"/>
+              <path d="M470,164 l150,10 l40,-24 l-150,-10 z"/>
+              <path d="M470,204 l150,10 l40,-24 l-150,-10 z"/>
+            </g>
+            <g stroke="#9BA0A6" stroke-width="1" stroke-dasharray="3 4">
+              <line x1="255" y1="90" x2="465" y2="98"/>
+              <line x1="255" y1="158" x2="465" y2="150"/>
+            </g>
+            <text x="340" y="118" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="16">?</text>
+            <text x="60" y="240" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1">SAME PATIENT · DIFFERENT SCANNER, ANGLE AND SPACING · NO SLICE-FOR-SLICE MATCH</text>
+          </svg>
+          <p class="fig-label"><span class="fig-no">Fig. 2 — The geometry problem</span><span>schematic; not patient data</span></p>
+        </figure>
       </div>
     </div>
   </section>
@@ -325,43 +353,48 @@
         <ol class="workflow">
           <li>
             <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h7v16h-7"/><path d="M2 12h13m-4-4 4 4-4 4"/></g></svg>
               <h3>Longitudinal pair received</h3>
-              <p>The baseline and follow-up examinations arrive over standard DICOM from the
-                existing workflow. Processing runs inside the hospital network without operator
-                interaction; no image data needs to leave the institution.</p>
+              <p>Baseline and follow-up arrive over standard DICOM, the same way any study
+                moves through the department. Processing starts on its own, with no operator
+                interaction, and the images stay inside the hospital network.</p>
             </div>
           </li>
           <li>
             <div>
-              <h3>Registration and technical quality assessment</h3>
-              <p>The follow-up is registered to the baseline, and the comparison itself is
-                assessed before any analysis: is this pair technically fit to compare? The
-                outcome is graded — report, report with caution, or an explicit refusal to
-                report the longitudinal comparison.</p>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5"/></g></svg>
+              <h3>Registration and quality assessment</h3>
+              <p>The follow-up is registered to the baseline. Before any analysis, the pair
+                itself is examined: are these two studies technically fit to compare? The
+                answer is graded — report, report with caution, or a refusal to report the
+                comparison at all.</p>
             </div>
           </li>
           <li>
             <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l4.5 8h-9z" fill="#A05400"/><path d="M17 20l-4.5-8h9z" fill="#33637F"/></svg>
               <h3>Candidate change analysis</h3>
-              <p>Candidate regions of change are identified with their location, volume and
-                direction, and ranked in two separate lanes: new or increasing, and resolving
-                or decreasing.</p>
+              <p>Candidate regions of change are identified and ranked, each with its
+                location, volume and direction. New or growing change and resolving change
+                sit in separate lanes, because they mean different things to the reader.</p>
             </div>
           </li>
           <li>
             <div>
-              <h3>Focused radiologist review</h3>
-              <p>Candidates are presented to the reading radiologist for review. Every candidate
-                is explicitly accepted or rejected by the radiologist; the software makes no
-                diagnostic decision, and the radiologist reads the study independently.</p>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6.5"/></g></svg>
+              <h3>Radiologist review</h3>
+              <p>The reading radiologist goes through the candidates and accepts or rejects
+                each one. Lävi Delta makes no diagnostic decision; the radiologist still
+                reads the whole study, with the candidate list alongside.</p>
             </div>
           </li>
           <li>
             <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h10l4 4v16H5z"/><path d="M15 2v4h4M9 12h6M9 16h6"/></g></svg>
               <h3>Structured, auditable record</h3>
-              <p>Results return to the existing workflow as standard DICOM objects —
-                segmentation objects, overlay series and a structured report — with the run's
-                provenance recorded and bound to them.</p>
+              <p>What returns to PACS is ordinary DICOM: segmentation objects, overlay series
+                and a structured report, each bound to the provenance of the run that
+                produced it.</p>
             </div>
           </li>
         </ol>
@@ -380,21 +413,36 @@
         <ul class="domains">
           <li>
             <span class="kicker">Stratum I</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <g stroke="#3C4147" stroke-width="1.3"><line x1="10" y1="20" x2="10" y2="28"/><line x1="30" y1="20" x2="30" y2="28"/><line x1="50" y1="20" x2="50" y2="28"/><line x1="70" y1="20" x2="70" y2="28"/></g>
+              <path d="M60 8l4.5 8h-9z" fill="#A05400"/>
+            </svg>
             <h3>Multiple sclerosis</h3>
-            <p>Regular surveillance MRI, where the appearance of new activity between visits
-              informs treatment decisions.</p>
+            <p>Surveillance MRI at regular intervals, where new activity between two visits
+              can change treatment.</p>
           </li>
           <li>
             <span class="kicker">Stratum II</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <path d="M6 20 C 30 19, 55 17, 82 10" stroke="#5C6167" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+              <path d="M78 4l4.5 8h-9z" fill="#A05400"/>
+            </svg>
             <h3>Primary brain tumours</h3>
-            <p>Post-treatment follow-up, where slow change must be separated from stable
-              appearance across a long series of examinations.</p>
+            <p>Follow-up after treatment, where slow growth has to be told apart from a
+              stable post-treatment appearance — across a long series of examinations.</p>
           </li>
           <li>
             <span class="kicker">Stratum III</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <g fill="#5C6167"><circle cx="18" cy="14" r="2.4"/><circle cx="38" cy="9" r="2"/><circle cx="55" cy="16" r="2.2"/></g>
+              <path d="M72 7l4.5 8h-9z" fill="#A05400"/>
+            </svg>
             <h3>Brain metastases</h3>
-            <p>Follow-up after treatment, where small new findings and change in known findings
-              both matter.</p>
+            <p>Follow-up after treatment, where a small new finding and change in a known one
+              carry equal weight.</p>
           </li>
         </ul>
         <p class="hairline-note">Lävi Delta is being developed for adults (18+) undergoing
@@ -413,15 +461,16 @@
         <h2>Clinical validation programme</h2>
       </div>
       <div class="prose">
-        <p>Whether Lävi Delta actually helps radiologists is a question we will answer with an
-          independent reader study, not with a claim. In the planned study, the same
-          retrospective cases will be read by several radiologists — first without the
-          software, and later with it — so that the study can measure whether the software
-          changes reader performance, while accounting for differences between readers and
-          between cases.</p>
-        <p>The study will cover one hundred cases across the three clinical settings above,
-          with an independent reference-standard process and independent statistical input.
-          Its final design is subject to methodology review.</p>
+        <p>Does a radiologist read follow-up brain MRI better with Lävi Delta than without
+          it? That is the question, and we intend to answer it with an independent reader
+          study rather than a marketing sentence.</p>
+        <p class="pull">We would rather prove it than assert it.</p>
+        <p>In the planned study, one hundred retrospective cases from the three settings
+          above will each be read by several radiologists — first without the software,
+          later with it. Reading every case both ways lets the study measure the software's
+          effect on the reader while accounting for how much readers and cases differ. The
+          reference standard and the statistics are in independent hands, and the final
+          design is subject to methodology review.</p>
         <p class="mono" style="font-size: 0.85rem;"><span class="chip chip-now" data-status="validationStatus">Clinical validation programme in preparation</span></p>
         <p><a href="/validation.html">Read the validation and evidence plan →</a></p>
       </div>
@@ -438,29 +487,31 @@
       <div>
         <ul class="facts">
           <li>
-            <h3>Abstention is implemented, not aspirational</h3>
-            <p>When the prerequisites for a valid longitudinal comparison are not met, Lävi
-              Delta says so explicitly and withholds the longitudinal result — rather than
-              producing a number of unknown reliability.</p>
+            <h3>When the comparison cannot be trusted, there is no result</h3>
+            <p>If the prerequisites for a valid comparison are not met, Lävi Delta withholds
+              the longitudinal result and reports the refusal itself. An honest "cannot
+              compare" is worth more than a number nobody should rely on. This behaviour is
+              implemented and tested today, not planned.</p>
           </li>
           <li>
-            <h3>Anatomical correspondence is never inferred from a method name</h3>
-            <p>Equal geometry, successful registration and convergence are recorded as
-              provenance. They are not treated as proof that the anatomy corresponds. Where
-              correspondence is unsupported, that lane abstains.</p>
+            <h3>Registration success is not proof of correspondence</h3>
+            <p>Equal geometry, a converged registration, a familiar method name — all of it
+              is recorded as provenance, none of it is treated as evidence that the anatomy
+              actually corresponds. Where correspondence is unsupported, that lane
+              abstains.</p>
           </li>
           <li>
-            <h3>Provenance travels with the result</h3>
-            <p>Registration method, policy identity, input hashes and environment are recorded
-              for every run and bound to the exported objects. On the path where the claim can
-              be made, registration is deterministic and replayable: the same input reproduces
-              the same result.</p>
+            <h3>Every result carries its provenance</h3>
+            <p>Method, policy identity, input hashes and environment are recorded on every
+              run and bound to the exported objects. Where determinism can be claimed, it is
+              exact — the same input reproduces the same result, bit for bit; where it is
+              only bounded, we say bounded.</p>
           </li>
           <li>
             <h3>A second reader, not a substitute</h3>
-            <p>The absence of a flagged candidate is not evidence that nothing changed. The
-              radiologist reads every study independently; Lävi Delta is designed to support
-              that reading, not to replace it.</p>
+            <p>An empty candidate list is not evidence that nothing changed. The radiologist
+              reads every study independently, exactly as before; the software's job is to
+              support that reading, never to stand in for it.</p>
           </li>
         </ul>
         <div class="qc-strip" role="img" aria-label="The three graded outcomes of the quality-control assessment: report, report with caution, and comparison withheld.">
@@ -492,21 +543,21 @@
         <ul class="facts">
           <li>
             <h3>Runs inside the hospital</h3>
-            <p>Lävi Delta is deployed on-premise. It receives studies over standard DICOM,
-              processes them without operator interaction, and returns standard DICOM objects
-              into the existing PACS workflow.</p>
+            <p>Deployed on-premise, speaking standard DICOM in both directions: studies in,
+              segmentation objects and reports out, straight into the existing PACS
+              workflow. The images stay in the building.</p>
           </li>
           <li>
             <h3>Traceability is machine-checked</h3>
-            <p>The build fails when a requirement cites a test that does not exist, or when a
-              controlled document drifts out of agreement with the code. Traceability is
-              enforced, not merely tabulated.</p>
+            <p>If a requirement cites a test that does not exist, or a controlled document no
+              longer matches the code, the build fails. We added those guards after our own
+              audits caught traceability rows that did not hold — once was enough.</p>
           </li>
           <li>
             <h3>Verified end to end</h3>
-            <p>The pipeline and the reader environment have been verified to work together end
-              to end against a real deployment — including verifying that rejected cases are
-              rejected.</p>
+            <p>One chain, exercised against a real deployment: pipeline run, exported
+              package, image store, reader workstation. Rejected cases were verified to stay
+              rejected rather than slipping through.</p>
           </li>
         </ul>
         <p style="margin-top: 1.6rem;"><a href="/technology.html">Read about the technology →</a></p>
@@ -522,24 +573,24 @@
         <h2>Lävi Clinical Suite</h2>
       </div>
       <div class="prose">
-        <p>Lävi Clinical Suite OÜ is an Estonian medical software company based in Tartu,
-          building Lävi Delta as a regulated medical device under the EU Medical Device
-          Regulation.</p>
+        <p>Lävi Clinical Suite OÜ is a medical software company in Tartu, Estonia. We are
+          building Lävi Delta as a medical device under the EU Medical Device Regulation —
+          slowly enough to do it properly.</p>
         <ul class="facts">
           <li>
             <h3>Andreas Müürsepp — Founder &amp; CEO</h3>
-            <p>Neuroradiologist. Lävi Delta is built from the reading room outward: its founder
-              reads longitudinal brain MRI and develops the pipeline, so the distance between
-              clinical need and implementation stays short.</p>
+            <p>Neuroradiologist. Andreas reads longitudinal brain MRI clinically and wrote
+              the core pipeline himself, so the reading-room problem and the code that
+              answers it live unusually close together.</p>
           </li>
           <li>
             <h3>Alvar Haug — CTO</h3>
-            <p>Leads infrastructure, deployment and security — the parts of a clinical system
-              that have to hold when nobody is watching.</p>
+            <p>Runs infrastructure, deployment and security — the plumbing a clinical system
+              stands on, and the first thing a hospital IT department asks about.</p>
           </li>
         </ul>
-        <p>We are building the team. If your work touches medical imaging, clinical software or
-          regulatory affairs, <a href="mailto:andreas@lavi-clinical.com?subject=Working%20with%20L%C3%A4vi">get in touch</a>.</p>
+        <p>The team is growing. If your work touches medical imaging, clinical software or
+          regulatory affairs, <a href="mailto:andreas@lavi-clinical.com?subject=Working%20with%20L%C3%A4vi">write to us</a>.</p>
       </div>
     </div>
   </section>
@@ -599,9 +650,10 @@
         <h2>Clinical collaboration</h2>
       </div>
       <div class="contact-block">
-        <p>We are preparing an independent reader study and welcome conversations with
-          radiologists, hospitals and imaging researchers working on longitudinal brain MRI —
-          and with investors who want to understand the evidence programme.</p>
+        <p>We are preparing an independent reader study and are glad to talk: with
+          radiologists and hospitals interested in follow-up imaging, with researchers, and
+          with investors who want to look at the evidence plan up close. The founder answers
+          his own email.</p>
         <div class="hero-actions">
           <a class="btn btn-primary" href="mailto:andreas@lavi-clinical.com?subject=Clinical%20collaboration">Write to us</a>
         </div>
