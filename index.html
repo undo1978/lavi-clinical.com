@@ -93,12 +93,12 @@
   <!-- ============ Hero ============ -->
   <section class="hero">
     <div class="container hero-inner">
-      <p class="kicker">Longitudinal brain MRI</p>
+      <p class="kicker">Lävi Clinical Suite · Longitudinal infrastructure for brain MRI</p>
       <h1>Make interval change easier to see.</h1>
-      <p class="standfirst">Lävi Delta is a second-reader tool for follow-up brain MRI. It gathers
-        the candidate changes between baseline and follow-up into one auditable review — and
-        when two studies cannot be compared on technical grounds, it says so and withholds
-        the result.</p>
+      <p class="standfirst">Lävi Delta is our first product: a second reader for follow-up
+        brain MRI. It gathers the candidate changes between baseline and follow-up into one
+        auditable review — and when two studies cannot be compared on technical grounds, it
+        says so and withholds the result.</p>
       <div class="hero-actions">
         <a class="btn btn-primary" href="mailto:andreas@lavi-clinical.com?subject=Clinical%20collaboration">Clinical collaboration</a>
         <a class="btn btn-secondary" href="#workflow">Explore Lävi Delta →</a>
@@ -291,6 +291,27 @@
         <span><strong>▨</strong> comparison withheld when prerequisites are not met</span>
       </figcaption>
     </figure>
+    <ul class="domains proof-strip" aria-label="Programme status at a glance">
+      <li>
+        <span class="kicker">Implemented</span>
+        <h3>Working end-to-end system</h3>
+        <p>The longitudinal pipeline, DICOM export and dedicated reader workstation are
+          implemented and tested — and verified to work together against a real
+          deployment.</p>
+      </li>
+      <li>
+        <span class="kicker">Deployment model</span>
+        <h3>Built for hospital deployment</h3>
+        <p>On-premise architecture with standard DICOM in and out, returning results into
+          the existing PACS workflow. No image data needs to leave the institution.</p>
+      </li>
+      <li>
+        <span class="kicker">In preparation</span>
+        <h3>Clinical validation next</h3>
+        <p>An independent multi-reader study is in preparation — and the reading
+          infrastructure it needs already exists. <a href="/validation.html">The plan</a>.</p>
+      </li>
+    </ul>
   </section>
 
   <!-- ============ 01 Problem ============ -->
@@ -313,6 +334,10 @@
           compared, because positioning or acquisition differs too much. Software built for
           follow-up reading has to recognise that situation. Papering over it would be worse
           than offering no help at all.</p>
+        <p>And this work compounds. Surveillance protocols add examinations to each
+          patient's history year after year, while the review itself is still a
+          side-by-side human comparison. Repeated imaging is a longitudinal data problem,
+          not a stack of single-scan reads.</p>
         <figure class="fig">
           <svg viewBox="0 0 720 250" role="img" aria-labelledby="figgeo-t">
             <title id="figgeo-t">Two visits of the same patient acquired with different slice geometry: the slice stacks do not align, so slice-by-slice comparison is unreliable.</title>
@@ -404,11 +429,43 @@
     </div>
   </section>
 
-  <!-- ============ 03 Clinical domains ============ -->
+  <!-- ============ 03 The platform ============ -->
+  <section class="section" id="platform">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">03</span> — The platform</p>
+        <h2>Built around the comparison, not the model</h2>
+      </div>
+      <div class="prose">
+        <p>Most imaging algorithms solve one narrow, single-scan analytical task. The
+          clinically hard part of longitudinal reading sits around any such model:
+          deciding whether two
+          examinations can validly be compared, preserving provenance, managing
+          uncertainty, integrating with PACS, presenting change for a human decision — and
+          withholding the answer when the evidence does not support one.</p>
+        <p>That surrounding layer is what Lävi is building, and it is deliberately not tied
+          to one indication: ingestion of longitudinal studies, registration and
+          comparison, quality control with explicit abstention, candidate-change analysis,
+          provenance, standard DICOM and PACS integration, the auditable radiologist
+          review environment, the reader-study infrastructure, and the validation and
+          regulatory architecture around all of it. Lävi Delta is the first product built
+          on that layer — and the first that will carry it through independent clinical
+          validation.</p>
+        <h3>Who it is for</h3>
+        <p>Lävi Delta is being built for radiology departments and imaging organisations
+          that read longitudinal brain MRI routinely. It is designed to fit the workflow a
+          hospital already runs: studies arrive over DICOM, analysis stays inside the
+          hospital network, and review returns to the radiologist through familiar imaging
+          infrastructure.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 Clinical domains ============ -->
   <section class="section" id="domains">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">03</span> — Clinical domains</p>
+        <p class="kicker"><span class="kicker-no">04</span> — Clinical domains</p>
         <h2>Where interval review matters first</h2>
       </div>
       <div>
@@ -455,11 +512,11 @@
     </div>
   </section>
 
-  <!-- ============ 04 Validation ============ -->
+  <!-- ============ 05 Validation ============ -->
   <section class="section" id="validation">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">04</span> — Validation</p>
+        <p class="kicker"><span class="kicker-no">05</span> — Validation</p>
         <h2>Clinical validation programme</h2>
       </div>
       <div class="prose">
@@ -479,11 +536,11 @@
     </div>
   </section>
 
-  <!-- ============ 05 Quality & abstention ============ -->
+  <!-- ============ 06 Quality & abstention ============ -->
   <section class="section" id="safety">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">05</span> — Safety philosophy</p>
+        <p class="kicker"><span class="kicker-no">06</span> — Safety philosophy</p>
         <h2>Quality and abstention</h2>
       </div>
       <div>
@@ -534,11 +591,11 @@
     </div>
   </section>
 
-  <!-- ============ 06 Technology ============ -->
+  <!-- ============ 07 Technology ============ -->
   <section class="section" id="technology">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">06</span> — Technology</p>
+        <p class="kicker"><span class="kicker-no">07</span> — Technology</p>
         <h2>Built to be checked</h2>
       </div>
       <div>
@@ -567,11 +624,11 @@
     </div>
   </section>
 
-  <!-- ============ 07 Company ============ -->
+  <!-- ============ 08 Company ============ -->
   <section class="section" id="company">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">07</span> — Company</p>
+        <p class="kicker"><span class="kicker-no">08</span> — Company</p>
         <h2>Lävi Clinical Suite</h2>
       </div>
       <div class="prose">
@@ -594,23 +651,28 @@
               stands on, and the first thing a hospital IT department asks about.</p>
           </li>
         </ul>
+        <p>The company is deliberately built on three legs: neuroradiology and clinical
+          workflow, software and infrastructure engineering, and independent clinical
+          validation — the reference standard and the statistical analysis of the planned
+          reader study are in independent hands, not ours.</p>
         <p>The team is growing. If your work touches medical imaging, clinical software or
           regulatory affairs, <a href="mailto:andreas@lavi-clinical.com?subject=Working%20with%20L%C3%A4vi">write to us</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 08 Roadmap ============ -->
+  <!-- ============ 09 Roadmap ============ -->
   <section class="section" id="roadmap">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">08</span> — Roadmap</p>
+        <p class="kicker"><span class="kicker-no">09</span> — Roadmap</p>
         <h2>What comes next</h2>
       </div>
       <div>
         <p style="margin-bottom: 1.6rem;">Lävi Delta is the first product, not the whole plan.
-          Lävi Clinical Suite is building a family of longitudinal neuroimaging products —
-          one validated layer at a time.</p>
+          What it establishes — registration, quality control and abstention, provenance,
+          DICOM integration, the review environment, the validation methodology — is the
+          foundation each subsequent longitudinal product reuses rather than rebuilds.</p>
         <div class="products">
           <div class="product-card">
             <span class="chip chip-now">Current programme</span>
@@ -627,16 +689,23 @@
               own programme begins once Delta's reaches the required maturity.</p>
             <p class="card-link"><a href="/lavi-ms.html">About Lävi MS →</a></p>
           </div>
+          <div class="product-card planned">
+            <span class="chip">Ahead</span>
+            <h3>Further longitudinal workflows</h3>
+            <p>Subsequent longitudinal brain MRI products can reuse the same validated
+              quality-control, provenance and deployment infrastructure. None are announced
+              beyond Lävi MS — the platform is the point, not a product list.</p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ============ 08 Development status ============ -->
+  <!-- ============ 10 Development status ============ -->
   <section class="section" id="status">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">09</span> — Development status</p>
+        <p class="kicker"><span class="kicker-no">10</span> — Development status</p>
         <h2>What exists, and what is not yet proven</h2>
       </div>
       <div>
@@ -665,8 +734,8 @@
                 requirement of the validation programme, not an established capability.</li>
               <li>Capabilities still under technical evaluation, which are not part of any
                 claim.</li>
-              <li>Regulatory conformity: Lävi Delta is not CE-marked and is not available for
-                sale.</li>
+              <li>Regulatory conformity: the conformity-assessment stage lies ahead, as the
+                statement below spells out.</li>
             </ul>
           </div>
         </div>
@@ -679,11 +748,11 @@
     </div>
   </section>
 
-  <!-- ============ 09 Contact ============ -->
+  <!-- ============ 11 Contact ============ -->
   <section class="section" id="contact">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">10</span> — Contact</p>
+        <p class="kicker"><span class="kicker-no">11</span> — Contact</p>
         <h2>Clinical collaboration</h2>
       </div>
       <div class="contact-block">
