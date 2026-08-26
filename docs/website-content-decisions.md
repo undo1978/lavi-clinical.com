@@ -128,6 +128,25 @@ A trusted-reviewer pass produced three required changes and three notes; outcome
 - Alvar Haug's CTO title: D4 stands; confirming it with him personally remains a
   risk-owner action.
 
+## 6c. Audience coverage round (2026-08-21) — plumbing decisions
+
+- **F2 status date:** single-sourced in `content/site-status.js`; static HTML fallbacks are
+  synced by `tools/update-status-date.py`; refresh cadence documented in `README.md`
+  (conscious bump at every content review, minimum quarterly).
+- **F3 LinkedIn slug:** verified against the risk owner 2026-08-21 — `lav-clinical-suit` is
+  the current real slug (rename typo, LinkedIn blocks immediate correction). Not a site bug;
+  tracked in §6.4.
+- **F4 Estonian version:** **deferred by decision.** An Estonian version matters for local
+  hospital partners and should be revisited once the English content stabilises; recorded
+  here so the gap is deliberate, not an oversight.
+- **Contact segmentation (F1/E2):** one address, four labelled routes with distinct subject
+  lines (clinical collaboration / careers / investor conversation / Lävi MS). The investor
+  route offers examination of the evidence plan and architecture; the dated-plan-under-NDA
+  sentence waits on needs-confirmation item 21.
+- **Draft-state policy:** fact-gated pages live in `drafts/` on the development branch with
+  visible `[CONFIRM:]` markers and a draft banner; the merge to `main` removes `drafts/`, so
+  no placeholder can reach the deployed site.
+
 ## 7. Acceptance test (brief §17) — answers as read from the built site
 
 - **Radiologist (30 s):** It is a second reader for follow-up brain MRI; it sits after
