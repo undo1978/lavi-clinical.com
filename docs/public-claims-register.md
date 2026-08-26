@@ -54,6 +54,7 @@ Last reviewed: 2026-08-20.
 | Why now: surveillance protocols add examinations year after year while review remains side-by-side human comparison | 01 Problem | — (clinical background) | VERIFIED FACT (general knowledge) | No market figures, no TAM | Qualitative only |
 | Roadmap third node: further longitudinal workflows can reuse the validated infrastructure; none announced beyond Lävi MS | 09 Roadmap | D5 + D6 | DEVELOPMENT INTENT | Must not read as announced products | "None are announced beyond Lävi MS" stated in the card itself |
 | Company built on three legs incl. independent clinical validation (reference standard and statistics in independent hands) | 08 Company | §5 | VERIFIED FACT / PLANNED VALIDATION | Independence claim limited to the planned study's design | As TS §5 |
+| Contact: four labelled routes (clinical collaboration, careers, investment, Lävi MS); investor route offers examination of the evidence plan and technical architecture | 11 Contact | D6 + audience round (F1/E2) | DEVELOPMENT INTENT (offer of conversation) | Must not become a fundraising pitch; no dated-plan claim until needs-confirmation §21 | Same single address; subject lines segment |
 
 ## Validation & evidence page (`validation.html`)
 
