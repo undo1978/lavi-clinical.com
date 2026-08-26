@@ -40,9 +40,13 @@ site), `docs/public-claims-register.md` (register of every claim on the new site
   should be named in the founder bio, that is a new decision.
 - **F4 — brand inconsistencies.** The old logo image and the LinkedIn company URL said
   "Lavi Clinical Solutions"; D1 chose "Lävi Clinical Suite OÜ". Update 2026-08-21: the
-  LinkedIn company page was renamed; the site now links to the new slug
-  `lav-clinical-suit` (known typo — LinkedIn does not allow an immediate second rename;
-  update the four site links again when the slug is corrected). The logo was initially deleted, then restored on the risk owner's request
+  LinkedIn company page was renamed. Correction 2026-08-21 (second pass): the site had been
+  linking to `lav-clinical-suit`, which 404s — the real slug is **`lavi-clinical-suit`**
+  (verified live: the page resolves and its canonical `og:url` is
+  `https://ee.linkedin.com/company/lavi-clinical-suit`). The truncated "suit" is LinkedIn's
+  own slug and works; the broken link was our missing "i", not LinkedIn's rename. Fixed in
+  all nine pages including the JSON-LD `sameAs`. The old `lavi-clinical-solutions` slug
+  still redirects to the same page. The logo was initially deleted, then restored on the risk owner's request
   (2026-08-20) as the **mark only** (`logo-mark.png`, extracted from the embedded original,
   white background keyed out) in the header of every page — the "CLINICAL SOLUTIONS" wordmark
   text was not restored, so the public site never contradicts D1. Design note: the brief's

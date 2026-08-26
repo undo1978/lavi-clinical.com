@@ -17,7 +17,8 @@ remains open:
 
 ## Standing reminders
 
-- LinkedIn slug typo (`lav-clinical-suit`): fix the four site links + JSON-LD `sameAs`
-  when LinkedIn permits the rename (decisions §6.4).
+- ~~LinkedIn slug~~ — **resolved 2026-08-21**: the live slug is `lavi-clinical-suit`
+  (our link was missing an "i" and 404'd). All site links and the JSON-LD `sameAs` now
+  point at the verified URL.
 - Registered address (Aardla tn 62, 50413 Tartu) was confirmed by the risk owner
   2026-08-21; re-verify against the business register whenever the imprint is next touched.
