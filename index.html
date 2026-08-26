@@ -62,13 +62,6 @@
 }
 </script>
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X7QBW5X59"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6X7QBW5X59');
-</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -80,6 +73,7 @@
       <ul>
         <li><a href="/" aria-current="page">Lävi Delta</a></li>
         <li><a href="/lavi-ms.html">Lävi MS</a></li>
+        <li><a href="/hospitals.html">Hospitals</a></li>
         <li><a href="/validation.html">Evidence</a></li>
         <li><a href="/technology.html">Technology</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -296,14 +290,15 @@
         <span class="kicker">Implemented</span>
         <h3>Working end-to-end system</h3>
         <p>The longitudinal pipeline, DICOM export and dedicated reader workstation are
-          implemented and tested — and verified to work together against a real
-          deployment.</p>
+          implemented and tested — and verified to work together in a full
+          production-form deployment.</p>
       </li>
       <li>
         <span class="kicker">Deployment model</span>
         <h3>Built for hospital deployment</h3>
         <p>On-premise architecture with standard DICOM in and out, returning results into
-          the existing PACS workflow. No image data needs to leave the institution.</p>
+          the existing PACS workflow. In that deployment, no image data needs to leave the
+          institution.</p>
       </li>
       <li>
         <span class="kicker">In preparation</span>
@@ -384,7 +379,8 @@
               <h3>Longitudinal pair received</h3>
               <p>Baseline and follow-up arrive over standard DICOM, the same way any study
                 moves through the department. Processing starts on its own, with no operator
-                interaction, and the images stay inside the hospital network.</p>
+                interaction, and in the intended on-premise deployment the images stay
+                inside the hospital network.</p>
             </div>
           </li>
           <li>
@@ -456,7 +452,7 @@
           that read longitudinal brain MRI routinely. It is designed to fit the workflow a
           hospital already runs: studies arrive over DICOM, analysis stays inside the
           hospital network, and review returns to the radiologist through familiar imaging
-          infrastructure.</p>
+          infrastructure. <a href="/hospitals.html">Deployment and early collaboration →</a></p>
       </div>
     </div>
   </section>
@@ -528,8 +524,8 @@
           above will each be read by several radiologists — first without the software,
           later with it. Reading every case both ways lets the study measure the software's
           effect on the reader while accounting for how much readers and cases differ. The
-          reference standard and the statistics are in independent hands, and the final
-          design is subject to methodology review.</p>
+          reference standard and the statistical analysis are planned to be independently
+          defined and reviewed, and the final design is subject to methodology review.</p>
         <p class="mono" style="font-size: 0.85rem;"><span class="chip chip-now" data-status="validationStatus">Clinical validation programme in preparation</span></p>
         <p><a href="/validation.html">Read the validation and evidence plan →</a></p>
       </div>
@@ -614,9 +610,9 @@
           </li>
           <li>
             <h3>Verified end to end</h3>
-            <p>One chain, exercised against a real deployment: pipeline run, exported
-              package, image store, reader workstation. Rejected cases were verified to stay
-              rejected rather than slipping through.</p>
+            <p>One chain, exercised in a full production-form deployment: pipeline run,
+              exported package, image store, reader workstation. Rejected cases were
+              verified to stay rejected rather than slipping through.</p>
           </li>
         </ul>
         <p style="margin-top: 1.6rem;"><a href="/technology.html">Read about the technology →</a></p>
@@ -651,7 +647,10 @@
         <p>The company is deliberately built on three legs: neuroradiology and clinical
           workflow, software and infrastructure engineering, and independent clinical
           validation — the reference standard and the statistical analysis of the planned
-          reader study are in independent hands, not ours.</p>
+          reader study are planned to be independently defined and reviewed, not decided by
+          us.</p>
+        <p>Company development is supported by participation in the Health Founders Estonia
+          DEVELOP programme.</p>
         <p>The team is growing. If your work touches medical imaging, clinical software or
           regulatory affairs, <a href="mailto:andreas@lavi-clinical.com?subject=Working%20with%20L%C3%A4vi">write to us</a>.</p>
       </div>
@@ -719,7 +718,7 @@
                 tested.</li>
               <li>Machine-checked traceability from requirements to tests, enforced in the
                 build, with a large continuously run automated test suite.</li>
-              <li>The full producer-to-reader chain, verified against a real deployment.</li>
+              <li>The full producer-to-reader chain, verified in a full production-form deployment.</li>
             </ul>
           </div>
           <div>
@@ -768,7 +767,10 @@
           </li>
           <li>
             <h3>Investment</h3>
-            <p>The evidence plan and the technical architecture, examined in detail.
+            <p>The evidence plan and the technical architecture, examined in detail. We
+              maintain dated internal development, validation and evidence-planning
+              documentation; selected material can be shared in qualified conversations
+              under NDA or controlled data-room access.
               <a href="mailto:andreas@lavi-clinical.com?subject=Investor%20conversation">Start an investor conversation →</a></p>
           </li>
           <li>
@@ -798,7 +800,8 @@
       <div>
         <h2>Lävi Clinical Suite OÜ</h2>
         <ul>
-          <li>Tartu, Estonia</li>
+          <li>Aardla tn 62, 50413 Tartu, Estonia</li>
+          <li>Registry code 17396580</li>
           <li><a href="mailto:andreas@lavi-clinical.com">andreas@lavi-clinical.com</a></li>
           <li><a href="tel:+3725012118">+372 501 2118</a></li>
         </ul>
@@ -808,14 +811,18 @@
         <ul>
           <li><a href="/">Lävi Delta</a></li>
           <li><a href="/lavi-ms.html">Lävi MS</a></li>
+          <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
       <div>
-        <h2>Elsewhere</h2>
+        <h2>Company</h2>
         <ul>
           <li><a href="https://www.linkedin.com/company/lav-clinical-suit/" rel="external">LinkedIn</a></li>
+          <li><a href="/privacy.html">Privacy notice</a></li>
+          <li><a href="/legal.html">Legal</a></li>
         </ul>
       </div>
     </div>

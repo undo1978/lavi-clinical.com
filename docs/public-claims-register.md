@@ -12,7 +12,7 @@ change ships. Time-sensitive statements live only in `content/site-status.js`.
 **Classifications:** `VERIFIED FACT` / `DEVELOPMENT INTENT` / `PLANNED VALIDATION` /
 `RESEARCH ONLY` / `DO NOT PUBLISH`.
 
-Last reviewed: 2026-08-20.
+Last reviewed: 2026-08-21.
 
 ---
 
@@ -24,7 +24,7 @@ Last reviewed: 2026-08-20.
 | It brings candidate changes between baseline and follow-up into one focused, auditable review | Hero | §2 | VERIFIED FACT | Implies capability beyond intended purpose | "brings candidate interval changes into one focused, auditable review" |
 | Says so explicitly when the comparison cannot be trusted | Hero; 05 | §3.3 | VERIFIED FACT | Overpromising a safety property | Abstention wording per §3.3; never "no unreliable results ever" |
 | Clinical validation and regulatory development in progress · not CE-marked | Hero status line | §5, §12 | PLANNED VALIDATION | Implied regulatory status | Exact status line; sourced from `content/site-status.js` |
-| Runs inside the hospital; receives studies over standard DICOM; processes without operator interaction; returns results into the existing PACS workflow; no image data needs to leave the institution | 02 Workflow (1); 06 | §3.1 | VERIFIED FACT | Deployment misrepresentation | As TS §3.1 |
+| Runs inside the hospital; receives studies over standard DICOM; processes without operator interaction; returns results into the existing PACS workflow; in the intended on-premise deployment no image data needs to leave the institution | 02 Workflow (1); 06; proof strip | §3.1 + D7 scoping | VERIFIED FACT | Unscoped "no data leaves" would overreach the development/MRMC architecture | Always tied to the intended on-premise clinical deployment (D7/Q11) |
 | The comparison is quality-assessed with graded outcomes: report / report with caution / explicit refusal to report | 02 Workflow (2); 05 | §3.2 | VERIFIED FACT | Overstating QC guarantees | Three graded outcomes, named as in TS |
 | Candidate regions carry location, volume and direction; new/increasing and resolving/decreasing are separate ranked lanes | 02 Workflow (3) | §3.2 | VERIFIED FACT | Implying lesion-level analysis (prohibited §7) | Regions of change; never "lesions", counting, or matching |
 | Every candidate is explicitly accepted or rejected by the radiologist; the software makes no diagnostic decision | 02 Workflow (4); key visual | §2 | VERIFIED FACT | Autonomy implication is a classification hazard | As TS §2 |
@@ -38,7 +38,7 @@ Last reviewed: 2026-08-20.
 | Provenance (method, policy identity, input hashes, environment) recorded per run and bound to exports | 05 Safety | §3.3 | VERIFIED FACT | — | Homepage states provenance only and links deeper; the exact-vs-bounded determinism claim lives solely on the technology page (§3.3 + §4 qualifier mandatory there) |
 | Absence of a flagged candidate is not evidence that nothing changed; the radiologist reads independently | 05 Safety | §11, §7 | VERIFIED FACT | Omitting this implies negative results are reassurance | As TS §11 |
 | Traceability is machine-checked; the build fails on requirement–test drift or document–code drift | 06 Technology | §3.4 | VERIFIED FACT | — | As TS §3.4 |
-| Pipeline and reader environment verified to work together end to end against a real deployment; rejected cases verified rejected | 06; 08 | §3.6 | VERIFIED FACT | Must not be phrased as validation | Exact §3.6 public phrasing; no verdict words |
+| Pipeline and reader environment verified to work together end to end in a full production-form deployment (pipeline, image store, reader workstation); rejected cases verified rejected | 06; 08; proof strip | §3.6 + D7/Q12 precision | VERIFIED FACT | Must not read as validation, nor as a hospital-site deployment | "full production-form deployment…"; technology page adds the explicit "not a routine clinical deployment at a hospital site" |
 | Dedicated reader workstation exists and is deployed: arm blinding, washout enforcement, role-based access, audit trail — implemented and tested | 08 Status | §3.5 | VERIFIED FACT | — | As TS §3.5 |
 | Large, continuously run automated test suite | 08 Status | §3.4 | VERIFIED FACT | Publishing the count would go stale | Fact of the suite only; no numbers |
 | Lävi Clinical Suite OÜ, Estonian medical software company, Tartu | 07 Company; footer | §1 + D1 | VERIFIED FACT | Wrong legal identity is a notified-body finding | Per decision D1; IFU correction pending on company side |
@@ -53,8 +53,8 @@ Last reviewed: 2026-08-20.
 | Who it is for: radiology departments / imaging organisations reading longitudinal brain MRI routinely; fits existing DICOM/PACS workflow | 03 Platform | §3.1 + D6 | DEVELOPMENT INTENT | No pricing, ROI, time-savings, procurement or pilot claims | "being built for"; workflow facts per §3.1 |
 | Why now: surveillance protocols add examinations year after year while review remains side-by-side human comparison | 01 Problem | — (clinical background) | VERIFIED FACT (general knowledge) | No market figures, no TAM | Qualitative only |
 | Roadmap third node: further longitudinal workflows can reuse the validated infrastructure; none announced beyond Lävi MS | 09 Roadmap | D5 + D6 | DEVELOPMENT INTENT | Must not read as announced products | "None are announced beyond Lävi MS" stated in the card itself |
-| Company built on three legs incl. independent clinical validation (reference standard and statistics in independent hands) | 08 Company | §5 | VERIFIED FACT / PLANNED VALIDATION | Independence claim limited to the planned study's design | As TS §5 |
-| Contact: four labelled routes (clinical collaboration, careers, investment, Lävi MS); investor route offers examination of the evidence plan and technical architecture | 11 Contact | D6 + audience round (F1/E2) | DEVELOPMENT INTENT (offer of conversation) | Must not become a fundraising pitch; no dated-plan claim until needs-confirmation §21 | Same single address; subject lines segment |
+| Company built on three legs; the reference standard and statistical analysis of the planned study are planned to be independently defined and reviewed; company development supported by participation in the Health Founders Estonia DEVELOP programme | 08 Company | §5 + §9 + D7 (Q14, Q19) | PLANNED VALIDATION + VERIFIED FACT (programme participation) | Present-tense independence would imply contractually final roles; programme mention must stay development support, never endorsement or financing | "planned to be independently defined and reviewed" site-wide; HFE named per D7 approval |
+| Contact: four labelled routes; investor route states that dated internal development, validation and evidence-planning documentation exists and may be shared under NDA / controlled data-room access in qualified conversations | 11 Contact | D6 + D7 (Q21) | DEVELOPMENT INTENT + VERIFIED FACT (documentation exists) | Never describe the material as externally audited, final or regulatory-approved | As written |
 
 ## Validation & evidence page (`validation.html`)
 
@@ -91,6 +91,7 @@ Last reviewed: 2026-08-20.
 | Large automated test suite, run across multiple runtime versions in CI | 06 | §3.4 | VERIFIED FACT | No count (goes stale; not on §8 whitelist) | As written |
 | End-to-end chain: committed run → hash-bound package → image store → workstation ingestion → presentation solely from the package manifest; rejection path verified | 07 | §3.6 | VERIFIED FACT | No verdict vocabulary | As TS §3.6 |
 | Reader workstation: pinned open-source viewer, standard image store, phase-aware proxy; RBAC/2FA, blinding, washout, response capture, audit trail, export — implemented and tested | 08 | §3.5 | VERIFIED FACT | — | Component brand names withheld (site policy) |
+| No released partner-facing integration interface today; analytical architecture modular by design; partner-facing interface is development intent; partner conversations welcome | 09 Integration | §4 + D7 (Q13) | VERIFIED FACT (absence) + DEVELOPMENT INTENT | Promising an API that does not exist | "development intent, not a current capability" |
 
 ## Lävi MS page (`lavi-ms.html`) — all claims rest on risk-owner decision D5 (2026-08-21)
 
@@ -103,6 +104,40 @@ Last reviewed: 2026-08-20.
 | Delta-first sequencing: Delta establishes the platform (ingestion/provenance, registration, QC, workflow, review environment, auditability, validation methodology); Lävi MS builds on it with its own validation and regulatory pathway | 03; Fig. 1 | D5 | DEVELOPMENT INTENT | MS must not inherit Delta's validation by implication | "own development, clinical-validation and regulatory pathway"; solid vs dashed encoding in Fig. 1 |
 | Intended future users: (neuro)radiologists reading MS follow-up; MS centres; radiology departments | 04 | D5 | DEVELOPMENT INTENT | — | "intended", future tense |
 | Not validated, not CE-marked, not available; programme not started | 06; footer | D5 + §12 | DEVELOPMENT INTENT / VERIFIED FACT | Absence is the risk | Footer regulatory statement extended with the Lävi MS sentence |
+
+## Hospitals page (`hospitals.html`) — shipped per D7
+
+| Public claim | Section | TS ref | Classification | Risk if wrong | Approved wording |
+|---|---|---|---|---|---|
+| Early collaboration is research/development context only; possible scopes: workflow evaluation, technical/deployment evaluation, separately agreed clinical validation | 01 | D7 (Q6) | DEVELOPMENT INTENT (offer) | Must never read as routine clinical use | As D7 wording |
+| Requirements: ethics/governance approval as applicable, data agreement, retrospective data, hospital IT involvement, defined reader time | 01 | D7 (Q6) | DEVELOPMENT INTENT | — | "typically requires" |
+| No software licence fee for agreed early research collaborations; each party bears its own internal costs unless agreed otherwise | 01 | D7 (Q6) | VERIFIED FACT (policy) | Must not read as a price commitment for a marketed product | As written |
+| Formal-programme participation subject to study protocol, not implied by early collaboration | 01 | D7 (Q6) | DEVELOPMENT INTENT | Protects the controlled validation cohort | As written |
+| Hardware figures not published because requirements are not frozen | 02 | D7 (Q7–Q8) | VERIFIED FACT (statement about publication) | Publishing numbers that change is the risk being avoided | No figures, no "available on request" |
+| Security actuals: on-premise intended deployment; RBAC + MFA; audit logging where implemented | 03 | §3.1, §3.5 + D7 (Q11) | VERIFIED FACT | — | "where implemented" qualifier on audit logging |
+| In preparation: MDCG 2019-16 alignment, penetration testing, patch policy, verified encryption at rest/in transit | 03 | D7 (Q11) | DEVELOPMENT INTENT (labelled) | Any of these as current-state would be a false compliance claim | "listed as intent, not as achievement; none claimed complete until verification is" |
+| End-to-end verification = full production-form deployment, not a hospital-site clinical deployment | 04 | §3.6 + D7 (Q12) | VERIFIED FACT | Implying a hospital deployment | Explicit negative stated |
+
+## Careers page (`careers.html`) — shipped per D7
+
+| Public claim | Section | TS ref | Classification | Risk if wrong | Approved wording |
+|---|---|---|---|---|---|
+| Engineering-culture facts (machine-checked traceability incl. "once was enough" history; abstention/fail-closed engineering; IEC 62304 Class B + ISO 14971 lifecycle in active use; continuous test suite; founder reads the studies) | 01 | §3.2–§3.5, §10.3/D3 | VERIFIED FACT | Same boundaries as the product pages | Reuses registered wording |
+| No formal open positions; speculative applications welcome and read | 02 | D7 (Q16) | VERIFIED FACT | — | As written |
+| Based in Tartu; working arrangements depend on the role | 02 | D7 (Q17) | VERIFIED FACT | No remote/hybrid policy promised | As written |
+| Stack, plumbing level only: Python, FastAPI, OHIF, Orthanc, PostgreSQL, DICOM/DICOMweb, Linux | 02 | D7 (Q18) | VERIFIED FACT | Careers-context exception to the no-component-names site policy; no model/algorithm stack | Exactly this list, nothing more |
+| Financing: deliberately absent | — | D7 (Q19) | DO NOT PUBLISH (for now) | RUP not yet awarded; nothing guaranteeable | Omitted |
+
+## Privacy & legal pages (`privacy.html`, `legal.html`; footer imprint on all pages) — shipped per D7
+
+| Public claim | Section | TS ref | Classification | Risk if wrong | Approved wording |
+|---|---|---|---|---|---|
+| Controller: Lävi Clinical Suite OÜ, registry code 17396580, Aardla tn 62, 50413 Tartu | privacy 01; legal; every footer | D1 + D7 (Q1, address confirmed by risk owner) | VERIFIED FACT | Wrong legal identity | As confirmed |
+| No cookies, no analytics, no tracking, no forms, self-hosted fonts, no third-party scripts | privacy 02 | D7 (Q5 — GA removed) + repo audit | VERIFIED FACT | Any future script addition invalidates this — re-audit before adding anything | Stated as a strength |
+| Email processed by Microsoft (Exchange Online/Outlook) via GoDaddy; lands in founder's mailbox | privacy 02 | D7 (Q2) | VERIFIED FACT | — | As written |
+| Retention: up to 24 months after last substantive exchange, unless ongoing relationship | privacy 02 | D7 (Q3) | VERIFIED FACT (policy) | Must be actually practised | As written |
+| GitHub Pages hosting; provider processes IP/request metadata; we hold no server logs | privacy 02 | D7 (Q4) + repo | VERIFIED FACT | — | As written |
+| Data-subject rights + Andmekaitse Inspektsioon as supervisory authority | privacy 03 | GDPR | VERIFIED FACT | — | Plain language |
 
 ## Metadata, structured data, assets (all pages)
 
