@@ -32,13 +32,6 @@
 <link rel="preload" href="/fonts/plex-mono-400.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="/styles.css">
 
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-6X7QBW5X59"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-6X7QBW5X59');
-</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -50,6 +43,7 @@
       <ul>
         <li><a href="/">Lävi Delta</a></li>
         <li><a href="/lavi-ms.html">Lävi MS</a></li>
+        <li><a href="/hospitals.html">Hospitals</a></li>
         <li><a href="/validation.html">Evidence</a></li>
         <li><a href="/technology.html" aria-current="page">Technology</a></li>
         <li><a href="/#contact">Contact</a></li>
@@ -82,8 +76,8 @@
       <div class="prose">
         <p>Lävi Delta runs on-premise, inside the hospital network. Studies arrive over
           standard DICOM, are processed without operator interaction, and the results go
-          back into the PACS workflow the department already has. No image data needs to
-          leave the institution.</p>
+          back into the PACS workflow the department already has. In this intended
+          deployment, no image data needs to leave the institution.</p>
         <figure class="fig">
           <svg viewBox="0 0 760 250" role="img" aria-labelledby="figdep-t">
             <title id="figdep-t">Deployment diagram: scanner, PACS and Lävi Delta all sit inside the hospital network; DICOM flows between them, and no image data crosses the network boundary.</title>
@@ -239,13 +233,15 @@
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">07</span> — Conformance</p>
-        <h2>Verified end to end, against a real deployment</h2>
+        <h2>Verified end to end, in production form</h2>
       </div>
       <div class="prose">
-        <p>The full producer-to-reader chain has been executed against a real deployment,
-          not simulated: a committed pipeline run, exported as a hash-bound case package,
-          delivered into the image store, ingested by the reader workstation, and presented
-          to the reader from the authoritative package manifest and nothing else.</p>
+        <p>The full producer-to-reader chain has been executed against a full
+          production-form deployment of the pipeline, image store and reader workstation —
+          not simulated, and not a routine clinical deployment at a hospital site. A
+          committed pipeline run was exported as a hash-bound case package, delivered into
+          the image store, ingested by the reader workstation, and presented to the reader
+          from the authoritative package manifest and nothing else.</p>
         <figure class="fig">
           <svg viewBox="0 0 760 240" role="img" aria-labelledby="fige2e-t">
             <title id="fige2e-t">The verified end-to-end chain: pipeline run, hash-bound case package, image store, reader workstation, reader. A rejected package is stopped at ingestion instead of passing through.</title>
@@ -281,7 +277,7 @@
             <line x1="382" y1="158" x2="366" y2="178" stroke="#3C4147" stroke-width="1.6"/>
             <text x="394" y="172" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="0.5">stopped at ingestion — verified</text>
           </svg>
-          <p class="fig-label"><span class="fig-no">Fig. 2 — The verified chain</span><span>executed against a real deployment</span></p>
+          <p class="fig-label"><span class="fig-no">Fig. 2 — The verified chain</span><span>executed in a production-form deployment</span></p>
         </figure>
         <p>The negative path got the same treatment: cases the pipeline rejects are rejected
           by the whole chain, not silently passed through.</p>
@@ -312,6 +308,26 @@
     </div>
   </section>
 
+  <!-- ============ 09 Integration ============ -->
+  <section class="section">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">09</span> — Integration</p>
+        <h2>Modular by design, honest about interfaces</h2>
+      </div>
+      <div class="prose">
+        <p>There is no released partner-facing integration interface today, and we will not
+          pretend otherwise. What is true: the analytical architecture is modular —
+          components can be replaced or developed independently by design — and a formal
+          partner-facing integration interface is development intent, not a current
+          capability.</p>
+        <p>Conversations with research and technology partners about future model and
+          component integration are welcome:
+          <a href="mailto:andreas@lavi-clinical.com?subject=Research%20collaboration">write about research collaboration</a>.</p>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
@@ -324,7 +340,8 @@
       <div>
         <h2>Lävi Clinical Suite OÜ</h2>
         <ul>
-          <li>Tartu, Estonia</li>
+          <li>Aardla tn 62, 50413 Tartu, Estonia</li>
+          <li>Registry code 17396580</li>
           <li><a href="mailto:andreas@lavi-clinical.com">andreas@lavi-clinical.com</a></li>
           <li><a href="tel:+3725012118">+372 501 2118</a></li>
         </ul>
@@ -334,14 +351,18 @@
         <ul>
           <li><a href="/">Lävi Delta</a></li>
           <li><a href="/lavi-ms.html">Lävi MS</a></li>
+          <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
       <div>
-        <h2>Elsewhere</h2>
+        <h2>Company</h2>
         <ul>
           <li><a href="https://www.linkedin.com/company/lav-clinical-suit/" rel="external">LinkedIn</a></li>
+          <li><a href="/privacy.html">Privacy notice</a></li>
+          <li><a href="/legal.html">Legal</a></li>
         </ul>
       </div>
     </div>
