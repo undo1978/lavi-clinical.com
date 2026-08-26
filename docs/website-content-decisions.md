@@ -143,6 +143,13 @@ A trusted-reviewer pass produced three required changes and three notes; outcome
   lines (clinical collaboration / careers / investor conversation / Lävi MS). The investor
   route offers examination of the evidence plan and architecture; the dated-plan-under-NDA
   sentence waits on needs-confirmation item 21.
+- **E — investor path:** deliberately minimal and public-side gated. Shipped now: the
+  dedicated investor contact route (subject "Investor conversation") offering examination of
+  the evidence plan and technical architecture. Held for confirmation (item 21): the public
+  sentence that a dated internal development plan exists and is shareable in qualified
+  conversations — which would convert "stages, not dates" from an opacity signal into a
+  discipline signal. No market size, pricing, business model, competition or traction was
+  added, by design.
 - **Draft-state policy:** fact-gated pages live in `drafts/` on the development branch with
   visible `[CONFIRM:]` markers and a draft banner; the merge to `main` removes `drafts/`, so
   no placeholder can reach the deployed site.
