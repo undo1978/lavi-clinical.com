@@ -2,12 +2,11 @@
 /**
  * The single source for every time-sensitive public statement on this site.
  *
- * Rules (see docs/product-truth-source.md §13):
+ * Rules:
  * - Update values here only; never inline a status, stage or date in page markup.
- * - Any change to a claim here must update docs/public-claims-register.md
- *   in the same commit, and be re-approved by the risk owner.
- * - The fixed regulatory statement (truth source §12) is NOT time-sensitive
- *   and lives statically in every page footer — do not move it here.
+ * - Changes are reviewed and approved before they ship.
+ * - The fixed regulatory statement is NOT time-sensitive and lives statically
+ *   in every page footer — do not move it here.
  *
  * @typedef {'current' | 'in-preparation' | 'future'} StageState
  */
