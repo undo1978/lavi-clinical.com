@@ -201,7 +201,7 @@ p, li { max-width: var(--measure); }
   text-transform: uppercase;
   color: var(--muted);
 }
-.site-nav ul { display: flex; gap: clamp(1rem, 3vw, 2.2rem); list-style: none; }
+.site-nav ul { display: flex; flex-wrap: wrap; gap: 0.4rem clamp(0.9rem, 3vw, 2.2rem); list-style: none; }
 .site-nav a {
   font-family: var(--f-mono);
   font-size: 0.85rem;
@@ -209,6 +209,7 @@ p, li { max-width: var(--measure); }
   color: var(--graphite);
   text-decoration: none;
   padding-block: 0.4rem;
+  white-space: nowrap;
 }
 .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--ink); box-shadow: 0 2px 0 0 var(--amber); }
 
@@ -350,27 +351,6 @@ p, li { max-width: var(--measure); }
 .facts > li { padding-block: 1.2rem; }
 .facts > li + li { border-top: 1px solid var(--film); }
 .facts h3 { margin-bottom: 0.3rem; }
-
-/* ---------- QC outcomes strip ---------- */
-.qc-strip {
-  display: grid;
-  gap: 1px;
-  background: var(--panel-line);
-  border: 1px solid var(--panel-line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  font-family: var(--f-mono);
-}
-@media (min-width: 720px) { .qc-strip { grid-template-columns: repeat(3, 1fr); } }
-.qc-strip > div { background: var(--ink); padding: 1.1rem 1.2rem 1.25rem; }
-.qc-strip .qc-label {
-  font-size: 0.8rem; font-weight: 500; letter-spacing: 0.1em;
-  color: var(--panel-text); display: block; margin-bottom: 0.45rem;
-}
-.qc-strip p { font-family: var(--f-body); font-size: 0.92rem; color: var(--panel-muted); max-width: none; }
-.qc-strip .qc-withheld { background-color: var(--ink); background-image: var(--hatch); }
-.qc-strip .qc-withheld .qc-label { background: var(--ink); display: inline-block; padding: 0.1rem 0.35rem; margin-left: -0.35rem; }
-.qc-strip .qc-withheld p { background: rgba(20, 23, 27, 0.85); padding: 0.2rem 0.35rem; margin-left: -0.35rem; }
 
 /* ---------- status chip ---------- */
 .chip {
