@@ -14,7 +14,7 @@
 
 const SITE_STATUS = {
   /** ISO date shown as "Status as of …" in validation and regulatory sections. */
-  asOf: '2026-08-21',
+  asOf: '2026-09-21',
 
   /** Hero status line (rendered uppercase by CSS). Truth source §5, §12. */
   heroStatusLine:
