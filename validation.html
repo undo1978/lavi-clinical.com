@@ -117,8 +117,10 @@
               <div>
                 <h3>Public-dataset evaluation</h3>
                 <p>Technical benchmarking on publicly available datasets. This is engineering
-                  evidence: it informs development. No figures from it are published, and it
-                  is never clinical validation.</p>
+                  evidence: it informs development. No performance results from it are
+                  published, and it is never clinical validation. The images on the home page
+                  come from public datasets; they illustrate the output and are not evidence of
+                  performance.</p>
               </div>
               <span class="chip">technical benchmarking</span>
             </li>
@@ -246,8 +248,8 @@
         <p>Reader studies fail on logistics about as often as on science, so we built the
           reading environment first. A dedicated browser-based reader workstation exists and
           is deployed — not a slide deck, a running system.</p>
-        <p>What is implemented and tested in it: role-based access with two-factor
-          authentication; the blinding gate between arms, so a reader in the unaided phase
+        <p>Reader accounts in the reading application use two-step sign-in.</p>
+        <p>What is implemented and tested in it: the blinding gate between arms, so a reader in the unaided phase
           cannot reach the software's outputs even on purpose; washout enforcement between
           phases; structured capture of every reader response; a full audit trail; and a
           results export for the analysts.</p>
@@ -272,10 +274,9 @@
           <li><p>Cross-vendor and cross-protocol comparison is a design goal and an explicit
             requirement of the validation programme. It is not an established capability, and
             we do not claim that the software works across scanners or protocols.</p></li>
-          <li><p>Some capabilities that exist in the software — longitudinal
-            contrast-enhancement change detection among them — are still under technical
-            evaluation. They are not part of any claim, and they are not in any feature
-            list.</p></li>
+          <li><p>Lävi Delta has two lanes: FLAIR and contrast-enhanced T1. Both are
+            implemented and both are part of the planned reader study. Neither is clinically
+            validated, and no performance claim is made for either.</p></li>
           <li><p>An empty candidate list is not evidence that nothing changed. The
             radiologist reads every study independently; nothing about Lävi Delta reduces
             that responsibility, and nothing about it is meant to.</p></li>
