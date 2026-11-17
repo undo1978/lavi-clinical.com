@@ -102,189 +102,74 @@
     </div>
   </section>
 
-  <!-- ============ Key visual ============ -->
-  <section class="container" aria-label="How Lävi Delta fits into the reading workflow">
-    <figure class="figure-panel" id="keyvisual">
-      <svg class="fig-desktop" viewBox="0 0 980 440" role="img" aria-labelledby="kv-title kv-desc">
-        <title id="kv-title">From baseline and follow-up to the radiologist's decision</title>
-        <desc id="kv-desc">A baseline examination and a follow-up examination are registered to
-          each other. A quality-control gate assesses the comparison: if its prerequisites are
-          not met, the comparison is explicitly withheld. Otherwise candidate changes are
-          presented in two direction-aware lanes — new or increasing, and resolving or
-          decreasing — and the flow ends at the radiologist, who accepts or rejects every
-          candidate. The software makes no diagnostic decision.</desc>
+  <!-- ============ Demo: Lävi Delta output ============ -->
+  <section class="container" aria-label="Lävi Delta output on public research data">
+    <figure class="figure-panel change-demo" id="change-demo" aria-labelledby="demo-caption">
+      <div class="demo-top">
+        <div class="demo-cases" role="group" aria-label="Choose example">
+          <button type="button" class="demo-case" data-case="0" aria-pressed="true">FLAIR · multiple sclerosis</button>
+          <button type="button" class="demo-case" data-case="1" aria-pressed="false">T1C · brain metastasis</button>
+        </div>
+        <div class="demo-views" role="group" aria-label="Choose image">
+          <button type="button" class="demo-view" data-view="0" aria-pressed="false">Baseline</button>
+          <button type="button" class="demo-view" data-view="1" aria-pressed="false">Follow-up</button>
+          <button type="button" class="demo-view" data-view="2" aria-pressed="true">Follow-up + map</button>
+        </div>
+      </div>
 
-        <!-- shared defs -->
-        <defs>
-          <pattern id="kv-hatch" width="7" height="7" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
-            <rect width="7" height="7" fill="none"/>
-            <line x1="0" y1="0" x2="0" y2="7" stroke="#787C80" stroke-width="1.2" opacity="0.55"/>
-          </pattern>
-          <marker id="kv-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#9BA0A6"/>
-          </marker>
-        </defs>
+      <div class="demo-panes" tabindex="0" role="group" aria-roledescription="image stack"
+           aria-label="Axial MRI slices. Arrow keys, mouse wheel or swipe move through the slices."
+           aria-describedby="demo-slice">
+        <div class="demo-pane" data-pane="0">
+          <p class="demo-label">Baseline</p>
+          <div class="demo-frame"><canvas width="480" height="480" role="img" data-alt="Baseline MRI, axial slice"></canvas></div>
+        </div>
+        <div class="demo-pane" data-pane="1">
+          <p class="demo-label">Follow-up</p>
+          <div class="demo-frame"><canvas width="480" height="480" role="img" data-alt="Follow-up MRI, axial slice"></canvas></div>
+        </div>
+        <div class="demo-pane is-shown" data-pane="2">
+          <p class="demo-label">Follow-up + change map</p>
+          <div class="demo-frame"><canvas width="480" height="480" role="img" data-alt="Follow-up MRI, same axial slice, with the change map overlaid"></canvas></div>
+        </div>
+      </div>
+      <noscript><p class="demo-noscript">This example needs JavaScript to page through the slices.</p></noscript>
 
-        <!-- BASELINE frame -->
-        <g>
-          <text x="34" y="52" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">BASELINE</text>
-          <rect x="34" y="64" width="170" height="170" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-          <!-- registration corner ticks -->
-          <path d="M34,80 v-16 h16 M188,64 h16 v16 M204,218 v16 h-16 M50,234 h-16 v-16" fill="none" stroke="#9BA0A6" stroke-width="1.5"/>
-          <!-- crosshair -->
-          <path d="M119,84 v24 M119,190 v24 M54,149 h24 M180,149 h24" stroke="#3A3F45" stroke-width="1"/>
-          <!-- abstract anatomy contours (schematic, deliberately non-clinical) -->
-          <ellipse cx="119" cy="149" rx="52" ry="44" fill="none" stroke="#5C6167" stroke-width="1.2"/>
-          <ellipse cx="119" cy="149" rx="30" ry="23" fill="none" stroke="#4A4F55" stroke-width="1"/>
-        </g>
+      <div class="demo-controls">
+        <button type="button" class="demo-play">Pause</button>
+        <input type="range" class="demo-slider" min="1" max="1" value="1" step="1" aria-label="Slice">
+        <span class="demo-slice" id="demo-slice">Slice –</span>
+        <button type="button" class="demo-map" role="switch" aria-checked="true">Map on</button>
+      </div>
+      <p class="demo-note" data-case-note="0">Selected slices</p>
 
-        <!-- arrow baseline -> follow-up -->
-        <line x1="212" y1="149" x2="252" y2="149" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kv-arrow)"/>
+      <p class="demo-legend"><span class="demo-swatch demo-swatch-up" aria-hidden="true"></span>Red: signal increased between the two scans. <span class="demo-swatch demo-swatch-down" aria-hidden="true"></span>Blue: signal decreased. The stronger the colour, the larger the change. Where there is no colour, the map shows no change.</p>
 
-        <!-- FOLLOW-UP frame -->
-        <g>
-          <text x="262" y="52" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">FOLLOW-UP</text>
-          <rect x="262" y="64" width="170" height="170" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-          <path d="M262,80 v-16 h16 M416,64 h16 v16 M432,218 v16 h-16 M278,234 h-16 v-16" fill="none" stroke="#9BA0A6" stroke-width="1.5"/>
-          <g class="anim-slide anim-d1">
-            <path d="M347,84 v24 M347,190 v24 M282,149 h24 M408,149 h24" stroke="#3A3F45" stroke-width="1"/>
-            <ellipse cx="347" cy="149" rx="52" ry="44" fill="none" stroke="#5C6167" stroke-width="1.2"/>
-            <ellipse cx="347" cy="149" rx="30" ry="23" fill="none" stroke="#4A4F55" stroke-width="1"/>
-            <!-- candidate marks: amber = new/increasing, blue = resolving -->
-            <path d="M373,118 l6,10 h-12 z" fill="#E8963C"/>
-            <path d="M317,171 l6,10 h-12 z" fill="#E8963C"/>
-            <path d="M362,180 l-6,-10 h12 z" fill="#7FA8C0"/>
-          </g>
-          <text x="262" y="252" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">REGISTERED · RECORDED AS PROVENANCE</text>
-        </g>
-
-        <!-- QC gate -->
-        <g class="anim-step anim-d2">
-          <line x1="440" y1="149" x2="466" y2="149" stroke="#9BA0A6" stroke-width="1.5"/>
-          <rect x="466" y="127" width="44" height="44" fill="none" stroke="#9BA0A6" stroke-width="1.5" transform="rotate(45 488 149)"/>
-          <text x="488" y="154" text-anchor="middle" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1">QC</text>
-          <line x1="519" y1="149" x2="548" y2="149" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kv-arrow)"/>
-          <text x="466" y="105" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">PREREQUISITES</text>
-          <text x="474" y="118" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">CHECKED</text>
-        </g>
-
-        <!-- CANDIDATE CHANGE panel -->
-        <g class="anim-step anim-d3">
-          <text x="558" y="52" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="2">CANDIDATE CHANGE</text>
-          <rect x="558" y="64" width="200" height="170" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-          <text x="572" y="92" fill="#E8963C" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">NEW / INCREASING</text>
-          <path d="M576,104 l6,10 h-12 z" fill="#E8963C"/>
-          <rect x="592" y="106" width="120" height="6" fill="#E8963C" opacity="0.85"/>
-          <path d="M576,124 l6,10 h-12 z" fill="#E8963C"/>
-          <rect x="592" y="126" width="76" height="6" fill="#E8963C" opacity="0.55"/>
-          <text x="572" y="164" fill="#7FA8C0" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">RESOLVING / DECREASING</text>
-          <path d="M570,186 l6,-10 h-12 z" fill="#7FA8C0" transform="translate(6 0)"/>
-          <rect x="592" y="178" width="58" height="6" fill="#7FA8C0" opacity="0.7"/>
-          <text x="572" y="218" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">RANKED FOR REVIEW</text>
-        </g>
-
-        <!-- arrow -> radiologist -->
-        <line class="anim-step anim-d4" x1="766" y1="149" x2="800" y2="149" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kv-arrow)"/>
-
-        <!-- RADIOLOGIST terminal node -->
-        <g class="anim-step anim-d4">
-          <circle cx="872" cy="149" r="62" fill="none" stroke="#E9EAE7" stroke-width="2"/>
-          <circle cx="872" cy="149" r="54" fill="none" stroke="#3A3F45" stroke-width="1"/>
-          <text x="872" y="140" text-anchor="middle" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" letter-spacing="1">RADIOLOGIST</text>
-          <text x="872" y="158" text-anchor="middle" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">ACCEPT / REJECT</text>
-          <text x="872" y="174" text-anchor="middle" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">EVERY CANDIDATE</text>
-        </g>
-
-        <!-- abstention branch -->
-        <g class="anim-step anim-d5">
-          <line x1="488" y1="180" x2="488" y2="330" stroke="#9BA0A6" stroke-width="1.5" stroke-dasharray="4 4" marker-end="url(#kv-arrow)"/>
-          <text x="500" y="270" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">PREREQUISITES NOT MET</text>
-          <rect x="368" y="338" width="240" height="66" fill="url(#kv-hatch)" stroke="#787C80" stroke-width="1.2"/>
-          <rect x="384" y="356" width="208" height="20" fill="#14171B"/>
-          <text x="488" y="371" text-anchor="middle" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" letter-spacing="2">COMPARISON WITHHELD</text>
-          <rect x="376" y="380" width="224" height="16" fill="#14171B"/>
-          <text x="488" y="392" text-anchor="middle" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="10" letter-spacing="1">STATED EXPLICITLY — NO UNRELIABLE NUMBER</text>
-        </g>
-      </svg>
-
-      <svg class="fig-mobile" viewBox="0 0 340 700" role="img" aria-labelledby="kvm-title kvm-desc">
-        <title id="kvm-title">From baseline and follow-up to the radiologist's decision</title>
-        <desc id="kvm-desc">Baseline and follow-up examinations are registered and quality-checked.
-          If prerequisites are not met, the comparison is explicitly withheld. Otherwise candidate
-          changes are presented in direction-aware lanes, and the radiologist accepts or rejects
-          every candidate. The software makes no diagnostic decision.</desc>
-        <defs>
-          <pattern id="kvm-hatch" width="7" height="7" patternTransform="rotate(-45)" patternUnits="userSpaceOnUse">
-            <rect width="7" height="7" fill="none"/>
-            <line x1="0" y1="0" x2="0" y2="7" stroke="#787C80" stroke-width="1.2" opacity="0.55"/>
-          </pattern>
-          <marker id="kvm-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
-            <path d="M0,0 L10,5 L0,10 z" fill="#9BA0A6"/>
-          </marker>
-        </defs>
-
-        <!-- frames side by side, small -->
-        <text x="34" y="24" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.5">BASELINE</text>
-        <rect x="34" y="34" width="116" height="116" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-        <ellipse cx="92" cy="92" rx="36" ry="30" fill="none" stroke="#5C6167" stroke-width="1.2"/>
-        <path d="M92,48 v14 M92,122 v14 M48,92 h14 M122,92 h14" stroke="#3A3F45" stroke-width="1"/>
-
-        <text x="190" y="24" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.5">FOLLOW-UP</text>
-        <rect x="190" y="34" width="116" height="116" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-        <ellipse cx="248" cy="92" rx="36" ry="30" fill="none" stroke="#5C6167" stroke-width="1.2"/>
-        <path d="M248,48 v14 M248,122 v14 M204,92 h14 M278,92 h14" stroke="#3A3F45" stroke-width="1"/>
-        <path d="M266,72 l5,9 h-10 z" fill="#E8963C"/>
-        <path d="M233,116 l5,-9 h-10 z" fill="#7FA8C0"/>
-
-        <text x="34" y="170" fill="#5C6167" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1">REGISTERED · RECORDED AS PROVENANCE</text>
-
-        <line x1="170" y1="182" x2="170" y2="210" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kvm-arrow)"/>
-
-        <!-- QC gate -->
-        <rect x="148" y="216" width="44" height="44" fill="none" stroke="#9BA0A6" stroke-width="1.5" transform="rotate(45 170 238)"/>
-        <text x="170" y="243" text-anchor="middle" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="12" letter-spacing="1">QC</text>
-
-        <!-- withheld branch (left) -->
-        <line x1="139" y1="238" x2="60" y2="238" stroke="#9BA0A6" stroke-width="1.2" stroke-dasharray="4 4"/>
-        <line x1="60" y1="238" x2="60" y2="282" stroke="#9BA0A6" stroke-width="1.2" stroke-dasharray="4 4" marker-end="url(#kvm-arrow)"/>
-        <rect x="20" y="288" width="132" height="52" fill="url(#kvm-hatch)" stroke="#787C80" stroke-width="1.2"/>
-        <rect x="26" y="300" width="120" height="28" fill="#14171B"/>
-        <text x="86" y="312" text-anchor="middle" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="500" letter-spacing="1">COMPARISON</text>
-        <text x="86" y="324" text-anchor="middle" fill="#E9EAE7" font-family="IBM Plex Mono, monospace" font-size="10" font-weight="500" letter-spacing="1">WITHHELD</text>
-
-        <line x1="170" y1="270" x2="170" y2="298" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kvm-arrow)"/>
-
-        <!-- candidates -->
-        <text x="60" y="322" fill="none" font-size="0">.</text>
-        <g>
-          <rect x="180" y="304" width="140" height="118" fill="none" stroke="#3A3F45" stroke-width="1.5"/>
-          <text x="192" y="326" fill="#E8963C" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1">NEW / INCREASING</text>
-          <path d="M196,336 l5,9 h-10 z" fill="#E8963C"/>
-          <rect x="208" y="338" width="86" height="5" fill="#E8963C" opacity="0.85"/>
-          <path d="M196,352 l5,9 h-10 z" fill="#E8963C"/>
-          <rect x="208" y="354" width="56" height="5" fill="#E8963C" opacity="0.55"/>
-          <text x="192" y="384" fill="#7FA8C0" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1">RESOLVING</text>
-          <path d="M196,402 l5,-9 h-10 z" fill="#7FA8C0"/>
-          <rect x="208" y="394" width="44" height="5" fill="#7FA8C0" opacity="0.7"/>
-        </g>
-        <text x="180" y="298" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="11" letter-spacing="1.5">CANDIDATES</text>
-
-        <line x1="250" y1="422" x2="250" y2="452" stroke="#9BA0A6" stroke-width="1.5" marker-end="url(#kvm-arrow)"/>
-
-        <!-- radiologist -->
-        <circle cx="170" cy="546" r="76" fill="none" stroke="#E9EAE7" stroke-width="2"/>
-        <circle cx="170" cy="546" r="67" fill="none" stroke="#3A3F45" stroke-width="1"/>
-        <text x="170" y="538" text-anchor="middle" fill="#FFFFFF" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="500" letter-spacing="1">RADIOLOGIST</text>
-        <text x="170" y="556" text-anchor="middle" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1">ACCEPT / REJECT</text>
-        <text x="170" y="570" text-anchor="middle" fill="#9BA0A6" font-family="IBM Plex Mono, monospace" font-size="9.5" letter-spacing="1">EVERY CANDIDATE</text>
-      </svg>
-
-      <figcaption class="figcap">
-        <span class="fig-no">Fig. 1 — The review loop</span>
-        <span><strong class="glyph-new">▲</strong> new / increasing candidate</span>
-        <span><strong class="glyph-res">▽</strong> resolving / decreasing candidate</span>
-        <span><strong>▨</strong> comparison withheld when prerequisites are not met</span>
+      <figcaption class="demo-cap" id="demo-caption">
+        <span class="fig-no">Fig. 1 — Lävi Delta output</span>
+        <span>Two MRI examinations of the same person, side by side, with Lävi Delta's change map on the follow-up.</span>
       </figcaption>
+
+      <div class="demo-source">
+        <p class="demo-cite">Data: Guarnera, F., Rondinella, A., Crispino, E., Russo, G., Di Lorenzo, C.,
+          Maimone, D., Pappalardo, F., &amp; Battiato, S. (2025). <cite>MSLesSeg: baseline and benchmarking of a new
+          Multiple Sclerosis Lesion Segmentation dataset</cite> [Dataset]. figshare.
+          <a href="https://doi.org/10.6084/m9.figshare.27919209.v1" rel="external">https://doi.org/10.6084/m9.figshare.27919209.v1</a>
+          · Licence: <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC BY 4.0</a>.</p>
+        <p class="demo-cite">Data: Chadha, S., Weiss, D., Janas, A., Ramakrishnan, D., Hager, T.,
+          Osenberg, K., Willms, K., Zhu, J., Chiang, V., Bakas, S., Maleki, N., Sritharan, D. V., Schoenherr, S.,
+          Westerhoff, M., Zawalich, M., Davis, M., Malhotra, A., Bousabarah, K., Deuschl, C., Lin, M., Aneja, S.,
+          &amp; Aboian, M. (2025). <cite>Yale longitudinal dataset of brain metastases on MRI with associated clinical
+          data (Yale-Brain-Mets-Longitudinal)</cite> (Version 1) [Dataset]. The Cancer Imaging Archive.
+          <a href="https://doi.org/10.7937/3YAT-E768" rel="external">https://doi.org/10.7937/3YAT-E768</a>
+          · Licence: <a href="https://creativecommons.org/licenses/by/4.0/" rel="external license">CC BY 4.0</a>.</p>
+        <p>Clark, K., Vendt, B., Smith, K., Freymann, J., Kirby, J., Koppel, P., Moore, S., Phillips, S., Maffitt, D.,
+          Pringle, M., Tarbox, L., &amp; Prior, F. (2013). The Cancer Imaging Archive (TCIA): maintaining and operating a
+          public information repository. <cite>Journal of Digital Imaging, 26</cite>(6), 1045–1057.
+          <a href="https://doi.org/10.1007/s10278-013-9622-7" rel="external">https://doi.org/10.1007/s10278-013-9622-7</a></p>
+        <p>Images have been processed: skull removed, change map added.</p>
+        <p class="demo-disclaimer">Public research data, not patient data from our study. Lävi Delta is in development and is not CE-marked.</p>
+      </div>
     </figure>
     <ul class="domains proof-strip" aria-label="Programme status at a glance">
       <li>
@@ -525,9 +410,10 @@
           it? That is the question, and we intend to answer it with an independent reader
           study rather than a marketing sentence.</p>
         <p class="pull">We would rather prove it than assert it.</p>
-        <p>In the planned study, one hundred retrospective cases from the three settings
-          above will each be read by several radiologists — first without the software,
-          later with it. Reading every case both ways lets the study measure the software's
+        <p>The planned study covers 100 patients from the three settings above: 40 with
+          multiple sclerosis, 30 with a primary brain tumour and 30 with brain metastases.
+          Five radiologists read every case, first without Lävi Delta and then with it.
+          Reading every case both ways lets the study measure the software's
           effect on the reader while accounting for how much readers and cases differ. The
           reference standard and the statistical analysis are planned to be independently
           defined and reviewed, and the final design is subject to methodology review.</p>
@@ -723,7 +609,7 @@
           available for sale, and must not be used for clinical decision-making. Information on
           this site describes a product in development and its planned evaluation, not the
           performance of a marketed medical device.</p>
-        <p class="status-line" data-status="asOf">Status as of 2026-09-21</p>
+        <p class="status-line" data-status="asOf">Status as of 2026-11-17</p>
       </div>
     </div>
   </section>
@@ -812,30 +698,12 @@
     </div>
     <p class="fine">
       <span>© 2026 Lävi Clinical Suite OÜ</span>
-      <span data-status="asOf">Status as of 2026-09-21</span>
+      <span data-status="asOf">Status as of 2026-11-17</span>
     </p>
   </div>
 </footer>
 
 <script src="/content/site-status.js" defer></script>
-<script>
-  // One orchestrated moment: the key visual plays once when it enters view.
-  // Content is fully rendered without JS; this only sequences its reveal.
-  (function () {
-    var fig = document.getElementById('keyvisual');
-    if (!fig || !('IntersectionObserver' in window)) return;
-    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    fig.classList.add('anim-armed');
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (e) {
-        if (e.isIntersecting) {
-          fig.classList.add('anim-play');
-          io.disconnect();
-        }
-      });
-    }, { threshold: 0.35 });
-    io.observe(fig);
-  })();
-</script>
+<script src="/demo/change-demo.js" defer></script>
 </body>
 </html>

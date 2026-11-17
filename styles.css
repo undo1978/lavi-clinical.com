@@ -646,3 +646,86 @@ p, li { max-width: var(--measure); }
 .product-card h3 { font-size: 1.35rem; }
 .product-card p { font-size: 0.99rem; }
 .product-card .card-link { margin-top: auto; padding-top: 0.5rem; }
+
+/* ---------- change demo (home page, Fig. 1) ---------- */
+/* Three panes on the ink panel: baseline, follow-up, follow-up + change map.
+   Phone width shows one pane at a time with view buttons. */
+.change-demo { display: flex; flex-direction: column; gap: 1rem; }
+.demo-top { display: flex; flex-wrap: wrap; gap: 0.6rem 1.2rem; justify-content: space-between; }
+.demo-cases, .demo-views { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.demo-views { display: none; }
+.change-demo button {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--panel-muted);
+  background: transparent;
+  border: 1px solid var(--panel-line);
+  border-radius: var(--radius);
+  padding: 0.5rem 0.8rem;
+  min-height: 2.5rem;
+  cursor: pointer;
+}
+.change-demo button:hover { color: var(--panel-text); border-color: var(--panel-muted); }
+.change-demo button[aria-pressed="true"],
+.change-demo button[aria-checked="true"] { color: var(--ink); background: var(--panel-text); border-color: var(--panel-text); }
+.change-demo :focus-visible { outline-color: var(--amber-bright); }
+.demo-panes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(0.5rem, 1.4vw, 1rem);
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
+  cursor: grab;
+  border-radius: var(--radius);
+}
+.demo-pane { min-width: 0; }
+.demo-label {
+  font-family: var(--f-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--panel-muted);
+  margin-bottom: 0.45rem;
+}
+.demo-frame { background: #000; border: 1px solid var(--panel-line); aspect-ratio: 1 / 1; }
+.demo-frame canvas { display: block; width: 100%; height: 100%; }
+.demo-noscript { color: var(--panel-muted); font-family: var(--f-mono); font-size: 0.8rem; }
+.demo-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
+.demo-play { min-width: 5.2rem; }
+.demo-slider { flex: 1 1 10rem; accent-color: var(--panel-text); min-height: 2.5rem; }
+.demo-slice { font-family: var(--f-mono); font-size: 0.78rem; color: var(--panel-muted); font-variant-numeric: tabular-nums; min-width: 8ch; }
+.demo-legend { font-family: var(--f-mono); font-size: 0.8rem; color: var(--panel-text); max-width: none; }
+.demo-swatch { display: inline-block; width: 0.8em; height: 0.8em; margin-right: 0.4em; vertical-align: -0.05em; border: 1px solid var(--panel-line); }
+.demo-swatch-up { background: #B81429; }
+.demo-swatch-down { background: #3E50C4; }
+.demo-swatch-none { background: transparent; }
+.demo-legend .demo-swatch + * { margin-left: 0; }
+.demo-cap {
+  font-family: var(--f-mono);
+  font-size: 0.78rem;
+  color: var(--panel-muted);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.6rem;
+  max-width: none;
+}
+.demo-source { border-top: 1px solid var(--panel-line); padding-top: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; }
+.demo-source p { font-size: 0.8rem; line-height: 1.5; color: var(--panel-muted); max-width: none; }
+.demo-source a { color: var(--panel-text); overflow-wrap: anywhere; }
+.demo-source cite { font-style: italic; }
+.demo-source .demo-disclaimer { color: var(--panel-text); }
+@media (max-width: 719px) {
+  .change-demo.is-live .demo-views { display: flex; }
+  .change-demo.is-live .demo-panes { grid-template-columns: 1fr; }
+  .change-demo.is-live .demo-pane { display: none; }
+  .change-demo.is-live .demo-pane.is-shown { display: block; }
+  .demo-cases, .demo-views { width: 100%; }
+  .demo-cases button, .demo-views button { flex: 1 1 0; padding-inline: 0.4rem; font-size: 0.72rem; letter-spacing: 0.02em; }
+  .change-demo.is-live .demo-label { display: none; }
+  .demo-slice { min-width: 0; }
+}
+.demo-note { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--panel-muted); max-width: none; }
