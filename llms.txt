@@ -1,0 +1,22 @@
+# Lävi Clinical Suite
+
+> Lävi Clinical Suite OÜ (also written Lavi Clinical Suite) is an Estonian company in Tartu that develops technology for detecting and assessing meaningful change between serial brain MRI examinations. Its first product, Lävi Delta, supports the radiologist in follow-up brain MRI: it shows on a colour map where the signal has changed between two examinations, and when the two cannot be compared on technical grounds it says so and withholds the result. Lävi Delta is in development. It is not CE-marked, is not available for sale and must not be used for clinical decision-making.
+
+Key facts:
+- The map is not a list of lesions and not a diagnosis; the radiologist checks each coloured area against the original images and decides what it means.
+- A planned retrospective multi-reader, multi-case study will evaluate Lävi Delta. It is subject to ethics committee approval and has not started. No performance figures are published.
+- Company: Lävi Clinical Suite OÜ, Aardla tn 62, 50413 Tartu, Estonia. Estonian Business Register code 17396580.
+- Team: Andreas Müürsepp (Founder & CEO, neuroradiologist), Alvar Haug (Co-founder & CTO), Anna-Liisa Rossi (COO).
+- Contact: andreas@lavi-clinical.com
+
+## Pages
+
+- [Lävi Delta](https://lavi-clinical.com/): what the product does, an example change map, and where development stands
+- [For hospitals](https://lavi-clinical.com/hospitals.html): what a pilot involves, how it fits a radiology department, security and data protection
+- [Technology](https://lavi-clinical.com/technology.html): deployment on standard DICOM, quality checks, the change map, the development lifecycle
+- [Validation and evidence](https://lavi-clinical.com/validation.html): the planned reader study and what is not yet established
+- [Lävi MS](https://lavi-clinical.com/lavi-ms.html): a planned multiple sclerosis follow-up workflow
+- [Company](https://lavi-clinical.com/company.html): team and roadmap
+- [Careers](https://lavi-clinical.com/careers.html)
+- [Legal notice](https://lavi-clinical.com/legal.html)
+- [Privacy](https://lavi-clinical.com/privacy.html)
