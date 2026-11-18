@@ -2,16 +2,17 @@
 // slice by slice. No dependencies. Images load only once the demo is on screen and the page
 // has finished loading: the first 10 slices first, the rest in the background. The slices
 // advance on their own unless the visitor prefers reduced motion or takes over
-// with the wheel, a swipe, the keyboard or the slider.
+// with the wheel, a swipe, the keyboard or the slider. Each case starts on a slice where a
+// lesion is visible (start, 1-based) and plays on from there.
 (function () {
   'use strict';
   var root = document.getElementById('change-demo');
   if (!root || !root.querySelector('canvas').getContext) return;
 
   var CASES = [
-    { dir: '/demo/DEMO-BM-05/', n: 100, start: 58, ms: 110,
+    { dir: '/demo/DEMO-BM-10/', n: 100, start: 53, ms: 110,
       label: 'Contrast-enhanced T1 (T1C) MRI of a person with brain metastases' },
-    { dir: '/demo/DEMO-MS-03/', n: 11, start: 1, ms: 420,
+    { dir: '/demo/DEMO-MS-03/', n: 11, start: 3, ms: 420,
       label: 'FLAIR MRI of a person with multiple sclerosis' }
   ];
   var LAYERS = ['bl', 'fu', 'map'];
