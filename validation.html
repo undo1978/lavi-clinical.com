@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clinical validation &amp; evidence — Lävi Delta</title>
-<meta name="description" content="How Lävi Delta will be validated: a planned multi-reader, multi-case study of follow-up brain MRI, the evidence ladder from technical development to regulatory validation, and what has not yet been proven. Clinical validation programme in preparation.">
+<meta name="description" content="How Lävi Delta will be evaluated clinically: a planned multi-reader, multi-case study of follow-up brain MRI, the evidence ladder from technical development to regulatory validation, and what exists today versus what is not yet established. Clinical validation programme in preparation.">
 <meta name="author" content="Lävi Clinical Suite OÜ">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lavi-clinical.com/validation.html">
 
 <meta property="og:title" content="Clinical validation &amp; evidence — Lävi Delta">
-<meta property="og:description" content="The planned reader study, the evidence ladder, and what has not yet been proven. Clinical validation programme in preparation.">
+<meta property="og:description" content="The planned reader study, the evidence ladder, and what is not yet established. Clinical validation programme in preparation.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lavi-clinical.com/validation.html">
 <meta property="og:site_name" content="Lävi Clinical Suite">
@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Clinical validation &amp; evidence — Lävi Delta">
-<meta name="twitter:description" content="The planned reader study, the evidence ladder, and what has not yet been proven.">
+<meta name="twitter:description" content="The planned reader study, the evidence ladder, and what is not yet established.">
 <meta name="twitter:image" content="https://lavi-clinical.com/og.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -46,6 +46,7 @@
         <li><a href="/hospitals.html">Hospitals</a></li>
         <li><a href="/validation.html" aria-current="page">Evidence</a></li>
         <li><a href="/technology.html">Technology</a></li>
+        <li><a href="/company.html">Company</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
@@ -66,13 +67,16 @@
   </section>
 
   <!-- ============ 01 The question ============ -->
-  <section class="section">
+  <section class="section" id="question">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">01</span> — The question</p>
         <h2>What a reader study answers</h2>
       </div>
       <div class="prose">
+        <p>Does a radiologist read follow-up brain MRI better with Lävi Delta than without
+          it? That is the question, and we intend to answer it with an independent reader
+          study rather than a marketing sentence.</p>
         <p>A second-reader tool makes no findings of its own. What it changes — if it changes
           anything — is how a radiologist reads. So "how accurate is the software?" is the
           wrong question to lead with.</p>
@@ -91,7 +95,7 @@
   </section>
 
   <!-- ============ 02 Evidence ladder ============ -->
-  <section class="section">
+  <section class="section" id="evidence-ladder">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">02</span> — The evidence ladder</p>
@@ -105,9 +109,10 @@
               <span class="rung-no" aria-hidden="true">1</span>
               <div>
                 <h3>Technical development</h3>
-                <p>The processing and quality-control architecture that exists today: the
-                  on-premise pipeline, quality control with explicit abstention,
-                  per-run provenance, and the dedicated reader workstation.</p>
+                <p>The software that exists today: analysis that runs inside the hospital
+                  network, a quality check that withholds the result when two scans cannot
+                  fairly be compared, a record of how every result was produced, and the
+                  dedicated reading environment for the study.</p>
               </div>
               <span class="chip chip-now">exists today</span>
             </li>
@@ -157,7 +162,7 @@
   </section>
 
   <!-- ============ 03 The planned study ============ -->
-  <section class="section">
+  <section class="section" id="study">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">03</span> — The planned study</p>
@@ -233,7 +238,7 @@
   </section>
 
   <!-- ============ 04 The reader environment ============ -->
-  <section class="section">
+  <section class="section" id="reader-environment">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">04</span> — The reader environment</p>
@@ -241,50 +246,77 @@
       </div>
       <div class="prose">
         <p>Reader studies fail on logistics about as often as on science, so we built the
-          reading environment first. A dedicated browser-based reader workstation exists and
-          is deployed — not a slide deck, a running system.</p>
-        <p>Reader accounts in the reading application use two-step sign-in.</p>
-        <p>What is implemented and tested in it: the blinding gate between arms, so a reader in the unaided phase
-          cannot reach the software's outputs even on purpose; structured capture of every reader response; a full audit trail; and a
-          results export for the analysts.</p>
-        <p>The pipeline and this reader environment have been run together end to end in a
-          full production-form deployment. That included the unglamorous half of the test:
-          cases the pipeline rejects were confirmed to stay rejected, not slip quietly
-          through.</p>
+          reading environment first. A dedicated reading application that runs in a web
+          browser exists and is installed — not a slide deck, a running system.</p>
+        <p>What is implemented and tested in it: while a radiologist reads without the
+          software, its results are locked away and cannot be opened, even on purpose; every
+          answer the reader gives is recorded in the same structured form; every action is
+          logged; and the results can be exported for the independent analysts.</p>
+        <p>The analysis and this reading environment have been run together from start to
+          finish; <a href="/technology.html#end-to-end">what that test covered</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 05 What we have not proven ============ -->
-  <section class="section">
-    <div class="container">
-      <div class="not-proven">
-        <p class="kicker">05 — The boundary</p>
-        <h2>What we have not proven</h2>
-        <ol>
-          <li><p>Clinical performance has not been established. Whether Lävi Delta changes
-            reader performance is exactly what the planned study exists to measure, and we
-            will not claim the answer before the study does.</p></li>
-          <li><p>Comparison across scanners and vendors is a design goal and an explicit
-            requirement of the validation programme. In our internal technical tests on healthy
-            volunteers, results across scanners from different vendors have been promising; what
-            was tested is described under <a href="/technology.html#scanners">Technology</a>.
-            Confirmation in patients is still ahead, and that is what the validation programme is
-            for. Different protocols have not yet been tested.</p></li>
-          <li><p>Lävi Delta has two lanes: FLAIR and contrast-enhanced T1. Both are
-            implemented and both are part of the planned reader study. Neither is clinically
-            validated, and no performance claim is made for either.</p></li>
-          <li><p>An empty candidate list is not evidence that nothing changed. The
-            radiologist reads every study independently; nothing about Lävi Delta reduces
-            that responsibility, and nothing about it is meant to.</p></li>
-        </ol>
+  <!-- ============ 05 What exists, and what does not yet (merged with the home page status lists) ============ -->
+  <section class="section" id="status">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">05</span> — The boundary</p>
+        <h2>What exists, and what is not yet established</h2>
+      </div>
+      <div>
+        <div class="split-status">
+          <div>
+            <h3>Built and tested</h3>
+            <ul>
+              <li>Software that runs inside the hospital network: scans in from PACS, analysis
+                without anyone pressing a button, results back to PACS in the standard format.</li>
+              <li>A quality check on every comparison, which withholds the result when two
+                scans cannot fairly be compared.</li>
+              <li>A record of how every result was produced, attached to the result itself.</li>
+              <li>A dedicated reading environment for the planned study, which keeps the
+                software's results hidden during unaided reading, controls who can see what,
+                and logs every action.</li>
+              <li>Every requirement linked to the tests that check it, with the link checked
+                automatically each time the software is built, and a large set of automated
+                tests run continuously.</li>
+              <li>The whole path from analysis to reading screen, tested together on a complete
+                installation set up the way it would be in a hospital.</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Not yet established</h3>
+            <ul>
+              <li>Clinical performance. Whether Lävi Delta changes reader performance is exactly
+                what the planned study exists to measure, and we will not claim the answer
+                before the study does.</li>
+              <li>Comparison across scanners and vendors in patients. It is a design goal and an
+                explicit requirement of the validation programme. In our internal technical
+                tests on healthy volunteers, results across scanners from different vendors have
+                been promising; <a href="/technology.html#scanners">what was tested</a>.
+                Confirmation in patients is still ahead, and different protocols have not yet
+                been tested.</li>
+              <li>The two lanes, FLAIR and contrast-enhanced T1. Both are implemented and both
+                are part of the planned reader study. Neither has been clinically evaluated
+                yet, and no performance claim is made for either.</li>
+              <li>Capabilities still under technical evaluation, which are not part of any
+                claim.</li>
+              <li>Regulatory conformity: the conformity-assessment stage lies ahead, as the
+                pathway below shows.</li>
+            </ul>
+          </div>
+        </div>
+        <p class="hairline-note">An empty candidate list is not evidence that nothing
+          changed. The radiologist reads every study independently; nothing about Lävi Delta
+          reduces that responsibility, and nothing about it is meant to.</p>
         <p class="status-line" data-status="asOf">Status as of 2026-11-17</p>
       </div>
     </div>
   </section>
 
   <!-- ============ 06 Regulatory pathway ============ -->
-  <section class="section">
+  <section class="section" id="regulatory">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">06</span> — Regulatory pathway</p>
@@ -338,6 +370,7 @@
           <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/company.html">Company</a></li>
           <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>

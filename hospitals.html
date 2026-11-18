@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>For hospitals &amp; pilot sites — Lävi Delta</title>
-<meta name="description" content="What an early research collaboration with Lävi Clinical Suite looks like: research-context evaluation, on-premise deployment inside the hospital network, security practice stated plainly. Lävi Delta is not CE-marked and not for clinical use.">
+<meta name="description" content="Lävi Delta for radiology departments: why follow-up brain MRI review is hard, how the software fits the workflow, and what a research pilot inside the hospital network involves. Not CE-marked; not for clinical use.">
 <meta name="author" content="Lävi Clinical Suite OÜ">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lavi-clinical.com/hospitals.html">
 
 <meta property="og:title" content="For hospitals &amp; pilot sites — Lävi Delta">
-<meta property="og:description" content="What an early research collaboration with Lävi Clinical Suite looks like: research-context evaluation, on-premise deployment inside the hospital network, security practice stated plainly. Lävi Delta is not CE-marked and not for clinical use.">
+<meta property="og:description" content="Lävi Delta for radiology departments: why follow-up brain MRI review is hard, how the software fits the workflow, and what a research pilot inside the hospital network involves. Not CE-marked; not for clinical use.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lavi-clinical.com/hospitals.html">
 <meta property="og:site_name" content="Lävi Clinical Suite">
@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="For hospitals &amp; pilot sites — Lävi Delta">
-<meta name="twitter:description" content="What an early research collaboration with Lävi Clinical Suite looks like: research-context evaluation, on-premise deployment inside the hospital network, security practice stated plainly. Lävi Delta is not CE-marked and not for clinical use.">
+<meta name="twitter:description" content="Lävi Delta for radiology departments: why follow-up brain MRI review is hard, how the software fits the workflow, and what a research pilot inside the hospital network involves. Not CE-marked; not for clinical use.">
 <meta name="twitter:image" content="https://lavi-clinical.com/og.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -45,6 +45,7 @@
         <li><a href="/hospitals.html" aria-current="page">Hospitals</a></li>
         <li><a href="/validation.html">Evidence</a></li>
         <li><a href="/technology.html">Technology</a></li>
+        <li><a href="/company.html">Company</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
@@ -58,17 +59,163 @@
       <p class="kicker">For hospitals &amp; pilot sites</p>
       <h1>What working with us looks like.</h1>
       <p class="standfirst">Lävi Delta is not CE-marked and is not available for clinical use.
-        What we offer today is narrower, and honest: a research-and-development collaboration
-        around the validation programme, on infrastructure that already runs.</p>
+        What we offer today is narrower, and honest: a research collaboration around the
+        planned clinical study, on software that already runs from scan to reading screen.</p>
       <p class="status-line" data-status="heroStatusLine">Clinical validation and regulatory development in progress · not CE-marked</p>
     </div>
   </section>
 
-  <!-- ============ 01 The offer ============ -->
-  <section class="section">
+  <!-- ============ 01 The problem (moved from the home page) ============ -->
+  <section class="section" id="problem">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">01</span> — The offer</p>
+        <p class="kicker"><span class="kicker-no">01</span> — The problem</p>
+        <h2>Why longitudinal review is hard</h2>
+      </div>
+      <div class="prose">
+        <p>Reading a follow-up scan means answering a comparative question: has anything
+          changed since last time? In practice that is harder than it sounds. The two
+          examinations were often acquired months apart, on different scanners, at different
+          slice angles, under different protocols. The reader scrolls two stacks side by side
+          and holds the difference in memory — case after case, on clinical time.</p>
+        <p>Slow, diffuse change is the kind most easily missed. A finding that grows a little
+          between every visit can look stable at each single comparison. A subtle new finding
+          can sit at the edge of a slice that has no true counterpart in the prior study.</p>
+        <p>Underneath both sits a quieter problem: not every visible difference between two
+          examinations is biological. Scanner and protocol differences, acquisition
+          variability, positioning and the image processing applied along the way all leave
+          marks that can read as change. Telling that technical variation apart from genuine
+          biological change is the problem Lävi is built around. <a href="/#scanners">See an example: same person, two scanners</a>.</p>
+        <p>And sometimes the two studies cannot reasonably be compared at all. Software
+          built for follow-up reading has to recognise that rather than paper over it — a
+          confident comparison of two examinations that do not correspond is worse than no
+          help at all.</p>
+        <p>And this work compounds. Surveillance protocols add examinations to each
+          patient's history year after year, while the review itself is still a
+          side-by-side human comparison. Repeated imaging is a longitudinal data problem,
+          not a stack of single-scan reads.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 Who it is for (moved from the home page) ============ -->
+  <section class="section" id="who-it-is-for">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">02</span> — Who it is for</p>
+        <h2>Where interval review matters first</h2>
+      </div>
+      <div>
+        <p style="margin-bottom: 1.6rem;">Lävi Delta is being built for radiology departments
+          and imaging organisations that read longitudinal brain MRI routinely. It is designed
+          to fit the workflow a hospital already runs, and review returns to the radiologist
+          through familiar imaging systems.</p>
+        <ul class="domains">
+          <li>
+            <span class="kicker">Stratum I</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <g stroke="#3C4147" stroke-width="1.3"><line x1="10" y1="20" x2="10" y2="28"/><line x1="30" y1="20" x2="30" y2="28"/><line x1="50" y1="20" x2="50" y2="28"/><line x1="70" y1="20" x2="70" y2="28"/></g>
+              <path d="M60 8l4.5 8h-9z" fill="#A05400"/>
+            </svg>
+            <h3>Multiple sclerosis</h3>
+            <p>Surveillance MRI at regular intervals, where new activity between two visits
+              can change treatment.</p>
+          </li>
+          <li>
+            <span class="kicker">Stratum II</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <path d="M6 20 C 30 19, 55 17, 82 10" stroke="#5C6167" stroke-width="1.3" fill="none" stroke-dasharray="4 3"/>
+              <path d="M78 4l4.5 8h-9z" fill="#A05400"/>
+            </svg>
+            <h3>Primary brain tumours</h3>
+            <p>Follow-up after treatment, where slow growth has to be told apart from a
+              stable post-treatment appearance — across a long series of examinations.</p>
+          </li>
+          <li>
+            <span class="kicker">Stratum III</span>
+            <svg class="domain-glyph" width="88" height="30" viewBox="0 0 88 30" aria-hidden="true">
+              <line x1="2" y1="24" x2="86" y2="24" stroke="#3C4147" stroke-width="1.3"/>
+              <g fill="#5C6167"><circle cx="18" cy="14" r="2.4"/><circle cx="38" cy="9" r="2"/><circle cx="55" cy="16" r="2.2"/></g>
+              <path d="M72 7l4.5 8h-9z" fill="#A05400"/>
+            </svg>
+            <h3>Brain metastases</h3>
+            <p>Follow-up after treatment, where a small new finding and change in a known one
+              carry equal weight.</p>
+          </li>
+        </ul>
+        <p class="hairline-note">Lävi Delta is being developed for adults (18+) undergoing
+          longitudinal brain MRI surveillance. These three settings are the strata of the
+          planned reader study. It is not intended for paediatric imaging, non-brain anatomy,
+          other modalities, or acute stroke triage.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 03 Workflow (moved from the home page) ============ -->
+  <section class="section" id="workflow">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">03</span> — The workflow</p>
+        <h2>How it fits into the department</h2>
+      </div>
+      <div>
+        <ol class="workflow">
+          <li>
+            <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M13 4h7v16h-7"/><path d="M2 12h13m-4-4 4 4-4 4"/></g></svg>
+              <h3>The two scans arrive</h3>
+              <p>The earlier and the new examination come from PACS the way any study moves
+                through the department. Analysis starts on its own; nobody has to press a
+                button.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="7"/><path d="M12 1v5M12 18v5M1 12h5M18 12h5"/></g></svg>
+              <h3>Alignment and a quality check</h3>
+              <p>The new scan is lined up with the earlier one. Before anything else, the
+                software checks whether the two studies are technically fit to compare. If
+                they are not, no comparison is reported.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l4.5 8h-9z" fill="#A05400"/><path d="M17 20l-4.5-8h9z" fill="#33637F"/></svg>
+              <h3>Possible changes, in order</h3>
+              <p>Regions that may have changed are listed in order of priority. New or growing
+                change is kept apart from shrinking change, because the two mean different
+                things to the reader.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6.5"/></g></svg>
+              <h3>The radiologist decides</h3>
+              <p>The reading radiologist goes through the list and accepts or rejects each
+                item. Lävi Delta makes no diagnostic decision; the radiologist still reads the
+                whole study, with the list alongside.</p>
+            </div>
+          </li>
+          <li>
+            <div>
+              <svg class="step-glyph" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true"><g stroke="#3C4147" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M5 2h10l4 4v16H5z"/><path d="M15 2v4h4M9 12h6M9 16h6"/></g></svg>
+              <h3>Results back in PACS</h3>
+              <p>The results return to PACS as ordinary DICOM images and a structured report.
+                Each one can be traced back to the exact analysis that produced it.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 04 The offer ============ -->
+  <section class="section" id="offer">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">04</span> — The offer</p>
         <h2>Early collaborating sites</h2>
       </div>
       <div class="prose">
@@ -92,11 +239,11 @@
     </div>
   </section>
 
-  <!-- ============ 02 Deployment ============ -->
-  <section class="section">
+  <!-- ============ 05 Deployment ============ -->
+  <section class="section" id="deployment">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">02</span> — Deployment</p>
+        <p class="kicker"><span class="kicker-no">05</span> — Deployment</p>
         <h2>What your IT department will ask</h2>
       </div>
       <div class="prose">
@@ -111,11 +258,11 @@
     </div>
   </section>
 
-  <!-- ============ 03 Security ============ -->
-  <section class="section">
+  <!-- ============ 06 Security ============ -->
+  <section class="section" id="security">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">03</span> — Security</p>
+        <p class="kicker"><span class="kicker-no">06</span> — Security</p>
         <h2>Security and data protection</h2>
       </div>
       <div class="prose">
@@ -130,34 +277,35 @@
     </div>
   </section>
 
-  <!-- ============ 04 What has been verified ============ -->
-  <section class="section">
+  <!-- ============ 07 What has been tested ============ -->
+  <section class="section" id="tested">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">04</span> — Verification</p>
-        <h2>What "verified end to end" means here</h2>
+        <p class="kicker"><span class="kicker-no">07</span> — Verification</p>
+        <h2>What "tested end to end" means here</h2>
       </div>
       <div class="prose">
-        <p>The full producer-to-reader chain has been executed against a full
-          production-form deployment of the pipeline, image store and reader workstation —
-          including verifying that rejected cases stay rejected. It was not a routine
-          clinical deployment at a hospital site, and we will not imply that it was.
-          Details are on the <a href="/technology.html">technology page</a>; what is and is
-          not proven is on the <a href="/validation.html">evidence page</a>.</p>
+        <p>We have run the whole path — from the analysis, through image storage, to the
+          radiologist's reading screen — on a complete installation set up the way it would be
+          in a hospital, and checked that cases the software refuses to analyse also stay out
+          of the reading screen. It was not a routine clinical installation at a hospital
+          site, and we will not imply that it was. Details are on the
+          <a href="/technology.html#end-to-end">technology page</a>; what exists and what is
+          not yet established is on the <a href="/validation.html#status">evidence page</a>.</p>
       </div>
     </div>
   </section>
 
-  <!-- ============ 05 Contact ============ -->
-  <section class="section">
+  <!-- ============ 08 Contact ============ -->
+  <section class="section" id="contact">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">05</span> — Contact</p>
+        <p class="kicker"><span class="kicker-no">08</span> — Contact</p>
         <h2>Talk to us</h2>
       </div>
       <div class="prose">
         <p>If your department reads longitudinal brain MRI and the programme above interests
-          you, <a href="mailto:andreas@lavi-clinical.com?subject=Clinical%20collaboration">write about clinical collaboration</a>.
+          you, <a href="mailto:andreas@lavi-clinical.com?subject=Clinical%20collaboration">talk to us about a pilot in your department</a>.
           A neuroradiologist answers.</p>
         <p class="status-line" data-status="asOf">Status as of 2026-11-17</p>
       </div>
@@ -190,6 +338,7 @@
           <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/company.html">Company</a></li>
           <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>

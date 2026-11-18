@@ -46,6 +46,7 @@
         <li><a href="/hospitals.html">Hospitals</a></li>
         <li><a href="/validation.html">Evidence</a></li>
         <li><a href="/technology.html" aria-current="page">Technology</a></li>
+        <li><a href="/company.html">Company</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
@@ -66,11 +67,37 @@
     </div>
   </section>
 
-  <!-- ============ 01 Deployment ============ -->
-  <section class="section">
+  <!-- ============ 01 The platform (moved from the home page) ============ -->
+  <section class="section" id="platform">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">01</span> — Deployment</p>
+        <p class="kicker"><span class="kicker-no">01</span> — The platform</p>
+        <h2>Built around the comparison, not the model</h2>
+      </div>
+      <div class="prose">
+        <p>Most imaging algorithms solve one narrow, single-scan analytical task. The
+          clinically hard part of longitudinal reading sits around any such model:
+          deciding whether two
+          examinations can validly be compared, preserving provenance, managing
+          uncertainty, integrating with PACS, presenting change for a human decision — and
+          withholding the answer when the evidence does not support one.</p>
+        <p>That surrounding layer is what Lävi is building, and it is deliberately not tied
+          to one indication: ingestion of longitudinal studies, registration and
+          comparison, quality control with explicit abstention, candidate-change analysis,
+          provenance, standard DICOM and PACS integration, the auditable radiologist
+          review environment, the reader-study infrastructure, and the validation and
+          regulatory architecture around all of it. Lävi Delta is the first product built
+          on that layer — and the first that will carry it through independent clinical
+          validation.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 01 Deployment ============ -->
+  <section class="section" id="deployment">
+    <div class="container section-grid">
+      <div class="section-head">
+        <p class="kicker"><span class="kicker-no">02</span> — Deployment</p>
         <h2>Inside the hospital, on standard DICOM</h2>
       </div>
       <div class="prose">
@@ -120,10 +147,10 @@
   </section>
 
   <!-- ============ 02 Sequence-aware processing ============ -->
-  <section class="section">
+  <section class="section" id="input">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">02</span> — Input handling</p>
+        <p class="kicker"><span class="kicker-no">03</span> — Input handling</p>
         <h2>Sequence-aware, and fails closed</h2>
       </div>
       <div class="prose">
@@ -139,10 +166,10 @@
   </section>
 
   <!-- ============ 03 Registration & provenance ============ -->
-  <section class="section">
+  <section class="section" id="provenance">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">03</span> — Provenance</p>
+        <p class="kicker"><span class="kicker-no">04</span> — Provenance</p>
         <h2>Registration you can replay</h2>
       </div>
       <div class="prose">
@@ -160,10 +187,10 @@
   </section>
 
   <!-- ============ 04 Candidates ============ -->
-  <section class="section">
+  <section class="section" id="candidates">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">04</span> — Candidates</p>
+        <p class="kicker"><span class="kicker-no">05</span> — Candidates</p>
         <h2>Direction-aware presentation</h2>
       </div>
       <div class="prose">
@@ -180,10 +207,10 @@
   </section>
 
   <!-- ============ 05 QC & abstention ============ -->
-  <section class="section">
+  <section class="section" id="quality-control">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">05</span> — Quality control</p>
+        <p class="kicker"><span class="kicker-no">06</span> — Quality control</p>
         <h2>Explicit abstention</h2>
       </div>
       <div class="prose">
@@ -194,16 +221,18 @@
         <p>To be precise about what this is and is not: it does not guarantee that every
           unreliable result is caught. It means the system's prerequisites are checked
           explicitly, and longitudinal output that fails them is withheld, with the refusal
-          itself reported to the reader.</p>
+          itself reported to the reader. An honest "cannot compare" is worth more than a
+          number nobody should rely on. This behaviour is implemented and tested today, not
+          planned.</p>
       </div>
     </div>
   </section>
 
   <!-- ============ 06 Traceability ============ -->
-  <section class="section">
+  <section class="section" id="traceability">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">06</span> — Traceability</p>
+        <p class="kicker"><span class="kicker-no">07</span> — Traceability</p>
         <h2>The build fails when the paperwork lies</h2>
       </div>
       <div class="prose">
@@ -224,10 +253,10 @@
   </section>
 
   <!-- ============ 07 End-to-end ============ -->
-  <section class="section">
+  <section class="section" id="end-to-end">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">07</span> — Conformance</p>
+        <p class="kicker"><span class="kicker-no">08</span> — Conformance</p>
         <h2>Verified end to end, in production form</h2>
       </div>
       <div class="prose">
@@ -281,21 +310,22 @@
   </section>
 
   <!-- ============ 08 Review workflow ============ -->
-  <section class="section">
+  <section class="section" id="review">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">08</span> — Review</p>
+        <p class="kicker"><span class="kicker-no">09</span> — Review</p>
         <h2>A browser-based reading environment</h2>
       </div>
       <div class="prose">
         <p>For the planned reader study there is a dedicated browser-based reader
           workstation, already deployed — a pinned open-source medical imaging viewer over a
           standard image store, behind a proxy that knows which study phase it is serving.</p>
-        <p>Reader accounts in the reading application use two-step sign-in.</p>
-        <p>It carries the blinding gate
-          between study arms, structured reader response capture, an
-          audit trail and a results export. All of it implemented and tested today — because
-          a reader study should not have to wait for its own furniture.</p>
+        <p>What it does for the study — blinding between the reading phases, structured reader
+          responses, an audit trail, a results export — is described on the
+          <a href="/validation.html#reader-environment">evidence page</a>; sign-in and security
+          practice are on the <a href="/hospitals.html#security">hospitals page</a>. All of it
+          implemented and tested today — because a reader study should not have to wait for
+          its own furniture.</p>
         <p class="hairline-note">Lävi Delta is under development. It is not CE-marked, is not
           available for sale, and must not be used for clinical decision-making. Information on
           this site describes a product in development and its planned evaluation, not the
@@ -305,10 +335,10 @@
   </section>
 
   <!-- ============ 09 Integration ============ -->
-  <section class="section">
+  <section class="section" id="integration">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">09</span> — Integration</p>
+        <p class="kicker"><span class="kicker-no">10</span> — Integration</p>
         <h2>Modular by design, honest about interfaces</h2>
       </div>
       <div class="prose">
@@ -327,7 +357,7 @@
   <section class="section" id="scanners">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">10</span> — Scanners</p>
+        <p class="kicker"><span class="kicker-no">11</span> — Scanners</p>
         <h2>Different scanners, same question</h2>
       </div>
       <div class="prose">
@@ -424,40 +454,8 @@
         </svg>
         <p class="fig-label"><span class="fig-no">Fig. 3 — What was tested</span><span>internal technical tests; no results shown</span></p>
         </figure>
-        <figure class="figure-panel scan-example" aria-labelledby="scan-cap-tech">
-          <div class="demo-top">
-            <div class="demo-cases" role="group" aria-label="Choose example">
-              <button type="button" class="scan-ex" data-ex="nochange" aria-pressed="true">No change</button>
-              <button type="button" class="scan-ex" data-ex="finding" aria-pressed="false">Simulated finding</button>
-            </div>
-            <div class="demo-cases" role="group" aria-label="Choose view">
-              <button type="button" class="scan-view" data-view="sub" aria-pressed="true">Plain subtraction</button>
-              <button type="button" class="scan-view" data-view="map" aria-pressed="false">Lävi Delta map</button>
-            </div>
-          </div>
-          <div class="scan-panes">
-            <div class="demo-pane">
-              <p class="demo-label" data-label="bl">Scanner 1 · Philips</p>
-              <div class="demo-frame scan-frame"><img data-layer="bl" width="400" height="400" decoding="async" alt="Axial FLAIR MRI of a healthy volunteer on the first scanner."></div>
-            </div>
-            <div class="demo-pane">
-              <p class="demo-label" data-label="fu">Scanner 2 · Siemens</p>
-              <div class="demo-frame scan-frame"><img data-layer="fu" width="400" height="400" decoding="async" alt="The same volunteer on a scanner from a different vendor, same slice."></div>
-            </div>
-            <div class="demo-pane">
-              <p class="demo-label" data-label="third">Plain subtraction</p>
-              <div class="demo-frame scan-frame"><img data-layer="third" width="400" height="400" decoding="async" alt="Plain subtraction of the two scans after alignment and standard intensity scaling."></div>
-            </div>
-          </div>
-          <noscript><p class="demo-noscript">This example needs JavaScript to show the images.</p></noscript>
-          <p class="demo-legend scan-legend" data-for="sub">Plain subtraction: grey means the two scans agree; lighter or darker means they differ.</p>
-          <p class="demo-legend scan-legend" data-for="map" hidden><span class="demo-swatch demo-swatch-up" aria-hidden="true"></span>Red: signal increased between the two scans. <span class="demo-swatch demo-swatch-down" aria-hidden="true"></span>Blue: signal decreased. The stronger the colour, the larger the change. Where there is no colour, the map shows no change.</p>
-          <p class="demo-legend scan-ring-note" hidden>Yellow rings: simulated findings.</p>
-          <figcaption class="demo-cap" id="scan-cap-tech">
-            <span class="fig-no">Fig. 4 — Same person, two scanners</span>
-            <span>One example pair from a public dataset (ON-Harmony, OpenNeuro ds004712). An illustration, not a performance result. Plain subtraction: rigid registration and intensity normalisation, then the difference of the two images.</span>
-          </figcaption>
-        </figure>
+        <p>An example pair from these tests, with and without a simulated finding, is shown on
+          the home page: <a href="/#scanners">same person, two scanners</a>.</p>
         <p>Dataset: ON-Harmony, OpenNeuro ds004712 (version 2.0.1),
           <a href="https://doi.org/10.18112/openneuro.ds004712.v2.0.1" rel="external">https://doi.org/10.18112/openneuro.ds004712.v2.0.1</a>.</p>
       </div>
@@ -490,6 +488,7 @@
           <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/company.html">Company</a></li>
           <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>
@@ -510,13 +509,5 @@
 </footer>
 
 <script src="/content/site-status.js" defer></script>
-<script>
-  // The demos load after the page itself, so they never slow the first view.
-  window.addEventListener('load', function () {
-    ['/demo/scanner-example.js'].forEach(function (src) {
-      var s = document.createElement('script'); s.src = src; document.body.appendChild(s);
-    });
-  });
-</script>
 </body>
 </html>

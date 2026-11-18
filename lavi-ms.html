@@ -46,6 +46,7 @@
         <li><a href="/hospitals.html">Hospitals</a></li>
         <li><a href="/validation.html">Evidence</a></li>
         <li><a href="/technology.html">Technology</a></li>
+        <li><a href="/company.html">Company</a></li>
         <li><a href="/#contact">Contact</a></li>
       </ul>
     </nav>
@@ -82,8 +83,7 @@
           series of examinations?</p>
         <p>Those questions span large three-dimensional studies acquired months or years
           apart, often on different scanners and under different protocols. Finding lesions
-          on a single scan is the easier half of the job — segmentation is a largely solved
-          conversation. The hard part, and the clinically decisive one, is reliable change
+          on a single scan is the easier half of the job, and many tools already do it. The hard part, and the clinically decisive one, is reliable change
           assessment over time.</p>
         <p class="pull">MS follow-up is not a segmentation problem. It is a change problem.</p>
       </div>
@@ -119,10 +119,11 @@
       </div>
       <div class="prose">
         <p>Lävi Delta comes first, and the ordering is deliberate. Delta establishes the
-          general longitudinal foundation: image ingestion and provenance, registration, the
-          quality-control and abstention architecture, the candidate-change workflow, the
-          clinical review environment, auditability, and — just as importantly — the
-          clinical-validation methodology itself.</p>
+          general longitudinal foundation: bringing the scans in and recording how every result was produced, lining
+          the scans up, the quality check that withholds a result when two scans cannot fairly
+          be compared, the list of possible changes, the radiologist's review screen, a full
+          record of who did what, and — just as importantly — the way the product is
+          evaluated clinically.</p>
         <figure class="fig">
           <svg viewBox="0 0 760 300" role="img" aria-labelledby="figarch-t">
             <title id="figarch-t">Product architecture: Lävi Delta is the current longitudinal platform layer; Lävi MS is a planned disease-specific product that will be built on top of it, with its own validation and regulatory pathway.</title>
@@ -152,8 +153,8 @@
         <p>Lävi MS then extends that foundation with disease-specific functionality for
           multiple sclerosis, under its own development, clinical-validation and regulatory
           pathway. Rather than pushing several regulated products through development at
-          once, we validate the common platform through one product and build the second on
-          proven ground.</p>
+          once, we evaluate the common platform through one product and build the second on
+          ground that has already been tested.</p>
         <p>Two things follow from this. Lävi MS is not an MS mode inside Lävi Delta — it is
           a separate product. And Lävi Delta is not a detour on the way to it — it is the
           platform the MS product will stand on.</p>
@@ -209,12 +210,13 @@
           <li>
             <h3>Quality and uncertainty</h3>
             <p>Explicit information about the technical limitations affecting a longitudinal
-              comparison — the same abstention discipline Lävi Delta is built on.</p>
+              comparison — the same rule Lävi Delta follows: no result when the comparison cannot
+              be trusted.</p>
           </li>
         </ul>
         <p class="hairline-note">This list describes the planned scope of a future product.
           The exact clinical outputs — and every claim attached to them — will be determined
-          by the final validated product, not by this page.</p>
+          by the final product and its clinical evaluation, not by this page.</p>
       </div>
     </div>
   </section>
@@ -226,8 +228,8 @@
         <p class="kicker">06 — The boundary</p>
         <h2>What Lävi MS is, and is not</h2>
         <ol>
-          <li><p>Lävi MS is a planned product programme. It is not clinically validated, not
-            CE-marked and not available — those milestones belong to a programme that has
+          <li><p>Lävi MS is a planned product programme. It has not been clinically evaluated, is
+            not CE-marked and is not available — those milestones belong to a programme that has
             not started.</p></li>
           <li><p>It is not an autonomous diagnostic system and not a replacement for the
             radiologist, and it will not become one.</p></li>
@@ -243,7 +245,7 @@
   </section>
 
   <!-- ============ 07 Contact ============ -->
-  <section class="section">
+  <section class="section" id="contact">
     <div class="container section-grid">
       <div class="section-head">
         <p class="kicker"><span class="kicker-no">07</span> — Contact</p>
@@ -287,6 +289,7 @@
           <li><a href="/hospitals.html">For hospitals</a></li>
           <li><a href="/validation.html">Validation &amp; evidence</a></li>
           <li><a href="/technology.html">Technology</a></li>
+          <li><a href="/company.html">Company</a></li>
           <li><a href="/careers.html">Careers</a></li>
         </ul>
       </div>

@@ -691,7 +691,9 @@ p, li { max-width: var(--measure); }
   color: var(--panel-muted);
   margin-bottom: 0.45rem;
 }
-.demo-frame { background: #000; border: 1px solid var(--panel-line); aspect-ratio: 1 / 1; }
+.demo-frame { background: #000; border: 1px solid var(--panel-line); aspect-ratio: 1 / 1; position: relative; }
+/* static first frame shown when JavaScript is off (inside <noscript>) */
+.demo-static { position: absolute; inset: 0; display: block; width: 100%; height: 100%; }
 .demo-frame canvas { display: block; width: 100%; height: 100%; }
 .demo-noscript { color: var(--panel-muted); font-family: var(--f-mono); font-size: 0.8rem; }
 .demo-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 0.6rem 1rem; }
@@ -716,16 +718,19 @@ p, li { max-width: var(--measure); }
 .demo-source { border-top: 1px solid var(--panel-line); padding-top: 0.9rem; display: flex; flex-direction: column; gap: 0.5rem; }
 .demo-source p { font-size: 0.8rem; line-height: 1.5; color: var(--panel-muted); max-width: none; }
 .demo-source a { color: var(--panel-text); overflow-wrap: anywhere; }
+.demo-cap a { color: var(--panel-text); }
 .demo-source cite { font-style: italic; }
 .demo-source .demo-disclaimer { color: var(--panel-text); }
 @media (max-width: 719px) {
-  .change-demo.is-live .demo-views { display: flex; }
-  .change-demo.is-live .demo-panes { grid-template-columns: 1fr; }
-  .change-demo.is-live .demo-pane { display: none; }
-  .change-demo.is-live .demo-pane.is-shown { display: block; }
+  /* html.js is set in the page head before first paint, so the phone layout does not
+     jump when the demo script starts (it used to switch on .is-live, a layout shift). */
+  .js .change-demo .demo-views { display: flex; }
+  .js .change-demo .demo-panes { grid-template-columns: 1fr; }
+  .js .change-demo .demo-pane { display: none; }
+  .js .change-demo .demo-pane.is-shown { display: block; }
   .demo-cases, .demo-views { width: 100%; }
   .demo-cases button, .demo-views button { flex: 1 1 0; padding-inline: 0.4rem; font-size: 0.72rem; letter-spacing: 0.02em; }
-  .change-demo.is-live .demo-label { display: none; }
+  .js .change-demo .demo-label { display: none; }
   .demo-slice { min-width: 0; }
 }
 .demo-note { font-family: var(--f-mono); font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--panel-muted); max-width: none; }
@@ -776,3 +781,78 @@ p, li { max-width: var(--measure); }
   .svgfig .svg-wide { display: none; }
   .svgfig .svg-narrow { display: block; }
 }
+
+/* ---------- home page: status sentence, map key, audiences ---------- */
+.hero-status {
+  font-family: var(--f-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+  border-left: 3px solid var(--ink);
+  padding-left: 0.75rem;
+}
+.lead { font-size: clamp(1.1rem, 1.8vw, 1.22rem); line-height: 1.6; }
+.map-key {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  font-family: var(--f-mono);
+  font-size: 0.88rem;
+  background: #FFFFFF;
+  border: 1px solid var(--film);
+  border-radius: var(--radius);
+  padding: 1rem 1.2rem;
+  max-width: var(--measure);
+}
+.map-key strong { color: var(--ink); font-weight: 500; }
+.map-key .demo-swatch { border-color: var(--graphite); }
+.map-key-note { font-family: var(--f-mono); font-size: 0.88rem; color: var(--ink); }
+.more-links { display: flex; flex-wrap: wrap; gap: 0.4rem 1.8rem; }
+.status-statement {
+  font-family: var(--f-display);
+  font-variation-settings: 'wdth' 110;
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--ink);
+  margin-top: 1.6rem;
+}
+#status .more-links { margin-top: 0.9rem; }
+.audiences {
+  list-style: none;
+  display: grid;
+  gap: 1px;
+  background: var(--film);
+  border: 1px solid var(--film);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+@media (min-width: 900px) { .audiences { grid-template-columns: repeat(3, 1fr); } }
+.audiences > li { background: #FFFFFF; padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; }
+.audiences p { font-size: 0.97rem; }
+.audience-action { margin-top: auto; padding-top: 0.4rem; }
+.audience-action .btn { white-space: normal; }
+.audience-more { font-size: 0.92rem; color: var(--muted); }
+
+/* ---------- team (company page) ---------- */
+.team { list-style: none; display: flex; flex-direction: column; }
+.team > li { display: grid; grid-template-columns: 96px 1fr; gap: 1.2rem; padding-block: 1.3rem; align-items: start; }
+.team > li + li { border-top: 1px solid var(--film); }
+.team h3 { margin-bottom: 0.3rem; }
+.photo-slot {
+  width: 96px; aspect-ratio: 1 / 1;
+  border: 1px dashed var(--muted);
+  border-radius: var(--radius);
+  background: var(--hatch), #FFFFFF;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--f-mono); font-size: 0.7rem; letter-spacing: 0.1em; text-transform: uppercase;
+  color: var(--muted);
+}
+.bio-slot {
+  font-family: var(--f-mono); font-size: 0.82rem; color: var(--muted);
+  border: 1px dashed var(--film); padding: 0.35rem 0.6rem; margin-top: 0.6rem; display: inline-block;
+}
+/* without JavaScript the demo controls do nothing; the static first frame stays */
+html:not(.js) .change-demo .demo-top,
+html:not(.js) .change-demo .demo-controls,
+html:not(.js) .scan-example .demo-top { display: none; }
