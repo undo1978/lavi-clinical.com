@@ -831,7 +831,9 @@ p, li { max-width: var(--measure); }
 .audiences > li { background: #FFFFFF; padding: 1.4rem 1.5rem 1.6rem; display: flex; flex-direction: column; gap: 0.6rem; }
 .audiences p { font-size: 0.97rem; }
 .audience-action { margin-top: auto; padding-top: 0.4rem; }
-.audience-action .btn { white-space: normal; }
+.audience-action .btn { white-space: normal; display: flex; width: 100%; align-items: center; }
+@media (min-width: 900px) { .audience-action .btn { min-height: 6.3rem; } }
+.contact-block > p { max-width: none; }
 .audience-more { font-size: 0.92rem; color: var(--muted); }
 
 /* ---------- team (company page) ---------- */
