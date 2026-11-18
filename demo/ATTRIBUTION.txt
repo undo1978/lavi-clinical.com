@@ -1,4 +1,4 @@
-Images in this folder (demo/DEMO-MS-03, demo/DEMO-BM-10) are derived from public research data.
+Images in this folder (demo/DEMO-MS-03, demo/DEMO-BM-05) are derived from public research data.
 They are not patient data from a Lävi study.
 
 DEMO-MS-03 (FLAIR):
@@ -8,7 +8,7 @@ DEMO-MS-03 (FLAIR):
   Licence: Creative Commons Attribution 4.0 International (CC BY 4.0),
   https://creativecommons.org/licenses/by/4.0/
 
-DEMO-BM-10 (T1C):
+DEMO-BM-05 (T1C):
   Chadha, S., Weiss, D., Janas, A., Ramakrishnan, D., Hager, T., Osenberg, K., Willms, K., Zhu, J.,
   Chiang, V., Bakas, S., Maleki, N., Sritharan, D. V., Schoenherr, S., Westerhoff, M., Zawalich, M.,
   Davis, M., Malhotra, A., Bousabarah, K., Deuschl, C., Lin, M., Aneja, S., & Aboian, M. (2025).

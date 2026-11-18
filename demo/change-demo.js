@@ -10,7 +10,7 @@
   if (!root || !root.querySelector('canvas').getContext) return;
 
   var CASES = [
-    { dir: '/demo/DEMO-BM-10/', n: 100, start: 53, ms: 110,
+    { dir: '/demo/DEMO-BM-05/', n: 100, start: 77, ms: 110,
       label: 'Contrast-enhanced T1 (T1C) MRI of a person with brain metastases' },
     { dir: '/demo/DEMO-MS-03/', n: 11, start: 3, ms: 420,
       label: 'FLAIR MRI of a person with multiple sclerosis' }
