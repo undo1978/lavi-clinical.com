@@ -841,6 +841,10 @@ p, li { max-width: var(--measure); }
 .team > li { padding-block: 1.2rem; }
 .team > li + li { border-top: 1px solid var(--film); }
 .team h3 { margin-top: 0; margin-bottom: 0.3rem; }
+.team > li:has(.team-portrait) { display: grid; grid-template-columns: 9rem 1fr; gap: 1.3rem; align-items: start; }
+.nowrap { white-space: nowrap; }
+.team-portrait { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; border-radius: calc(var(--radius) / 2); }
+@media (max-width: 420px) { .team > li:has(.team-portrait) { grid-template-columns: 6.5rem 1fr; gap: 0.9rem; } }
 
 /* without JavaScript the demo controls do nothing; the static first frame stays */
 html:not(.js) .change-demo .demo-top,
