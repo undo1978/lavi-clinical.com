@@ -4,13 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Technology — Lävi Delta</title>
-<meta name="description" content="How Lävi Delta is built: on-premise DICOM deployment, longitudinal registration with recorded provenance, direction-aware candidate presentation, quality-control logic with explicit abstention, and machine-checked traceability.">
+<meta name="description" content="How Lävi Delta is built: on-premise DICOM deployment, longitudinal registration with recorded provenance, a change map that shows the direction of change, quality-control logic with explicit abstention, and machine-checked traceability.">
 <meta name="author" content="Lävi Clinical Suite OÜ">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://lavi-clinical.com/technology.html">
 
 <meta property="og:title" content="Technology — Lävi Delta">
-<meta property="og:description" content="On-premise DICOM deployment, registration with recorded provenance, direction-aware candidates, explicit abstention, and machine-checked traceability.">
+<meta property="og:description" content="On-premise DICOM deployment, registration with recorded provenance, a change map that shows the direction of change, explicit abstention, and machine-checked traceability.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://lavi-clinical.com/technology.html">
 <meta property="og:site_name" content="Lävi Clinical Suite">
@@ -20,7 +20,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Technology — Lävi Delta">
-<meta name="twitter:description" content="On-premise DICOM deployment, registration with recorded provenance, direction-aware candidates, explicit abstention, and machine-checked traceability.">
+<meta name="twitter:description" content="On-premise DICOM deployment, registration with recorded provenance, a change map that shows the direction of change, explicit abstention, and machine-checked traceability.">
 <meta name="twitter:image" content="https://lavi-clinical.com/og.png">
 
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -83,7 +83,7 @@
           withholding the answer when the evidence does not support one.</p>
         <p>That surrounding layer is what Lävi is building, and it is deliberately not tied
           to one indication: ingestion of longitudinal studies, registration and
-          comparison, quality control with explicit abstention, candidate-change analysis,
+          comparison, quality control with explicit abstention, change measurement,
           provenance, standard DICOM and PACS integration, the auditable radiologist
           review environment, the reader-study infrastructure, and the validation and
           regulatory architecture around all of it. Lävi Delta is the first product built
@@ -136,8 +136,9 @@
           </svg>
           <p class="fig-label"><span class="fig-no">Fig. 1 — Deployment</span><span>schematic</span></p>
         </figure>
-        <p>The results are ordinary DICOM: SEG segmentation objects for candidate regions,
-          secondary-capture overlay series, and a structured report. No proprietary viewer,
+        <p>The results are ordinary DICOM: a parametric map of the change between the two scans,
+          and a segmentation object that marks where the change could not be measured. No
+          proprietary viewer,
           no new workflow bolted onto the reading radiologist's day.</p>
         <p>What ships is an integration and orchestration runtime for a clinical site's own
           infrastructure. It is not a sealed appliance, and we do not pretend deployment
@@ -186,22 +187,17 @@
     </div>
   </section>
 
-  <!-- ============ 04 Candidates ============ -->
-  <section class="section" id="candidates">
+  <!-- ============ 04 Change map ============ -->
+  <section class="section" id="change-map">
     <div class="container section-grid">
       <div class="section-head">
-        <p class="kicker"><span class="kicker-no">05</span> — Candidates</p>
-        <h2>Direction-aware presentation</h2>
+        <p class="kicker"><span class="kicker-no">05</span> — Change map</p>
+        <h2>The change map</h2>
       </div>
       <div class="prose">
-        <p>Each candidate region carries its location, its volume and its direction of
-          change. New or growing change and resolving change run in separate ranked lanes —
-          they mean different things at the reading station and deserve separate
-          attention.</p>
-        <p>Candidates are ordered by review priority and put in front of the reading
-          radiologist, who accepts or rejects each one. The software works at the level of
-          image regions: it does not count lesions, does not match lesions between visits,
-          does not classify disease, and makes no diagnostic decision.</p>
+        <p>The map carries the direction and size of the change at every point where it could
+          be measured. Where it could not be measured, the map says so instead of showing
+          nothing. The two lanes, FLAIR and contrast-enhanced T1, are kept separate.</p>
       </div>
     </div>
   </section>
